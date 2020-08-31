@@ -1,5 +1,12 @@
 # Arch Linux简明实用教程
 
+本书提供作者多年工作与生活中使用Arch Linux的一些经验。
+`docsify-cli`
+[GitHub Corner](http://tholman.com/github-corners/)
+
+
+
+
 文档第一页 介绍本书特点 描述的内容 简要介绍
 
 
