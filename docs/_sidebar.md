@@ -7,15 +7,15 @@
 
 - 娱乐
 
-  - [Configuration](configuration.md)
+  - [软件](/play/software)
 
 - 办公
 
-  - [Configuration](configuration.md)
+  - [软件](/office/software)
 
 - 编程
 
-  - [Deploy](deploy.md)
+  - [软件](/code/software)
 
-- [杠精高潮区](awesome.md)
-- [关于&致谢](changelog.md)
+- [杠精高潮区](MrRight.md)
+- [关于&致谢](about.md)

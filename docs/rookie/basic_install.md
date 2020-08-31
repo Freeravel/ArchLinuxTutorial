@@ -1,15 +1,12 @@
 # 基础安装 
 从安装最基础的ArchLinux系统开始  
 官方文档: [安装指南](https://wiki.archlinux.org/index.php/Installation_guide)    
-相关视频链接： 2020ArchLinux安装教程 图文结合效果更好
-## 1.刻录优盘
-
-``` bash
+相关视频链接： 2020ArchLinux安装教程 视频文字结合效果更好
+#### 1.刻录优盘
+```bash
 dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync
-```
-
-其中 oflag=sync 的意思是：
-
+```  
+其中 oflag=sync 的意思是：  
 使用oflag来控制输出(写入数据)时的行为特征。确保命令结束时数据及元数据真正写入磁盘  而不是刚写入缓存就返回。
 
 status=LEVEL 的意思是：
