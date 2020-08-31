@@ -1,30 +1,21 @@
 - [**引言**](/)
 
-- Getting started
+- 新手上路
 
-  - [基础安装](/basic_install/222)
-  - [Writing more pages](more-pages.md)
-  - [Custom navbar](custom-navbar.md)
-  - [Cover page](cover.md)
+  - [基础安装](/rookie/basic_install)
+  - [桌面环境与常用应用](/rookie/DE&App)
 
-- Customization
+- 娱乐
 
   - [Configuration](configuration.md)
-  - [Themes](themes.md)
-  - [List of Plugins](plugins.md)
-  - [Write a Plugin](write-a-plugin.md)
-  - [Markdown configuration](markdown.md)
-  - [Language highlighting](language-highlight.md)
 
-- Guide
+- 办公
+
+  - [Configuration](configuration.md)
+
+- 编程
 
   - [Deploy](deploy.md)
-  - [Helpers](helpers.md)
-  - [Vue compatibility](vue.md)
-  - [CDN](cdn.md)
-  - [Offline Mode(PWA)](pwa.md)
-  - [Server-Side Rendering(SSR)](ssr.md)
-  - [Embed Files](embed-files.md)
 
-- [Awesome docsify](awesome.md)
-- [Changelog](changelog.md)
+- [杠精高潮区](awesome.md)
+- [关于&致谢](changelog.md)
