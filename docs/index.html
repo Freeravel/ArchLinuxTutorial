@@ -33,20 +33,20 @@
       subMaxLevel: 4,
       themeColor: 'rgb(23,147,209)',
       repo: 'https://github.com/KagarinoKirieStudio/ArchLinuxTutorial',
+      formatUpdated: '{YYYY}-{MM}-{DD}',
       plugins: [
         function(hook, vm) {
           hook.beforeEach(function(html) {
             var url =
               'https://github.com/KagarinoKirieStudio/ArchLinuxTutorial/blob/master/docs/' +
               vm.route.file;
-            var editHtml = '[📝 EDIT DOCUMENT](' + url + ')\n';
+            var editHtml = '[📝 编辑本文](' + url + ')\n';
 
             return (
-              // editHtml +
+              '<span>更新日期 {docsify-updated}</span> ' + '\n' +
               html +
               '\n----\n' +
-              'Last modified {docsify-updated} ' +
-              editHtml
+              editHtml + '\n'
             );
           });
         }
