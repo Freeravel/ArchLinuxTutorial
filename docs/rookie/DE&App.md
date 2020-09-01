@@ -5,6 +5,12 @@
 
 本章只介绍最大众的软件
 
+
+## haha1
+装桌面    plasma  
+装gretter  sddm  要有一个非root用户才行
+
+
 <!-- # 显卡
 
 optimus-manager 
