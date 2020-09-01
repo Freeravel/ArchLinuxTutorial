@@ -125,6 +125,8 @@ pacstrap /mnt dhcpcd iwd vim                #一个有线所需 一个无线所�
 
 #### 11.生产 fstab
 
+fstab 用来定义磁盘分区
+
 ```bash
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
@@ -137,7 +139,7 @@ cat /mnt/etc/fstab
 
 #### 12.change root
 
-把 root 环境切换到新系统的/mnt 下
+把环境切换到新系统的/mnt 下
 
 ```bash
 arch-chroot /mnt
@@ -146,12 +148,12 @@ arch-chroot /mnt
 #### 13.时区
 
 ```bash
-ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime #为/usr下合适的时区创建符号连接
 ```
 
 #### 14.硬件时间设置
 
-默认为 UTC 时间
+将系统时间同步到硬件时间
 
 ```bash
     hwclock --systohc
@@ -161,21 +163,19 @@ ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 Locale 决定了软件使用的语言、书写习惯和字符集。
 
-编辑 /etc/locale.gen，去掉需要的行的注释符号（#）。
-
-去掉 en_US.UTF-8 行的注释符号（#）。
+编辑 /etc/locale.gen，去掉 en_US.UTF-8 行的注释符号（#）。
 
 然后使用 locale-gen 生成 locale。
 
-执行
+```bash
+locale-gen
+```
 
-    locale-gen
+编辑 /etc/locale.conf
 
-编辑
-
-    /etc/locale.conf
-
-    echo 'LANG=en_US.UTF-8'  > /etc/locale.conf
+```bash
+echo 'LANG=en_US.UTF-8'  > /etc/locale.conf
+```
 
 #### 16.为 root 用户设置密码
 
@@ -186,15 +186,16 @@ passwd root
 #### 17.安装微码
 
 ```bash
-pacman -S intel-ucode
+pacman -S intel-ucode   #Intel
+pacman -S amd-ucode     #AMD
 ```
 
 #### 18.安装引导程序
 
 ```bash
-pacman -S grub efibootmgr
-grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB
-grub-mkconfig -o /boot/grub/grub.cfg
+pacman -S grub efibootmgr   #grub是启动引导器，efibootmgr被 grub 脚本用来将启动项写入 NVRAM。
+grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB #取名为GRUB 并将grubx64.efi安装到之前的指定位置
+grub-mkconfig -o /boot/grub/grub.cfg    #生成GRUB所需的配置文件
 ```
 
 ### 19.完成安装
