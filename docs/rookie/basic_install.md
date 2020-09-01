@@ -198,7 +198,7 @@ grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB 
 grub-mkconfig -o /boot/grub/grub.cfg    #生成GRUB所需的配置文件
 ```
 
-### 19.完成安装
+#### 19.完成安装
 
 ```bash
 exit                # 退回安装环境#

@@ -84,10 +84,7 @@ sudo pacman -Syyu
 #### 6.安装基础功能包
 
 <!-- 3：安装自动补全工具  待确认这个包是否在kde
-
     pacman -S bash-completion
-
-待确认yay是否可通过ArchLinuxCN安装
      -->
 
 接下来我们安装一些基础功能包
