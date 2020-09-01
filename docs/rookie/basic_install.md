@@ -1,20 +1,20 @@
 # 基础安装 
-从安装最基础的ArchLinux系统开始  
-官方文档: [安装指南](https://wiki.archlinux.org/index.php/Installation_guide)    
+从安装最基础的ArchLinux系统开始，由于当前已经是2020年，安装将全部以UEFI+GPT的形式进行。传统方式不再赘述。  
+官方文档: [安装指南](https://wiki.archlinux.org/index.php/Installation_guide)  
 相关视频链接： 2020ArchLinux安装教程 视频文字结合效果更好
-#### 1.刻录优盘
+
+#### 1.刻录启动优盘
+准备一个2G以上的优盘，刻录一个安装启动盘。  
+
+Linux下可以直接用dd命令进行刻录  
 ```bash
 dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync
 ```  
-其中 oflag=sync 的意思是：  
-使用oflag来控制输出(写入数据)时的行为特征。确保命令结束时数据及元数据真正写入磁盘  而不是刚写入缓存就返回。
+bs=4M 指定一个较为合理的文件输入输出块大小。
+oflag=sync 用来控制写入数据时的行为特征。确保命令结束时数据及元数据真正写入磁盘，而不是刚写入缓存就返回。  
+status=progress 用来输出刻录过程总的信息。 
 
-status=LEVEL 的意思是：
-
-LEVEL用来控制dd程序的输出信息的。
-
-分别有三个，“none”，“noxfer”和“progress”，默认是“progress”。“none”的意思是不输出任何相关信息，除非出错信息。“noxfer”不会输出最后的统计信息，而“progress”会输出所有信息。
-
+Windows下推荐使用[Power ISO](https://www.poweriso.com/download.php)或者[Rufus](https://rufus.ie/)进行光盘刻录。二者皆为免费使用的软件。具体操作请自行查阅，都非常简单。
 
 ## 2.检测是否为uefi
 ```
