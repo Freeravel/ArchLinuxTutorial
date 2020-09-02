@@ -12,10 +12,10 @@ pacman -Syyu    #升级系统中全部包
 
 #### 2.准备非 root 用户
 
-添加用户，这里添加 wheel 用户组是为了能够使用 sudo 提权。比如新增加的用户叫 wallen
+添加用户，比如新增加的用户叫 wallen
 
 ```bash
-useradd -m -g users -G wheel -s /bin/bash wallen
+useradd -m -g users -G wheel -s /bin/bash wallen  #wheel附加组可sudo进行提权
 ```
 
 设置新用户 wallen 的密码
@@ -23,8 +23,6 @@ useradd -m -g users -G wheel -s /bin/bash wallen
 ```bash
 passwd wallen
 ```
-
-设置 wheel 组的用户能用 sudo 获取 root 权限:
 
 ```bash
 visudo
@@ -36,12 +34,28 @@ visudo
 #%wheel ALL=(ALL) ALL
 ```
 
+这里稍微解释一下
+%wheel 代表是 wheel 组，百分号是前缀  
+ALL= 代表在所有主机上都生效(如果把同样的`sudoers`文件下发到了多个主机上)  
+(ALL) 代表可以成为任意目标用户  
+ALL 代表可以执行任意命令
+一个更详细的例子:
+
+```bash
+%mailadmin   snow,rain=(root) /usr/sbin/postfix, /usr/sbin/postsuper, /usr/bin/doveadm
+nobody       ALL=(root) NOPASSWD: /usr/sbin/rndc reload
+```
+
+组 mailadmin 可以作为 root 用户，执行一些邮件服务器控制命令。可以在 "snow" 和 "rain"这两台主机上执行
+
+用户 nobody 可以以 root 用户执行`rndc reload`命令。可以在所有主机上执行。同时可以不输入密码。(正常来说 sudo 都是要求输入调用方的密码的)
+
 :wq 保存并退出即可。
 
 #### 3.安装 KDE Plasma 桌面环境
 
 ```bash
-pacman -S plasma-meta
+pacman -S plasma-meta #安装plasma-meta元软件包
 ```
 
 #### 4.安装 greeter sddm
@@ -112,7 +126,7 @@ sudo pacman -S yay                              #yay命令可以让用户安装A
 
     /etc/locale.conf
 
-    echo 'LANG=zh_CN.UTF-8'  > /etc/locale.conf
+    echo 'LANG=zh_CN.UTF-8'  >> /etc/locale.conf
 
 #### 8.安装输入法
 
