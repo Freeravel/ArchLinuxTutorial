@@ -106,6 +106,7 @@ sudo pacman -Syyu
 ```bash
 sudo pacman -S ntfs-3g                          #识别NTFS格式的硬盘
 sudo pacman -S adobe-source-han-serif-cn-fonts  #安装一个开源中文字体
+sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra  #安装谷歌开源字体
 sudo pacman -S firefox chromium                 #安装常用的火狐、谷歌浏览器
 sudo pacman -S yay                              #yay命令可以让用户安装AUR中的软件
 ```
@@ -130,7 +131,7 @@ sudo pacman -S yay                              #yay命令可以让用户安装A
 
 #### 8.安装输入法
 
-此处选用 fcitx5 的默认输入法。  
+对比目前的几种输入法方案，百度、搜狗、中州韵等，此处推荐选用 fcitx5 的默认输入法。  
 [Fcitx5](https://wiki.archlinux.org/index.php/Fcitx5)
 
 #### 9.显卡驱动

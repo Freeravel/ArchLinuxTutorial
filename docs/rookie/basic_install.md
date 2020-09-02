@@ -54,7 +54,7 @@ systemctl start dhcpcd
 ping www.baidu.com
 ```
 
-若能看到数据返回，即说明已经联网，ctrl+c 终止退出。
+若能看到数据返回，即说明已经联网，ctrl+c 终止退出当前命令。
 
 #### 5.更新系统时钟
 
@@ -114,7 +114,7 @@ mount /dev/sda3 /mnt/boot/EFI
 基础包
 
 ```bash
-pacstrap /mnt base linux linux-firmware     #
+pacstrap /mnt base linux linux-firmware
 ```
 
 功能性软件
