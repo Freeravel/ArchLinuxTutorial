@@ -13,19 +13,21 @@
 
 - 娱乐
 
-  - [软件](/play/software)
+  - [娱乐软件](/play/software)
 
-- [**办公**](/office/index)
+- 办公
 
-  - [软件](/office/software)
+  - [办公软件](/office/software)
 
 - 自媒体相关
 
-  - [软件](/media/software)
+  - [多媒体软件](/media/software)
+  - [多媒体配置](/media/config)
 
 - 编程
 
-  - [软件](/code/software)
+  - [编程软件](/code/software)
+  - [前端开发](/code/frontEnd)
 
 - [贡献文档与代码](contribution.md)
 - [杠精高潮区](MrRight.md)

@@ -1,5 +1,6 @@
-# 软件推荐
+# 办公软件
 
+本章记录日常办公需要用到的软件及配置。同时包括 QQ 等即时通讯软件的配置与使用
 wps-office
 
 yaourt -S deepin.com.qq.im

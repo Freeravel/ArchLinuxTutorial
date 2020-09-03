@@ -2,8 +2,6 @@
 
 不论你是否是程序员，你肯定需要这个东西。本文不会教授科学上网的搭建步骤，假定你已经有了一串 ss 或者任何什么的链接，然后告诉你在 Linux 上当前最好用的客户端和配置方式。
 
-#### 软件安装与配置
-
 目前 Linux 上最好用的是 Qv2ray 这个软件。它是跨平台的，你在 Windows 与 macOS 均可使用。
 
 ```bash
@@ -21,3 +19,18 @@ sudo pacman -S qv2ray
 - 终端
 
 - OSS code
+
+ <!-- 代理：
+
+google-chrome-stable --proxy-server=socks5://127.0.0.1:1080
+
+终端代理：使用包 proxychains-ng
+
+sudo vim /etc/proxychains.conf
+
+把配置文件中最后一行改为 shadowsocks 的本地 ip 跟端口
+
+使用代理方式：
+在命令前添加 proxychains4
+
+proxychains4 yaourt -S crossover -->
