@@ -33,6 +33,10 @@ sudo pacman -Scc
 
 systemctl
 
+#### 系统备份
+
+rsync 替换掉老旧的 scp
+
 #### 必须掌握的 Linux 知识
 
 一些 Linux 基础知识点 只介绍最基本的 最必要的。其余的在编程章节介绍
