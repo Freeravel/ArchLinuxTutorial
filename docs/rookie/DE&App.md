@@ -24,6 +24,8 @@ useradd -m -g users -G wheel -s /bin/bash wallen  #wheel附加组可sudo进行�
 passwd wallen
 ```
 
+编辑 sudo 文件
+
 ```bash
 visudo
 ```
@@ -46,10 +48,8 @@ ALL 代表可以执行任意命令
 nobody       ALL=(root) NOPASSWD: /usr/sbin/rndc reload
 ```
 
-组 mailadmin 可以作为 root 用户，执行一些邮件服务器控制命令。可以在 "snow" 和 "rain"这两台主机上执行
-
-用户 nobody 可以以 root 用户执行`rndc reload`命令。可以在所有主机上执行。同时可以不输入密码。(正常来说 sudo 都是要求输入调用方的密码的)
-
+组 mailadmin 可以作为 root 用户，执行一些邮件服务器控制命令。可以在 "snow" 和 "rain"这两台主机上执行  
+用户 nobody 可以以 root 用户执行`rndc reload`命令。可以在所有主机上执行。同时可以不输入密码。(正常来说 sudo 都是要求输入调用方的密码的)  
 :wq 保存并退出即可。
 
 #### 3.安装 KDE Plasma 桌面环境
@@ -97,14 +97,11 @@ sudo pacman -Syyu
 
 #### 6.安装基础功能包
 
-<!-- 3：安装自动补全工具  待确认这个包是否在kde
-    pacman -S bash-completion
-     -->
-
 接下来我们安装一些基础功能包
 
 ```bash
 sudo pacman -S ntfs-3g                          #识别NTFS格式的硬盘
+sudo pacman -S bash-completion                  #命令行补全工具
 sudo pacman -S adobe-source-han-serif-cn-fonts  #安装一个开源中文字体
 sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra  #安装谷歌开源字体
 sudo pacman -S firefox chromium                 #安装常用的火狐、谷歌浏览器
@@ -119,20 +116,20 @@ sudo pacman -S yay                              #yay命令可以让用户安装A
 
 编辑 /etc/locale.gen，去掉 zh_CN.UTF-8 的注释符号（#）。
 
-然后使用 locale-gen 生成 locale。
+```bash
+locale-gen  #重新生成locale
+```
 
-    locale-gen
+编辑 /etc/locale.conf
 
-编辑
-
-    /etc/locale.conf
-
-    echo 'LANG=zh_CN.UTF-8'  >> /etc/locale.conf
+```bash
+echo 'LANG=zh_CN.UTF-8'  >> /etc/locale.conf
+```
 
 #### 8.安装输入法
 
-对比目前的几种输入法方案，百度、搜狗、中州韵等，此处推荐选用 fcitx5 的默认输入法。  
-[Fcitx5](https://wiki.archlinux.org/index.php/Fcitx5)
+使用 [Fcitx5](<https://wiki.archlinux.org/index.php/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>) 的默认输入法。
+中文及日文输入法均体验良好。
 
 #### 9.显卡驱动
 

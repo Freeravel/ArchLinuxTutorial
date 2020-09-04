@@ -2,7 +2,7 @@
 
 从安装最基础的 ArchLinux 系统开始，由于当前已经是 2020 年，安装将全部以 UEFI+GPT 的形式进行。传统方式不再赘述。  
 官方文档: [安装指南](https://wiki.archlinux.org/index.php/Installation_guide)  
-相关视频链接： 2020ArchLinux 安装教程 视频文字结合效果更好
+相关视频链接： 2020ArchLinux 安装教程 视频中可看到全部操作步骤 强烈建议观看视频配合文字学习
 
 #### 1.刻录启动优盘
 
@@ -66,14 +66,14 @@ timedatectl status          #检查服务状态
 #### 6.更换国内镜像源加快下载速度
 
 ```bash
-vim /etc/pacman.d/mirrorlist
+vim /etc/pacman.d/mirrorlist    #不会vim的同学，此处注意视频中的vim操作步骤
 ```
 
 放在最上面的是会使用的更新源,把中科大 ustc 的或者清华的放在最上面
 
 #### 7.分区
 
-cfdisk 的操作可详见视频
+cfdisk 分区的详细操作见视频中的教学
 
 ```bash
 lsblk                       #显示分区情况
@@ -81,11 +81,13 @@ parted /dev/sdx             #执行parted，进行磁盘类型变更
 (parted)mktable
 New disk label type? gpt    #输入gpt 将磁盘类型转换为gpt
 quit                        #最后quit退出parted命令行交互
-cfdisk  /dev/sdx            #来执行分区,选择type
+cfdisk  /dev/sdx            #来执行分区操作,分配各个分区大小，类型
 fdisk -l                    #复查
 ```
 
 #### 8.格式化
+
+这里的 sdax 只是例子，具体根据你的实际情况来
 
 ```bash
 mkfs.vfat  /dev/sdax            #efi分区  挂载在/mnt/boot/EFI    300m
@@ -97,8 +99,7 @@ swapon /dev/sdax                #打开swap分区
 
 #### 9.挂载
 
-在挂载时，挂载是有顺序的，需要从根目录开始挂载  
-这里的 sdax 只是例子，具体根据你的实际情况来
+在挂载时，挂载是有顺序的，需要从根目录开始挂载
 
 ```bash
 mount /dev/sda1  /mnt
@@ -165,13 +166,13 @@ Locale 决定了软件使用的语言、书写习惯和字符集。
 
 编辑 /etc/locale.gen，去掉 en_US.UTF-8 行的注释符号（#）。
 
-然后使用 locale-gen 生成 locale。
+然后使用如下命令生成 locale。
 
 ```bash
 locale-gen
 ```
 
-编辑 /etc/locale.conf
+向 /etc/locale.conf 输入内容
 
 ```bash
 echo 'LANG=en_US.UTF-8'  > /etc/locale.conf
