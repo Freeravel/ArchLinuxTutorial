@@ -30,5 +30,5 @@
   - [前端开发](/code/frontEnd)
 
 - [贡献文档与代码](contribution.md)
-- [杠精高潮区](MrRight.md)
+<!-- - [杠精高潮区](MrRight.md) -->
 - [关于&致谢](about.md)
