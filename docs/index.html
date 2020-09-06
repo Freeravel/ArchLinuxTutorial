@@ -86,12 +86,12 @@
         distractionFreeMode: false,
         id: decodeURI(location.hash.split("?")[0]),
       };
-      // let gitalk = new Gitalk(props);
     </script>
     <script>
       // 哈希路由切换时 重新加载Gitalk
       window.addEventListener("hashchange", onHashChange);
       function onHashChange() {
+        let gitalk = new Gitalk(props);
         props.id = decodeURI(location.hash.split("?")[0]);
         let container = document.getElementById("gitalk-container");
         container.innerHTML = "";
