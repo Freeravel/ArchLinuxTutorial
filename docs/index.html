@@ -76,7 +76,7 @@
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
     <script>
-      const gitalk = new Gitalk({
+      let props = {
         clientID: "996648fd23750b023e94",
         clientSecret: "e24374242bf3d3c75621ab54d60065cfb15db849",
         repo: "ArchLinuxTutorial",
@@ -84,8 +84,19 @@
         admin: ["wallena3"],
         // facebook-like distraction free mode
         distractionFreeMode: false,
-        id: decodeURI(location.hash),
-      });
+        id: decodeURI(location.hash.split("?")[0]),
+      };
+      let gitalk = new Gitalk(props);
+    </script>
+    <script>
+      // 哈希路由切换时 重新加载Gitalk
+      window.addEventListener("hashchange", onHashChange);
+      function onHashChange() {
+        props.id = decodeURI(location.hash.split("?")[0]);
+        let container = document.getElementById("gitalk-container");
+        container.innerHTML = "";
+        new window.Gitalk(props).render(container);
+      }
     </script>
   </body>
 </html>
