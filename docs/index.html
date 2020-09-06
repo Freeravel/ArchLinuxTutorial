@@ -86,17 +86,13 @@
         distractionFreeMode: false,
         id: decodeURI(location.hash.split("?")[0]),
       };
-    </script>
-    <script>
+      let gitalk = new Gitalk(props);
       // 哈希路由切换时 重新加载Gitalk
       window.addEventListener("hashchange", onHashChange);
       function onHashChange() {
-        let gitalk = new Gitalk(props);
-        props.id = decodeURI(location.hash.split("?")[0]);
-        let container = document.getElementById("gitalk-container");
-        container.innerHTML = "";
-        new window.Gitalk(props).render(container);
+        props.id = decodeURI(location.hash.split("?")[0]); //如果不切分，在docsify里面的各个段落都会生成新的评论issue
       }
     </script>
+    <script></script>
   </body>
 </html>
