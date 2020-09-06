@@ -84,7 +84,7 @@
         admin: ["wallena3"],
         // facebook-like distraction free mode
         distractionFreeMode: false,
-        id: location.pathname.split("/").pop().substring(0, 49),
+        id: decodeURI(localtion.pathname),
       });
     </script>
   </body>
