@@ -19,6 +19,10 @@
       rel="stylesheet"
       href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css"
     />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css"
+    />
     <style>
       .sidebar {
         padding: 0 0 0 0;
@@ -69,5 +73,18 @@
     </script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script>
+      const gitalk = new Gitalk({
+        clientID: "Iv1.53d0ddcc9f3f468b",
+        clientSecret: "ccdf16cd9ab4fbab2a90c727dd5a93f22c4f870f",
+        repo: "https://github.com/KagarinoKirieStudio/ArchLinuxTutorial",
+        owner: "wallena3",
+        admin: ["wallena3"],
+        // facebook-like distraction free mode
+        distractionFreeMode: false,
+      });
+    </script>
   </body>
 </html>
