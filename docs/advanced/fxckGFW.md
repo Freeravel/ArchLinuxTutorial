@@ -44,11 +44,12 @@ sudo vim /etc/proxychains.conf
 ```
 
 把配置文件中最后一行改为 shadowsocks 的本地 ip 跟端口
+socks5 127.0.0.1 1080
 
-使用代理方式： 在命令前添加 proxychains4
+使用代理方式： 在命令前添加 proxychains
 
 ```bash
-proxychains4 yaourt -S crossover
+proxychains yaourt -S crossover
 ```
 
 - OSS code  
