@@ -1,11 +1,20 @@
-# 多媒体软件
+# 自媒体软件 <!-- {docsify-ignore-all} -->
 
-达芬奇
+本节将列自媒体方向的各类优质软件，包括做直播或者自媒体所需的软件。
+
+#### 视频剪辑
+
+#### 直播推流
+
+obs-studio
+
+#### 直播辅助软件
+
+#### 专业调色与特效
+
+####
 
 davinci-resolve
 还有一件事，达芬奇始终无法中文输入。。。有知道的同学麻烦告诉我一下。。。
 
-obs-studio
-
-netease-cloud-music  
-看图 feh nomacs
+netease-cloud-music

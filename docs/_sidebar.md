@@ -21,8 +21,8 @@
 
 - 自媒体相关
 
-  - [多媒体软件](/media/software)
-  - [多媒体配置](/media/config)
+  - [自媒体软件](/media/software)
+  - [自媒体软件配置](/media/config)
 
 - 编程
 

@@ -1,6 +1,6 @@
 # 前端开发 <!-- {docsify-ignore-all} -->
 
-本文简述 Arch Linux 下前端开发流程。并且会简要介绍从前端开发出现直到现在的演进过程。
+本文简述 Arch Linux 下当前最佳前端开发工具与流程。
 
 #### 开发工具
 
@@ -15,7 +15,3 @@
 - [google-chrome](https://aur.archlinux.org/packages/google-chrome/)<sup>AUR</sup>
 
 除了浏览器，另一个重要工具就是编辑器。推荐前端开发均使用[OSS code](https://www.archlinux.org/packages/community/x86_64/code/)，微软 Visual Studio Code 的开源版本。其配置与使用与其余平台均保持一致，本文不再赘述。至于 [yarn](https://www.archlinux.org/packages/community/any/yarn/)、[npm](https://www.archlinux.org/packages/community/any/npm/) 等工具，也均可用 pacman 安装，这些内容不在本文讨论范围内。
-
-#### 前端开发的演进过程
-
-TODO
