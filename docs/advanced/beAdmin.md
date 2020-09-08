@@ -107,7 +107,13 @@ WantedBy=multi-user.target              #被谁依赖
 
 #### 文件传输与系统备份
 
-有一点 Linux 经验的同学应该知道`scp`这个命令。它常被用来在服务器端传输文件。但是目前它应该被更现代的工具`rsync`替代。同时，`rsync` 也被用来进行备份操作。
+有一点 Linux 经验的同学应该知道[scp](<https://wiki.archlinux.org/index.php/SCP_and_SFTP#Secure_copy_protocol_(SCP)>)这个命令。它常被用来在服务器间传输文件。但是目前它应该被更现代的工具[rsync](https://wiki.archlinux.org/index.php/Rsync)替代，其拥有即时压缩，差量传输等新特性。同时，`rsync`也被用来进行备份操作。
+
+```bash
+rsync foo.txt me@server:/home/me/   #最基础的复制文件 与scp的操作完全相同
+rsync -a bar/ me@server:/home/me/   #-a 标记实现目录复制等 比scp -r 能更好的处理符号链接等情况
+# 全盘系统备份的方式
+```
 
 #### 杂项
 
