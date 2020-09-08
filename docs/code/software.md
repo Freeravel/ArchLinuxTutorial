@@ -22,5 +22,5 @@
 
   ***
 
-  - [robo3t<sup>AUR</sup>](https://aur.archlinux.org/packages/robo3t-bin/)
-  - [redis-desktop-manager<sup>AUR</sup>](https://aur.archlinux.org/packages/redis-desktop-manager/)
+  - [robo3t](https://aur.archlinux.org/packages/robo3t-bin/)<sup>AUR</sup>
+  - [redis-desktop-manager](https://aur.archlinux.org/packages/redis-desktop-manager/)<sup>AUR</sup>
