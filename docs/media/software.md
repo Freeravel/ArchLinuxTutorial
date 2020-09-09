@@ -12,9 +12,10 @@ obs-studio
 
 #### 专业调色与特效
 
-####
-
 davinci-resolve
 还有一件事，达芬奇始终无法中文输入。。。有知道的同学麻烦告诉我一下。。。
 
-netease-cloud-music
+#### 绘图与修饰
+
+krita
+gimp

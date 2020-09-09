@@ -9,6 +9,7 @@
 
   - [成为合格的系统管理员](/advanced/beAdmin)
   - [科学上网和代理](/advanced/fxckGFW)
+  - [透明代理](/advanced/transparentProxy)
   - [系统美化](/advanced/beauty)
 
 - 娱乐

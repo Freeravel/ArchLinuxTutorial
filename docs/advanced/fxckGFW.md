@@ -46,3 +46,7 @@ export ALL_PROXY=socks5://127.0.0.1:1080
   ```bash
   proxychains yay -S crossover
   ```
+
+  拓展链接: [windows 版本的自述文档](https://github.com/shunf4/proxychains-windows/blob/master/README_zh-Hans.md)
+
+备用手段：建议自建，或持有多个机场。或者自备一下[lantern](https://aur.archlinux.org/packages/lantern-bin/)或者[老王 vpn](https://play.google.com/store/apps/details?id=com.findtheway&hl=zh)这类软件以防万一。还有一些电报群组有共享的链接资源，如[这个](https://t.me/wtovpn)。

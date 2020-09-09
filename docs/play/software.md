@@ -4,6 +4,8 @@
 
 #### 音乐播放器
 
+netease-cloud-music
+
 #### 游戏
 
 16：安装 steam
