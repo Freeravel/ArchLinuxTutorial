@@ -8,11 +8,12 @@
 
 #### 必须掌握的 Linux 知识
 
-一些 Linux 基础知识点 只介绍最基本的 最必要的。其余的在编程章节介绍。
-1: 目录结构
-2: 相对路径 绝对路径
-3：用户构成
-4：xxxx。。。
+此处只介绍最基本的，最必要的 Linux 知识点与小技巧 。
+
+1. 在 Linux 中，文件目录结构与 Windows 完全不同。Windows 存在 C 盘，D 盘等盘符，而在 Linux 中不存在这些划分，最上层的目录是根目录，路径为 _/_ ，并以一个树形结构从此向下一级一级区分。
+2. 对于 Linux 的树形文件结构，存在相对路径与绝对路径之分。绝对路径是代表从根路径 _/_ 开始的完整路径，如`/home/wallen/Download`。相对路径代表从当前目录，到目标目录的一个部分路径。比如当前你所在的目录为`/home/wallen`，那么切换到绝对路径`/home/wallen/Download`的相对路径即为`./Download`。其中`./`代表从当前目录，再向下寻找。另外，`..`这种两个句点代表的是向上层寻找，比如你当前所在的路径为`/home/wallen/Download`，向上寻找到`/home/wallen/Desktop`的相对路径即为`../Desktop`。
+3. 简单来说，Linux 中存在两类用户。第一类用户即为 root 用户，也成为超级用户，它拥有系统中最高的权限。第二类用户就是除了 root 用户的普通用户，他们可以拥有不同等级的权限。任何时候都应该避免始终用 root 用户操作你的系统。
+4. 理论上来说，任何图形化界面中的操作都可以用对应的命令行命令完成。如果你打开某个程序报错，不妨试试找到它的对应启动命令，在终端中执行此命令，并观察它运行时的错误日志输出，查阅相关资料，解决问题。
 
 #### 终端操作基础
 
@@ -113,13 +114,15 @@ WantedBy=multi-user.target              #被谁依赖
 ```bash
 rsync foo.txt me@server:/home/me/   #最基础的复制文件 与scp的操作完全相同
 rsync -a bar/ me@server:/home/me/   #-a 标记实现目录复制等 比scp -r 能更好的处理符号链接等情况
-# 全盘系统备份的方式
 ```
+
+关于全盘备份，请阅读[官方文档](https://wiki.archlinux.org/index.php/Rsync#Full_system_backup)
 
 #### 杂项
 
-解压 windows 下的压缩包，可能会乱码
+解压 windows 下的压缩包，可能会乱码。使用 unar
 
+```bash
 sudo pacman -S unarchiver
-
 unar xxx.zip
+```
