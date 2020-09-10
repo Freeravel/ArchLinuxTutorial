@@ -16,8 +16,11 @@
 - 特效剪辑调色综合体
 
   - [davinci-resolve](https://aur.archlinux.org/packages/davinci-resolve/)<sup>AUR</sup> 免费版
-  - [davinci-resolve-studio](https://aur.archlinux.org/packages/davinci-resolve-studio/)<sup>AUR</sup> 收费完整版
+  - [davinci-resolve-studio](https://aur.archlinux.org/packages/davinci-resolve-studio/)<sup>AUR</sup> 收费完整版  
     还有一件事，达芬奇始终无法中文输入。。。有知道的同学麻烦告诉我一下。。。
+
+    Linux 下免费版支持的编解码格式有限
+    https://documents.blackmagicdesign.com/SupportNotes/DaVinci_Resolve_15_Supported_Codec_List.pdf
 
 - 绘图、制图与修饰
 

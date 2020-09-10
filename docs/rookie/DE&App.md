@@ -166,6 +166,10 @@ sudo pacman -S xf86-video-intel #英特尔核显
 sudo pacman -S xf86-video-amdgpu    #amd显卡
 ```
 
+#### OpenCl
+
+https://wiki.archlinux.org/index.php/GPGPU
+
 #### 后续
 
 如果作为一个普通使用者，到这里你的系统已经配置完毕了。不会命令行也没太大关系，你可以慢慢探索 KDE 这个桌面环境，记住每天用如下命令更新系统即可。
