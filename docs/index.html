@@ -51,6 +51,9 @@
         themeColor: "rgb(23,147,209)",
         repo: "https://github.com/KagarinoKirieStudio/ArchLinuxTutorial",
         formatUpdated: "{YYYY}-{MM}-{DD}",
+        requestHeaders: {
+          "cache-control": "no-cache",
+        },
         plugins: [
           function (hook, vm) {
             hook.beforeEach(function (html) {
