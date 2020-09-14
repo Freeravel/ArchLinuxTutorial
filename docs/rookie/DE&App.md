@@ -2,8 +2,8 @@
 
 官方文档: [安装后的工作](<https://wiki.archlinux.org/index.php/General_recommendations_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)  
 本文只介绍最基本的，能使系统真正意义上可用所需的组件  
-相关视频链接： 2020ArchLinux 安装桌面环境和常用软件 视频文字结合效果更好  
-注: 文档中带有<sup>AUR</sup>角标的软件代表是用户自行打包的第三方软件，不在 Arch 官方支持范围内，可能会出现各种问题。如果不是实在没有官方支持的同类软件，则不建议使用。
+相关视频链接： 2020ArchLinux 安装桌面环境和常用软件<sup>TODO</sup> 视频文字结合效果更好  
+注: 文档中带有 <sup>AUR</sup> 角标的软件代表是用户自行打包的第三方软件[AUR](https://aur.archlinux.org/)，不在 Arch 官方支持范围内，可能会出现各种问题。如果不是实在没有官方支持的同类软件，则不建议使用。
 
 #### 1.确保系统为最新
 
@@ -31,7 +31,7 @@ passwd wallen
 visudo
 ```
 
-找到这样的一行,把前面的注释符号#去掉:
+找到这样的一行,把前面的注释符号#去掉，`:wq`保存并退出即可。
 
 ```bash
 #%wheel ALL=(ALL) ALL
@@ -41,7 +41,7 @@ visudo
 %wheel 代表是 wheel 组，百分号是前缀  
 ALL= 代表在所有主机上都生效(如果把同样的`sudoers`文件下发到了多个主机上)  
 (ALL) 代表可以成为任意目标用户  
-ALL 代表可以执行任意命令
+ALL 代表可以执行任意命令  
 一个更详细的例子:
 
 ```bash
@@ -50,8 +50,7 @@ nobody       ALL=(root) NOPASSWD: /usr/sbin/rndc reload
 ```
 
 组 mailadmin 可以作为 root 用户，执行一些邮件服务器控制命令。可以在 "snow" 和 "rain"这两台主机上执行  
-用户 nobody 可以以 root 用户执行`rndc reload`命令。可以在所有主机上执行。同时可以不输入密码。(正常来说 sudo 都是要求输入调用方的密码的)  
-:wq 保存并退出即可。
+用户 nobody 可以以 root 用户执行`rndc reload`命令。可以在所有主机上执行。同时可以不输入密码。(正常来说 sudo 都是要求输入调用方的密码的)
 
 #### 3.安装 KDE Plasma 桌面环境
 
@@ -109,8 +108,6 @@ sudo pacman -S firefox chromium                 #安装常用的火狐、谷歌�
 sudo pacman -S yay                              #yay命令可以让用户安装AUR中的软件
 ```
 
-[AUR](https://aur.archlinux.org/)
-
 #### 7.设置系统为中文
 
 如果想要系统换为中文，需要重新设置 locale
@@ -130,46 +127,47 @@ echo 'LANG=zh_CN.UTF-8'  >> /etc/locale.conf
 #### 8.安装输入法
 
 使用 [Fcitx5](<https://wiki.archlinux.org/index.php/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>) 的默认输入法。
-中文及日文输入法均体验良好。
+中文及日文输入法均体验良好。这部分的官方中文文档质量良好，建议尝试跟随安装。
 
 #### 9.显卡驱动
 
 现在是 2020 年，显卡驱动的安装在 Arch Linux 上已经变得非常容易。
 
-- 英特尔核心显卡
+- 英特尔核心显卡 [官网文档](https://wiki.archlinux.org/index.php/Intel_graphics)
 
-```bash
-sudo pacman -S xf86-video-intel #英特尔核显
-```
+  ```bash
+  sudo pacman -S xf86-video-intel mesa lib32-mesa vulkan-intel
+  ```
 
 - Nvidia 显卡
 
-  - 若为台式机，拥有独立的显卡，直接安装如下两个包即可。
+  - 若为台式机，拥有独立的显卡，直接安装如下两个包即可。[台式机显卡官方文档](https://wiki.archlinux.org/index.php/NVIDIA)
 
   ```bash
   sudo pacman -S nvidia nvidia-settings
   ```
 
-  [台式机显卡官方文档](https://wiki.archlinux.org/index.php/NVIDIA)
+  如果是 GeForce 630 以下到 GeForce 400 系列的老卡，尝试安装 [nvidia-390xx-dkms](https://aur.archlinux.org/packages/nvidia-390xx-dkms/)<sup>AUR</sup>
 
-  - 若为笔记本，除上述两个包，推荐安装 optimus-manager。可以在核心显卡和独立显卡间轻松切换。
+  再老的显卡直接使用[开源驱动](https://wiki.archlinux.org/index.php/Nouveau)即可。
+
+  如有需要，安装 32 位支持的相关包。
+
+  - 若为笔记本，除上述的包，推荐安装 optimus-manager。可以在核心显卡和独立显卡间轻松切换。[笔记本双显卡官方文档](https://wiki.archlinux.org/index.php/NVIDIA_Optimus)
 
   ```
   sudo yay -S optimus-manager
   ```
 
-  [笔记本双显卡官方文档](https://wiki.archlinux.org/index.php/NVIDIA_Optimus)
-
 - AMD 显卡  
-  群主目前没有 AMD 显卡或者笔记本，无法提供最佳实践
+  群主目前没有 AMD 显卡或者笔记本，无法提供经验证的最佳实践
 
-```bash
-sudo pacman -S xf86-video-amdgpu    #amd显卡
-```
+  <!-- ```bash
+  sudo pacman -S xf86-video-amdgpu    #amd显卡
+  ``` -->
 
-#### OpenCl
-
-https://wiki.archlinux.org/index.php/GPGPU
+- OpenCL  
+  如果你需要 OpenCL 的安装，请参照[官方文档](https://wiki.archlinux.org/index.php/GPGPU)针对自己的显卡进行配置。
 
 #### 后续
 

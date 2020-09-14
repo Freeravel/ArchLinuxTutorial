@@ -2,7 +2,7 @@
 
 从安装最基础的 ArchLinux 系统开始，由于当前已经是 2020 年，安装将全部以 UEFI+GPT 的形式进行。传统方式不再赘述。  
 官方文档: [安装指南](https://wiki.archlinux.org/index.php/Installation_guide)  
-相关视频链接： 2020ArchLinux 安装教程 视频中可看到全部操作步骤 强烈建议观看视频配合文字学习
+相关视频链接： 2020ArchLinux 安装教程<sup>TODO</sup> 视频中可看到全部操作步骤 强烈建议观看视频配合文字学习
 
 #### 1.刻录启动优盘
 
@@ -15,8 +15,8 @@ dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync
 ```
 
 bs=4M 指定一个较为合理的文件输入输出块大小。  
-oflag=sync 用来控制写入数据时的行为特征。确保命令结束时数据及元数据真正写入磁盘，而不是刚写入缓存就返回。  
-status=progress 用来输出刻录过程总的信息。
+status=progress 用来输出刻录过程总的信息。  
+oflag=sync 用来控制写入数据时的行为特征。确保命令结束时数据及元数据真正写入磁盘，而不是刚写入缓存就返回。
 
 Windows 下推荐使用[Power ISO](https://www.poweriso.com/download.php)或者[Rufus](https://rufus.ie/)进行光盘刻录。二者皆为免费使用的软件。具体操作请自行查阅，都非常简单。
 
@@ -73,6 +73,13 @@ vim /etc/pacman.d/mirrorlist    #不会vim的同学，此处注意视频中的vi
 
 #### 7.分区
 
+这里总共设置四个分区，可以满足绝大多数人的需求
+
+- 根目录： `/`
+- 用户主目录： `/home`
+- EFI： `/boot/EFI`
+- 交换分区: `swap`
+
 cfdisk 分区的详细操作见视频中的教学
 
 ```bash
@@ -87,11 +94,11 @@ fdisk -l                    #复查
 
 #### 8.格式化
 
-这里的 sdax 只是例子，具体根据你的实际情况来
+这里的 sdax 只是例子，具体根据你的实际情况来，请注意视频中的操作。
 
 ```bash
-mkfs.vfat  /dev/sdax            #efi分区  挂载在/mnt/boot/EFI    300m
 mkfs.ext4  /dev/sdax            #  /        /home 两个分区
+mkfs.vfat  /dev/sdax            #efi分区  挂载在/mnt/boot/EFI    300m
 #磁盘若有数据会问 'proceed any way?' y回车 即可
 mkswap -f /dev/sdax             #格式化swap
 swapon /dev/sdax                #打开swap分区
@@ -149,7 +156,7 @@ arch-chroot /mnt
 #### 13.时区
 
 ```bash
-ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime #为/usr下合适的时区创建符号连接
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime     #为/usr下合适的时区在/etc下创建符号连接
 ```
 
 #### 14.硬件时间设置
