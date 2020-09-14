@@ -4,6 +4,8 @@
 
 #### 声卡驱动
 
+[alsa 官方文档](https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture)  
+[PulseAudio 官方文档](https://wiki.archlinux.org/index.php/PulseAudio)  
 音频问题：需要安装一些包来解决声道独占的问题(davinci reslove 会出现声道抢占)
 
 shotcut 前置依赖 输出视频格式与素材拖拽倒入相关依赖

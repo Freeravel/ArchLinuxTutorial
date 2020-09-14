@@ -100,12 +100,13 @@ sudo pacman -Syyu
 接下来我们安装一些基础功能包
 
 ```bash
-sudo pacman -S ntfs-3g                          #识别NTFS格式的硬盘
-sudo pacman -S bash-completion                  #命令行补全工具
-sudo pacman -S adobe-source-han-serif-cn-fonts  #安装一个开源中文字体
+sudo pacman -S ntfs-3g                                                      #识别NTFS格式的硬盘
+sudo pacman -S bash-completion                                              #命令行补全工具
+sudo pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei                   #安装几个开源中文字体
+sudo pacman -S ttf-liberation                                               #安装Red Hats字体
 sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra  #安装谷歌开源字体
-sudo pacman -S firefox chromium                 #安装常用的火狐、谷歌浏览器
-sudo pacman -S yay                              #yay命令可以让用户安装AUR中的软件
+sudo pacman -S firefox chromium                                             #安装常用的火狐、谷歌浏览器
+sudo pacman -S yay                                                          #yay命令可以让用户安装AUR中的软件 格式：yay -S xxx
 ```
 
 #### 7.设置系统为中文
@@ -144,7 +145,7 @@ echo 'LANG=zh_CN.UTF-8'  >> /etc/locale.conf
   - 若为台式机，拥有独立的显卡，直接安装如下两个包即可。[台式机显卡官方文档](https://wiki.archlinux.org/index.php/NVIDIA)
 
   ```bash
-  sudo pacman -S nvidia nvidia-settings
+  sudo pacman -S nvidia nvidia-settings nvidia-utils lib32-nvidia-utils
   ```
 
   如果是 GeForce 630 以下到 GeForce 400 系列的老卡，尝试安装 [nvidia-390xx-dkms](https://aur.archlinux.org/packages/nvidia-390xx-dkms/)<sup>AUR</sup>
