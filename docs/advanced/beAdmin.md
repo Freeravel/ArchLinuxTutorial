@@ -30,7 +30,7 @@ mv a.cpp b.cpp      #移动(重命名)命令 将a.cpp更名为b.cpp
 mkdir new_folder    #新建文件夹new_folder
 ```
 
-拓展链接：推荐阅读书籍`《Linux命令行与Shell脚本编程大全(第3版)》`。 群主也提供了与此书配套的教学视频 [Linux 命令行与 Shell 教程](https://bilibili.com)。
+拓展链接：推荐阅读书籍`《Linux命令行与Shell脚本编程大全(第3版)》`。 群主也提供了与此书配套的教学视频 [Linux 命令行与 Shell 教程](https://bilibili.com)<sup>TODO</sup>。
 
 #### Pacman 包管理
 
