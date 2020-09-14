@@ -36,6 +36,13 @@ yay -S deepin-wine-tim          #基于deepin wine的tim
 yay -S deepin-wine-wechat       #基于deepin-wine-wechat
 ```
 
+#### 网盘存储
+
+- [坚果云](https://aur.archlinux.org/packages/nutstore/)<sup>AUR</sup> 可直接使用 [web 版本](https://www.jianguoyun.com/d/home#/)
+- [Mega](https://aur.archlinux.org/packages/megasync/)<sup>AUR</sup> 可直接使用 [web 版本](https://mega.nz/fm/dashboard)
+- [超星网盘](http://i.mooc.chaoxing.com/space/index?t=1600061701200) 据说免费 100G 未验证
+- [百度网盘](https://aur.archlinux.org/packages/baidunetdisk-bin/) 辣鸡
+
 #### 图片浏览
 
 快速看图
