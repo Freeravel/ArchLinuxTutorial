@@ -107,3 +107,74 @@ ref:
 https://github.com/googlechromelabs/preload-webpack-plugin  
 https://developers.google.com/web/fundamentals/performance/optimizing-javascript/code-splitting  
 https://www.zhihu.com/question/273930443
+
+#### H5 开发记录
+
+兼容性问题:
+
+1. 某些较旧 webview 下(Chrome/57.0.2987.108 UCBrowser) 会在音频第一次播放时，在这个时间变更回调中判断是否为第一次播放，然后将 currentTime 强制设置为 0
+   某些 webview 上   在第一次播放的时候，timeupdate 回调中回强制吧 audio 的 currentTime 设置为 0，这样如果按照正常的代码逻辑，就不能在中间开始播放了，所以要在 timeupdate 中对其是否是第一次播放进行判断和处理。
+2. 兼容逻辑   某些 webview 跳转到 onelink 后   音频被强行暂停，但是页面没有销毁   此时若回到此 h5   歌曲暂停了，但是歌曲的播放 state 还是 playing。解决办法是直接在 audio 的一些播放·暂停的 event 中进行相关操作
+3. Rgba， 默认第四个参数不写 ，一些浏览器默认为 1。但是一些旧 webview 表现不一致(表现为渐变失效，其中的元素颜色变为反色)。更换成标准 rgb，解决问题。
+4. safari 相关 webview     在 onload 后再将 currenttime 设置为 0，所以 didmount 里面设置 currenttime 无用，需要在 canplay（throough）回调中进行设置，并且随后卸载此回调，否则非 safari 会鬼畜 不停调用此回调（手动设置 currentTime 会使得 firefox 触发一次 canplaythrough 事件，其他浏览器或许不会如此）
+<!-- 确认是onload么？我觉得可能是audio载入src内容之后对currentTime设置才能生效，比如响应一下
+onloadedmetadata事件试试呢 -->
+5. scrollTo 兼容性不好 用 scrollTop  scrollLeft 等
+6. Style component    orgin 保留字 不可做属性传入
+7. vh 的问题   在 webview 中可占满 100%没有问题     在各个手机浏览器中实现不同，各个浏览器会加各种魔改的底栏或者顶栏，这部分也被计入了。所以会出现可滑动。此需求不影响。
+8. top: calc(constant(safe-area-inset-top)+66px);   这种同时使用 calc 和 env 的情况 有些 webview 计算不出
+   所以用了折中的办法  top 处理 env   padding-top: 66px;处理额外需要 padding 的情况
+9. Svg offset path 在 ios 不兼容   最后没有办法还是使用动画模拟
+10. 全屏给一个高斯模糊   会有一个问题   屏幕四周会出现一条黑色细线，之前解决办法是吧背景图拉大，但是布局会出现问题   整体长宽会变大
+11. img 没有图片时  safari 会有一个白边 需要去除
+12. 弹窗的时候， 弹窗有抖动     原因： 这个弹窗有一个动画 然后弹窗里面的元素有类似 translate 50% left 50%这种东西，它的父级是一个宽度为奇数的元素，   算出来有小数点，所以在动画过程中，到动画截止最后，有一个 1px 的变化。看起来就是会抖动。这种情况移动端 css 不能有小数点
+13. IOS safari 不能自动的 load   需要手动进行触发 this.audio.load()
+14. UCBrowser，HUAWEIBrowser   在未播放的时候进行拖拽，依然会在未知事件中将 currentTime 强行设置成 0.已经在 audio 的 load 流程的全部事件中进行测试，依旧未能定位到是哪个事件中的设置。初步断定为是此种浏览器的自定义事件中的逻辑。未解决
+15. 一个旋转的唱片的动画。如果其被定义为一个 div ，用 background ，那么在切换它的动画状态(播放/暂停)时，会有短暂的闪动。将其从 div 替换为 img 后，即可解决问题
+16. svg 在当做 loading 动画图标时，若存在和其他图标根据 state 的切换，会存在短暂的闪动，替换为 png 即可解决问题。
+17. 有些浏览器测试 网页/浏览器直接崩了  : 关闭浏览器自带的一些左右划，点击事件插件等。
+18. 有些安卓 10 机型上，首次进入页面点击播放后，歌曲播放了但是进度条不动，排查下来是 updateProgress 的事件没有挂载。暂时没有排查出原因。解决办法是在点击播放按钮，执行播放前，再额外来一次 play 和 pause。。。
+19. 安卓 4.4 系统的兼容性解决   webview 版本极低   大概是 chrome30.0.xxx
+    1. tsconfig 中，将 target 变更为 es5。
+    2. 除此之外还需要引入 import '@babel/polyfill';解决 Map 等问题
+
+---
+
+布局实现
+进度条: 一个条   一个高亮条   一个移动的点  
+专辑: mask 背景 默认图叠加  
+飘动音符: 三个动画叠加+延迟      svg offset 兼容有问题  
+歌词： 外部一个 mask img   内部一个具体组件实现  
+歌词组件:     接受歌词属性 ，将后端的纯字符串解析成 start end text 对象结构的数组。接受 index 属性，标记当前正在播放的是那一句歌词。  
+在接受的 index 改变时，做出对应的 scroll 动作  
+歌词分为  last ，current， next，nextnext ， hide 五种状态(因为需求中要分四行)。根据不同的状态，采用不同的样式
+
+---
+
+重点逻辑实现：
+使用 web api 提供的各种原生事件，提供了一个自定义的播放组件实现
+
+1. progress 实现缓冲进度     设置了片段起始点 会同时在 0 秒和起始秒进行加载，加快可播放的速度。
+
+- 多个 timerange 对象可进行合并
+
+2. Touch 相关事件 实现手指的点击 拖动，释放
+   一些文档
+   https://zhuanlan.zhihu.com/p/74566301     基本通俗说明了常用的属性和时间。其中兼容性部分整理的很好。看得出来都是踩过的坑。
+   https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Media_events   Mozilla 权威解释 较简略
+
+---
+
+待研究的
+
+1. 服务端音频的 response header(如 Content-Type、Content-Length、Accept-Ranges)及 Status Code(200,206)均会对业务功能的实现产生影响，具体细节还没看，也没有在具体业务中测试。
+   https://segmentfault.com/q/1010000002908474
+1. Sketch 或其他设计类软件的使用，如我们可直接用其输出 SVG path   以后就不用依赖设计了。
+
+---
+
+总结:
+
+- 对于较为重点的 h5 需求，一定要尽可能多的测试不同平台，不同版本的 webview。一个版本完美实现，另几个版本可能出现各种各样奇怪的问题。
+- audio 有很多实用的回调，尽可能掌握和应用会让代码变得更明晰和简单。
+- 用一些 Element 的 web api 时一定要注意其兼容性的问题。
