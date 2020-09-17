@@ -128,7 +128,7 @@ pacstrap /mnt base linux linux-firmware
 功能性软件
 
 ```bash
-pacstrap /mnt dhcpcd iwd vim                #一个有线所需 一个无线所需 一个编辑器  iwd也需要dhcpcd
+pacstrap /mnt dhcpcd iwd vim sudo                #一个有线所需 一个无线所需 一个编辑器  iwd也需要dhcpcd
 ```
 
 #### 11.生产 fstab

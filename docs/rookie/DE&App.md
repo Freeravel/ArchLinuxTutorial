@@ -5,6 +5,13 @@
 相关视频链接： 2020ArchLinux 安装桌面环境和常用软件<sup>TODO</sup> 视频文字结合效果更好  
 注: 文档中带有 <sup>AUR</sup> 角标的软件代表是用户自行打包的第三方软件[AUR](https://aur.archlinux.org/)，不在 Arch 官方支持范围内，可能会出现各种问题。如果不是实在没有官方支持的同类软件，则不建议使用。
 
+#### 0.开启 dhcp 服务
+
+```bash
+systemctl enable dhcpcd #开机自动启动dhcp
+systemctl start dhcpcd #立即启动dhcp
+```
+
 #### 1.确保系统为最新
 
 ```bash
@@ -28,7 +35,7 @@ passwd wallen
 编辑 sudo 文件
 
 ```bash
-visudo
+EDITOR=vim visudo
 ```
 
 找到这样的一行,把前面的注释符号#去掉，`:wq`保存并退出即可。
@@ -55,13 +62,14 @@ nobody       ALL=(root) NOPASSWD: /usr/sbin/rndc reload
 #### 3.安装 KDE Plasma 桌面环境
 
 ```bash
-pacman -S plasma-meta #安装plasma-meta元软件包
+pacman -S xorg plasma-meta #安装plasma-meta元软件包 直接回车回车
 ```
 
 #### 4.安装 greeter sddm
 
 ```
 pacman -S sddm
+systemctl enable sddm
 ```
 
 重启电脑，即可看到欢迎界面，输入新用户的密码即可登录桌面
