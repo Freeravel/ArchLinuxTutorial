@@ -126,3 +126,20 @@ rsync -a bar/ me@server:/home/me/   #-a 标记实现目录复制等 比scp -r �
 sudo pacman -S unarchiver
 unar xxx.zip
 ```
+
+<!-- 提升 CPU 性能
+
+```bash
+如果您的 CPU 频率调节器设为了 Power Save 模式，那您可以会在玩 Total War: THREE KINGDOMS 时遇到性能问题。 我们建议您在游戏时将 CPU 频率调节器设为 High Performance 模式。
+
+我们开发了一款工具 GameMode，它可以自动开启该过程。 GameMode 安装后，Total War: THREE KINGDOMS 将自动设置 CPU 的变频控制定速模式。 要了解更多以下是，请前往 GitHub 查看关于 GameMode 的条目。
+
+如果您希望手动设置 CPU 变频控制定速模式，请参考下列说明。
+
+    在桌面上打开 Terminal 应用程序。
+    在 Terminal 中，输入下列代码：echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor。然后按下回车键。
+    系统将提示您输入密码。 输入密码，然后按下回车键。
+    现在您的电源应该处于 High Performance 模式了。 关闭 Terminal 应用程序。
+
+如果您希望将设置改回 Power Save 模式，那么只需要按照上述步骤，并输入下列代码即可：echo powersave | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor。
+``` -->
