@@ -115,6 +115,7 @@ sudo pacman -S ttf-liberation                                               #安
 sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra  #安装谷歌开源字体
 sudo pacman -S firefox chromium                                             #安装常用的火狐、谷歌浏览器
 sudo pacman -S yay                                                          #yay命令可以让用户安装AUR中的软件 格式：yay -S xxx
+yay -S octopi                                                               #包管理器前端界面
 ```
 
 #### 7.设置系统为中文
