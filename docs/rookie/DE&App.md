@@ -55,7 +55,7 @@ nobody       ALL=(root) NOPASSWD: /usr/sbin/rndc reload
 #### 3.安装 KDE Plasma 桌面环境
 
 ```bash
-pacman -S xorg plasma-meta #安装plasma-meta元软件包 直接回车回车
+pacman -S plasma-meta konsole dolphin bash-completion #安装plasma-meta元软件包 直接回车回车
 ```
 
 #### 4.安装 greeter sddm
@@ -65,11 +65,7 @@ pacman -S sddm
 systemctl enable sddm
 ```
 
-重启电脑，即可看到欢迎界面，输入新用户的密码即可登录桌面
-
 #### 5.开启 32 位支持库与 ArchLinuxCN 支持库
-
-进入桌面后，搜索 terminal，可以找到 konsole。它是 KDE 桌面环境默认的命令行终端。
 
 ```bash
 sudo vim /etc/pacman.conf
@@ -102,17 +98,20 @@ sudo pacman -Syyu
 
 ```bash
 sudo pacman -S ntfs-3g                                                      #识别NTFS格式的硬盘
-sudo pacman -S bash-completion                                              #命令行补全工具
 sudo pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei                   #安装几个开源中文字体
-sudo pacman -S ttf-liberation                                               #安装Red Hats字体
 sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra  #安装谷歌开源字体
 sudo pacman -S firefox chromium                                             #安装常用的火狐、谷歌浏览器
-sudo pacman -S yay                                                          #yay命令可以让用户安装AUR中的软件 格式：yay -S xxx
-yay -S octopi                                                               #包管理器前端界面
+sudo pacman -S yay                                                          #yay命令可以让用户安装AUR中的软件(yay在archLinuxCn)
 ```
+
+重启电脑，即可看到欢迎界面，输入新用户的密码即可登录桌面
 
 #### 7.设置系统为中文
 
+打开 _系统设置_ > _区域设置_ > _语言_ 中加入中文，重新登陆即可。
+
+<!-- optional KDE应该不需要了 在 kde 的区域设置里直接加上中文就行了
+https://wiki.archlinux.org/index.php/Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E5%9F%BA%E6%9C%AC%E4%B8%AD%E6%96%87%E6%94%AF%E6%8C%81
 如果想要系统换为中文，需要重新设置 locale
 
 编辑 /etc/locale.gen，去掉 zh_CN.UTF-8 的注释符号（#）。
@@ -125,12 +124,40 @@ locale-gen  #重新生成locale
 
 ```bash
 echo 'LANG=zh_CN.UTF-8'  >> /etc/locale.conf
-```
+
+```-->
 
 #### 8.安装输入法
 
-使用 [Fcitx5](<https://wiki.archlinux.org/index.php/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>) 的默认输入法。
-中文及日文输入法均体验良好。这部分的官方中文文档质量良好，建议尝试跟随安装。
+进入桌面后，搜索 konsole。它是 KDE 桌面环境默认的命令行终端。  
+[Fcitx5 官方文档](<https://wiki.archlinux.org/index.php/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)  
+中文及日文输入法均体验良好。
+
+```bash
+sudo pacman -S fcitx5-im #基础包组
+sudo pacman -S fcitx5-chinese-addons #官方中文输入引擎
+sudo pacman -S fcitx5-pinyin-moegirl #萌娘百科词库 二刺猿必备(ArchLinuxCn)
+sudo pacman -S fcitx5-material-color #主题
+```
+
+设置环境变量 编辑文件 `vim ~/.pam_environment` 加入以下内容。konsole 以及 dophin 都需要这些环境变量，倒是 chrome 和 firefox 都不需要就可以输入中文
+
+```bash
+INPUT_METHOD DEFAULT=fcitx5
+GTK_IM_MODULE DEFAULT=fcitx5
+QT_IM_MODULE DEFAULT=fcitx5
+XMODIFIERS DEFAULT=\@im=fcitx5
+```
+
+打开 _系统设置_ > _区域设置_ > _输入法_
+
+点击`添加输入法`，找到简体中文下的 Pinyin ，点击添加
+
+找到 _配置附加组件_
+拉到下面找到 _Pinyin_ 点选`云拼音`和`在程序中显示预编辑文本` 最后应用  
+找到 _classic user interface_ 在主题里选择一个你喜欢的颜色 最后应用
+
+注销，重新登陆，就可以发现已经可以在各个软件中输入中文了
 
 #### 9.显卡驱动
 
@@ -162,14 +189,14 @@ echo 'LANG=zh_CN.UTF-8'  >> /etc/locale.conf
   sudo yay -S optimus-manager
   ```
 
-- AMD 显卡  
+- AMD 显卡
   群主目前没有 AMD 显卡或者笔记本，无法提供经验证的最佳实践
 
   <!-- ```bash
   sudo pacman -S xf86-video-amdgpu    #amd显卡
   ``` -->
 
-- OpenCL  
+- OpenCL
   如果你需要 OpenCL 的安装，请参照[官方文档](https://wiki.archlinux.org/index.php/GPGPU)针对自己的显卡进行配置。
 
 #### 后续

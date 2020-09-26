@@ -2,7 +2,7 @@
 
 从安装最基础的 ArchLinux 系统开始，由于当前已经是 2020 年，安装将全部以 UEFI+GPT 的形式进行。传统方式不再赘述。  
 官方文档: [安装指南](https://wiki.archlinux.org/index.php/Installation_guide)  
-相关视频链接： 2020ArchLinux 安装教程<sup>TODO</sup> 视频中可看到全部操作步骤 强烈建议观看视频配合文字学习
+相关视频链接： [2020ArchLinux 安装教程](https://www.bilibili.com/video/BV1qf4y1D7Da/) 视频中可看到全部操作步骤 强烈建议观看视频配合文字学习
 
 #### 1.刻录启动优盘
 

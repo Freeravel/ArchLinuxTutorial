@@ -143,3 +143,6 @@ unar xxx.zip
 
 如果您希望将设置改回 Power Save 模式，那么只需要按照上述步骤，并输入下列代码即可：echo powersave | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor。
 ``` -->
+
+<!-- 这个先不放在这里 会有网络问题，之后放在进阶
+yay -S octopi                                                               #包管理器前端界面 -->
