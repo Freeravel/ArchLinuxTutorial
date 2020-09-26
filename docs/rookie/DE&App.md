@@ -5,13 +5,6 @@
 相关视频链接： 2020ArchLinux 安装桌面环境和常用软件<sup>TODO</sup> 视频文字结合效果更好  
 注: 文档中带有 <sup>AUR</sup> 角标的软件代表是用户自行打包的第三方软件[AUR](https://aur.archlinux.org/)，不在 Arch 官方支持范围内，可能会出现各种问题。如果不是实在没有官方支持的同类软件，则不建议使用。
 
-#### 0.开启 dhcp 服务
-
-```bash
-systemctl enable dhcpcd #开机自动启动dhcp
-systemctl start dhcpcd #立即启动dhcp
-```
-
 #### 1.确保系统为最新
 
 ```bash

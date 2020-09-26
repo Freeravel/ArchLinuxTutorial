@@ -213,3 +213,11 @@ exit                # 退回安装环境#
 umount -R  /mnt     # 卸载新分区
 reboot              # 重启
 ```
+
+重启后，开启 dhcp 服务，即可连接网络
+
+```bash
+systemctl enable dhcpcd #开机自动启动dhcp
+systemctl start dhcpcd  #立即启动dhcp
+ping www.baidu.com      #测试网络连接
+```
