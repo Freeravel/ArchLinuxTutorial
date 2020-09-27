@@ -92,8 +92,11 @@ Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 sudo pacman -Syyu
 ```
 
+重启电脑，即可看到欢迎界面，输入新用户的密码即可登录桌面
+
 #### 6.安装基础功能包
 
+进入桌面后，搜索 konsole。它是 KDE 桌面环境默认的命令行终端。  
 接下来我们安装一些基础功能包
 
 ```bash
@@ -103,8 +106,6 @@ sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra  #安
 sudo pacman -S firefox chromium                                             #安装常用的火狐、谷歌浏览器
 sudo pacman -S yay                                                          #yay命令可以让用户安装AUR中的软件(yay在archLinuxCn)
 ```
-
-重启电脑，即可看到欢迎界面，输入新用户的密码即可登录桌面
 
 #### 7.设置系统为中文
 
@@ -129,7 +130,6 @@ echo 'LANG=zh_CN.UTF-8'  >> /etc/locale.conf
 
 #### 8.安装输入法
 
-进入桌面后，搜索 konsole。它是 KDE 桌面环境默认的命令行终端。  
 [Fcitx5 官方文档](<https://wiki.archlinux.org/index.php/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)  
 中文及日文输入法均体验良好。
 
