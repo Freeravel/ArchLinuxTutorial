@@ -1,6 +1,6 @@
 # 显卡驱动
 
-[OpenCL 等官方文档](https://wiki.archlinux.org/index.php/GPGPU)
+<!-- [OpenCL 等官方文档](https://wiki.archlinux.org/index.php/GPGPU) -->
 
 结合[视频]()食用更佳
 
@@ -13,8 +13,10 @@
 英特尔核心显卡安装如下几个包即可
 
 ```bash
-sudo pacman -S xf86-video-intel mesa lib32-mesa vulkan-intel lib32-vulkan-intel intel-compute-runtime? beignet?
+sudo pacman -S xf86-video-intel mesa lib32-mesa vulkan-intel lib32-vulkan-intel
 ```
+
+<!-- intel-compute-runtime? beignet? -->
 
 ## AMD 核心显卡
 
@@ -28,7 +30,7 @@ sudo pacman -S xf86-video-intel mesa lib32-mesa vulkan-intel lib32-vulkan-intel 
 若为台式机，拥有独立的显卡，直接安装如下几个包即可。[台式机显卡官方文档](https://wiki.archlinux.org/index.php/NVIDIA)
 
 ```bash
-sudo pacman -S nvidia nvidia-settings nvidia-utils lib32-nvidia-utils opencl-nvidia? lib32-opencl-nvidia?
+sudo pacman -S nvidia nvidia-settings nvidia-utils lib32-nvidia-utils opencl-nvidia lib32-opencl-nvidia
 ```
 
 如果是 GeForce 630 以下到 GeForce 400 系列的老卡，上述包除了不要安装`nvidia`包，其余的照样安装，并且安装 [nvidia-390xx-dkms](https://aur.archlinux.org/packages/nvidia-390xx-dkms/)<sup>AUR</sup>
@@ -52,6 +54,12 @@ optimus-manager 对于 AMD 核显 + 英伟达独显组合的支持正在开发�
 ```
 sudo yay -S optimus-manager optimus-manager-qt
 ```
+
+英特尔单独驱动，选择 intel 不要选 modesettings 模式 否则会黑屏+混成不能开启
+
+hybird 模式 添加的三个环境变量，在切换到其他模式之前一定要去掉，否则会黑屏，切换不到 intel
+
+I 卡 N 卡的 modeset 选项都去掉勾选
 
 ## AMD 显卡
 

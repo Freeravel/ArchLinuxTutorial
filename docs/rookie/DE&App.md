@@ -100,6 +100,7 @@ sudo pacman -Syyu
 接下来我们安装一些基础功能包
 
 ```bash
+sudo systemctl enable --now NetworkManager                                  #确保先启动NetworkManager
 sudo pacman -S ntfs-3g                                                      #识别NTFS格式的硬盘
 sudo pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei                   #安装几个开源中文字体
 sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra  #安装谷歌开源字体
