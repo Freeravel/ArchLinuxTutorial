@@ -101,6 +101,7 @@ sudo pacman -S ntfs-3g                                                      #识
 sudo pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei                   #安装几个开源中文字体
 sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra  #安装谷歌开源字体
 sudo pacman -S firefox chromium                                             #安装常用的火狐、谷歌浏览器
+sudo pacman -S archlinuxcn-keyring
 sudo pacman -S yay                                                          #yay命令可以让用户安装AUR中的软件(yay在archLinuxCn)
 ```
 
