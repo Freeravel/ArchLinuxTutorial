@@ -3,7 +3,8 @@
 - 新手上路
 
   - [基础安装](/rookie/basic_install)
-  - [桌面环境与常用应用](/rookie/DE&App)
+  - [桌面环境与必要应用](/rookie/DE&App)
+  - [显卡驱动](/rookie/graphic_driver)
 
 - 进阶
 
