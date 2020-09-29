@@ -35,7 +35,7 @@ sudo pacman -S xf86-video-intel mesa lib32-mesa vulkan-intel lib32-vulkan-intel
 sudo pacman -S nvidia nvidia-settings nvidia-utils lib32-nvidia-utils opencl-nvidia lib32-opencl-nvidia
 ```
 
-如果是 GeForce 630 以下到 GeForce 400 系列的老卡，上述包除了不要安装`nvidia`包，其余的照样安装，并且安装 [nvidia-390xx-dkms](https://aur.archlinux.org/packages/nvidia-390xx-dkms/)<sup>AUR</sup>及其 32 位支持包。
+如果是 GeForce 630 以下到 GeForce 400 系列的老卡，安装 [nvidia-390xx-dkms](https://aur.archlinux.org/packages/nvidia-390xx-dkms/)<sup>AUR</sup>及其 32 位支持包。
 
 ```bash
 yay -S nvidia-390xx-dkms nvidia-390xx-utils lib32-nvidia-390xx-utils
@@ -52,7 +52,7 @@ sudo pacman -S mesa lib32-mesa xf86-video-nouveau
 若为 Intel 核显+Nvidia 独显的笔记本，除上述的包，安装 optimus-manager。可以在核心显卡和独立显卡间轻松切换。[笔记本双显卡官方文档](https://wiki.archlinux.org/index.php/NVIDIA_Optimus)
 
 ```
-sudo yay -S optimus-manager optimus-manager-qt
+yay -S optimus-manager optimus-manager-qt
 ```
 
 在你切换显卡模式`前`需要进行的配置：
