@@ -58,10 +58,11 @@ nobody       ALL=(root) NOPASSWD: /usr/sbin/rndc reload
 pacman -S plasma-meta konsole dolphin bash-completion #安装plasma-meta元软件包 直接回车回车
 ```
 
-#### 4.安装 greeter sddm
+#### 4.配置 greeter sddm
+
+<!-- pacman -S sddm //包含在plasma-meta了 不用单独装-->
 
 ```
-pacman -S sddm
 systemctl enable sddm
 ```
 
