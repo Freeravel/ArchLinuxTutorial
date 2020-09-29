@@ -60,6 +60,7 @@ yay -S optimus-manager optimus-manager-qt
 - I 卡 N 卡的 modeset 选项都去掉勾选
 - 切换到英特尔核显模式前，需要选择 intel，不要选 modesettings 模式。否则会黑屏+混成不能开启
 - hybird 模式中添加的三个环境变量，在切换到其他模式之前一定要去掉，否则会黑屏，切换不到 intel。
+- 如果你使用了混成器，调整至 OpenGl 2.0 - 平滑模式。否则切换时可能会卡 splash screen
 
 <!-- 目前的 hybrid 模式尚不稳定，不建议使用。 -->
 
