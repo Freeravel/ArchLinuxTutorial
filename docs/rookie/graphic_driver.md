@@ -49,7 +49,7 @@ sudo pacman -S mesa lib32-mesa xf86-video-nouveau
 
 ---
 
-若为 Intel 核显+Nvidia 独显的笔记本，除上述的包，安装 optimus-manager。可以在核心显卡和独立显卡间轻松切换。[笔记本双显卡官方文档](https://wiki.archlinux.org/index.php/NVIDIA_Optimus)
+若为 Intel 核显+Nvidia 独显的笔记本，同样需要按照显卡新旧的分类安装如上台式机驱动的各个软件包，除此之外还需要安装 optimus-manager。可以在核心显卡和独立显卡间轻松切换。[笔记本双显卡官方文档](https://wiki.archlinux.org/index.php/NVIDIA_Optimus)
 
 ```
 yay -S optimus-manager optimus-manager-qt
