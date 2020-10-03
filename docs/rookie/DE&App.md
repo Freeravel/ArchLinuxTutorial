@@ -101,7 +101,9 @@ sudo pacman -Syyu
 接下来我们安装一些基础功能包
 
 ```bash
-sudo systemctl enable --now NetworkManager                                  #确保先启动NetworkManager
+sudo systemctl disable iwd                                                  #确保iwd处于关闭状态，其无线连接会与NetworkManager冲突
+sudo systemctl stop iwd                                                     #同上
+sudo systemctl enable --now NetworkManager                                  #确保先启动NetworkManager，并进行网络连接
 sudo pacman -S ntfs-3g                                                      #识别NTFS格式的硬盘
 sudo pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei                   #安装几个开源中文字体
 sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra  #安装谷歌开源字体

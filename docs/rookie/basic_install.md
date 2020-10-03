@@ -221,3 +221,10 @@ systemctl enable dhcpcd #开机自动启动dhcp
 systemctl start dhcpcd  #立即启动dhcp
 ping www.baidu.com      #测试网络连接
 ```
+
+若为无线链接，则需要启动 iwd 才可以使用 iwctl 连接网络
+
+```bash
+systemctl start iwd #立即启动iwd
+iwctl               #和之前的方式一样，连接无线网络
+```
