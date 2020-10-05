@@ -2,7 +2,7 @@
 
 <!-- [OpenCL 等官方文档](https://wiki.archlinux.org/index.php/GPGPU) -->
 
-结合[视频]()食用更佳
+结合[视频](https://www.bilibili.com/video/BV1vK4y187Ww/)食用更佳
 
 现在是 2020 年，显卡驱动的安装在 Arch Linux 上已经变得非常容易。本文简述几种情况下的显卡驱动安装。
 
