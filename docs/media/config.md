@@ -1,5 +1,6 @@
 # 自媒体软件配置
 
+TODO 待完善
 为获得最佳多媒体效果，需要一些额外的配置
 
 #### 声卡驱动
@@ -9,15 +10,12 @@
 音频问题：需要安装一些包来解决声道独占的问题(davinci reslove 会出现声道抢占)
 
 shotcut 前置依赖 输出视频格式与素材拖拽倒入相关依赖
-rtaudio
-rubberband
-portaudio
-swh-plugins
 声卡
 
 ```bash
 sudo pacman -S alsa-utils
 sudo pacman -S alsa-lib
+sudo pacman -S rtaudio rubberband portaudio swh-plugins
 ```
 
 <!--  不确定是否需要的：
