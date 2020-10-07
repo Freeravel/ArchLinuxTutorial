@@ -77,7 +77,6 @@ sudo vim /etc/pacman.conf
 
 ```bash
 [archlinuxcn]
-SigLevel = Optional TrustAll
 Server = http://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 ```
 
