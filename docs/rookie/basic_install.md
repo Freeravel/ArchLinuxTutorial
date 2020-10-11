@@ -122,7 +122,7 @@ mount /dev/sda3 /mnt/boot/EFI
 基础包
 
 ```bash
-pacstrap /mnt base linux linux-firmware
+pacstrap /mnt base base-devel linux linux-firmware #base-devel在某些AUR包的安装是必须的
 ```
 
 功能性软件

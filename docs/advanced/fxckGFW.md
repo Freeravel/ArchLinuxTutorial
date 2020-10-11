@@ -41,6 +41,7 @@ export ALL_PROXY=socks5://127.0.0.1:1080
   ```
 
   把配置文件中最后一行改为本地代理的 ip 和端口，如`socks5 127.0.0.1 1080`  
+  同时搜索`proxy_dns`， 在这一行前添加#注释掉此行，否则使用 proxychains 启动 yay 会报错  
   使用代理方式为在单一命令前添加 proxychains
 
   ```bash
