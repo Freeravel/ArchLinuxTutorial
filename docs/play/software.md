@@ -23,7 +23,7 @@ sudo pacman -S minecraft #我的世界官服起动器(ArchLinuxCN)
 sudo pacman -S steam
 ```
 
-下面的清单是群主自身测试过，或者玩过的，在 Linux 下拥有`完美体验或者表现良好`的游戏列表，分为原生组和 [Steam Play](https://wiki.archlinux.org/index.php/Steam#Proton_Steam-Play) 组两类。关于非 Linux 平台的游戏，通过 Steam Play 运行的可玩程度，可通过[protondb](https://www.protondb.com/)这个网站进行查询。
+下面的清单是群主自身测试过，或者玩过的，在 Linux 下拥有`完美体验或者表现良好`的游戏列表，分为原生组和 [Steam Play](https://wiki.archlinux.org/index.php/Steam#Proton_Steam-Play) 组两类。关于非 Linux 平台的游戏，通过 Steam Play 运行的可玩程度，可通过[protondb](https://www.protondb.com/)这个网站进行查询。有时最新版 Proton 可能存在问题，需要用特定版本游玩的游戏下面列表会额外标出。另外，github 上还存在一些官方 proton 的 fork 版本，如 [GE proton](https://github.com/GloriousEggroll/proton-ge-custom)，可以支持一些额外的，官方暂不支持的游戏(如骑砍 2)。由于其非官方的定位，以及折腾，暂时持观望态度。
 
 只列出大作以及较好玩的精品，不会列举全部。
 
@@ -48,4 +48,5 @@ sudo pacman -S steam
 
 #### Steam Play 组
 
-- [三国志 11](https://store.steampowered.com/app/628070/Romance_of_the_Three_Kingdoms_XI_with_Power_Up_Kit/)
+- [三国志 11](https://store.steampowered.com/app/628070/Romance_of_the_Three_Kingdoms_XI_with_Power_Up_Kit/) 注意需要使用 Proton 5.0.9 版本
+- [上古卷轴 5](https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/) 注意需要使用 Proton 5.0.9 版本
