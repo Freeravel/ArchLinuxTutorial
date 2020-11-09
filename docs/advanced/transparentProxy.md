@@ -1,6 +1,6 @@
 # 使用 Qv2ray+cgproxy 配置透明代理（仅限 Linux）
 
-注意，一定要先启动 cgproxy service,在启动链接 Qv2ray 的相关节点。  
+注意，一定要先启动 cgproxy service,再启动链接 Qv2ray 的相关节点。  
 本文收集自 [Qv2ray 用户组](https://t.me/qv2ray)，`非群主书写`。
 
 1. 在“首选项-入站设置”的下方启用透明代理选项。
