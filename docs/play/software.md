@@ -27,32 +27,38 @@ sudo pacman -S steam
 
 只列出大作以及较好玩的精品，不会列举全部。
 
+游戏锁区解决办法：让你的 steam 处于一个国家的代理下，如日本。先随便加一个游戏到购物车，在购物车右上角国家地区改成日本，再去访问已锁区的游戏，就可以浏览购买了。
+
 #### 原生游戏组
 
-- [Dota2](https://store.steampowered.com/app/570/Dota_2/)
-- [CS GO](https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/)
-- [RimWorld](https://store.steampowered.com/app/294100/RimWorld/)
-- [十字军之王 3](https://store.steampowered.com/app/1158310/Crusader_Kings_III/)
-- [欧陆风云 4](https://store.steampowered.com/app/236850/Europa_Universalis_IV/)
-- [星露谷物语](https://store.steampowered.com/app/413150/Stardew_Valley/)
-- [饥荒](https://store.steampowered.com/app/219740/Dont_Starve/)
-- [泰拉瑞亚](https://store.steampowered.com/app/105600/Terraria/)
-- [全战三国](https://store.steampowered.com/app/779340/Total_War_THREE_KINGDOMS/)
-- [骑马与砍杀](https://store.steampowered.com/app/22100/Mount__Blade/)
+- [武装突袭 3](https://store.steampowered.com/app/107410/Arma_3/) 大名鼎鼎的吃鸡游戏的爸爸。
+- [CS GO](https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/) 不用介绍了吧？
+- [十字军之王 3](https://store.steampowered.com/app/1158310/Crusader_Kings_III/) 经典的中世纪模拟器 第三部已经有官方中文了。
+- [Dota2](https://store.steampowered.com/app/570/Dota_2/) 不用介绍了吧？
+- [RimWorld](https://store.steampowered.com/app/294100/RimWorld/) 一款非常好玩的生存建设类游戏。
+- [欧陆风云 4](https://store.steampowered.com/app/236850/Europa_Universalis_IV/) 没有官中。linux 双字节补丁暂无。
+- [Kingdom: Classic](https://store.steampowered.com/app/368230/Kingdom_Classic/) 挺好玩的一个像素风横版闯关类小游戏。同系列还有几个新作。
+- [地铁 2033 Redux](https://store.steampowered.com/app/286690/Metro_2033_Redux/) 经典的地铁系列。
+- [地铁 Last Light Redux](https://store.steampowered.com/app/287390/Metro_Last_Light_Redux/) 经典的地铁系列。
+- [星露谷物语](https://store.steampowered.com/app/413150/Stardew_Valley/) 二次元像素风农场模拟器。
+- [饥荒](https://store.steampowered.com/app/219740/Dont_Starve/) 不用介绍了吧？
+- [泰拉瑞亚](https://store.steampowered.com/app/105600/Terraria/) 不用介绍了吧？
+- [全战三国](https://store.steampowered.com/app/779340/Total_War_THREE_KINGDOMS/) 全战系列的三国篇。
+- [骑马与砍杀](https://store.steampowered.com/app/22100/Mount__Blade/) 最爱骑砍。
 - [骑马与砍杀：战团](https://store.steampowered.com/app/48700/Mount__Blade_Warband/)
-- [武装突袭 1(闪点行动)](https://store.steampowered.com/app/594550/Arma_Cold_War_Assault_MacLinux/)
-- [武装突袭 3](https://store.steampowered.com/app/107410/Arma_3/)
-- [地铁 Last Light Redux](https://store.steampowered.com/app/287390/Metro_Last_Light_Redux/)
-- [地铁 2033 Redux](https://store.steampowered.com/app/286690/Metro_2033_Redux/)
-- [中土世界 暗影摩多](https://store.steampowered.com/app/241930/Middleearth_Shadow_of_Mordor/)
+- [武装突袭 1(闪点行动)](https://store.steampowered.com/app/594550/Arma_Cold_War_Assault_MacLinux/) 血统上为武装突袭第一代。
+
+- [中土世界 暗影摩多](https://store.steampowered.com/app/241930/Middleearth_Shadow_of_Mordor/) 兽人养成器。
 
 #### Steam Play 组
 
 如无另行说明，则代表默认使用最新的 Pronton 版本即可。
 
-- [三国志 11](https://store.steampowered.com/app/628070/Romance_of_the_Three_Kingdoms_XI_with_Power_Up_Kit/) 注意需要使用 Proton 5.0-10 版本
-- [上古卷轴 5](https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/) 注意需要使用 Proton 5.0-10 版本。
 - [ATRI -My Dear Moments-](https://store.steampowered.com/app/1230140/ATRI_My_Dear_Moments/) 可爱的あとり 第一时间预购了 但始终没时间玩。 注意需要使用 Proton 4.11-13 版本。
+- [cute honey](https://store.steampowered.com/app/1347430/Cute_Honey/) 已锁国区。一款社保黄油。[社保补丁](https://www.jianguoyun.com/p/DeqYLckQmv_5CBiumsoD)
+- [上古卷轴 5](https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/) 注意需要使用 Proton 5.0-10 版本。
+- [LOVE³ -爱立方-](https://store.steampowered.com/app/939600/LOVE/) 一款社保黄油。steam dlc 有社保补丁 dlc。注意需要使用 Proton 5.0-10 版本。
+- [三国志 11](https://store.steampowered.com/app/628070/Romance_of_the_Three_Kingdoms_XI_with_Power_Up_Kit/) 注意需要使用 Proton 5.0-10 版本
 
 ### Lutris
 
