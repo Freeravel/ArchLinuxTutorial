@@ -47,7 +47,6 @@ sudo pacman -S steam
 - [骑马与砍杀](https://store.steampowered.com/app/22100/Mount__Blade/) 最爱骑砍。
 - [骑马与砍杀：战团](https://store.steampowered.com/app/48700/Mount__Blade_Warband/)
 - [武装突袭 1(闪点行动)](https://store.steampowered.com/app/594550/Arma_Cold_War_Assault_MacLinux/) 血统上为武装突袭第一代。
-
 - [中土世界 暗影摩多](https://store.steampowered.com/app/241930/Middleearth_Shadow_of_Mordor/) 兽人养成器。
 
 #### Steam Play 组
