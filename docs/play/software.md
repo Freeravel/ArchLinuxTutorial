@@ -23,7 +23,8 @@ sudo pacman -S minecraft #我的世界官服起动器(ArchLinuxCN)
 sudo pacman -S steam
 ```
 
-下面的清单是群主自身测试过，或者玩过的，在 Linux 下拥有`完美体验或者表现良好`的游戏列表，分为原生组和 [Steam Play](https://wiki.archlinux.org/index.php/Steam#Proton_Steam-Play) 组两类。关于非 Linux 平台的游戏，通过 Steam Play 运行的可玩程度，可通过[protondb](https://www.protondb.com/)这个网站进行查询。有时最新版 Proton 可能存在问题，需要用特定版本游玩的游戏下面列表会额外标出。另外，github 上还存在一些官方 proton 的 fork 版本，如 [GE proton](https://github.com/GloriousEggroll/proton-ge-custom)，可以支持一些额外的，官方暂不支持的游戏(如骑砍 2)。由于其非官方的定位，以及经过测试并不一定能保持稳定，暂时持观望态度。
+下面的清单是群主自身测试过，或者玩过的，在 Linux 下拥有`完美体验或者表现良好`的游戏列表，分为原生组和 [Steam Play](https://wiki.archlinux.org/index.php/Steam#Proton_Steam-Play) 组两类。关于非 Linux 平台的游戏，通过 Steam Play 运行的可玩程度，可通过[protondb](https://www.protondb.com/)这个网站进行查询。有时最新版 Proton 可能存在问题，需要用特定版本游玩的游戏下面列表会额外标出。  
+另外，github 上还存在一些官方 proton 的 fork 版本，如 [GE proton](https://github.com/GloriousEggroll/proton-ge-custom)，可以支持一些额外的，官方暂不支持或支持不完善的游戏(如骑砍 2)。使用方式也很简单，根据官方文档，下载 release 的压缩包到指定位置，重启 steam 后即可选择特定版本的 proton。
 
 只列出大作以及较好玩的精品，不会列举全部。
 
@@ -57,7 +58,8 @@ sudo pacman -S steam
 - [cute honey](https://store.steampowered.com/app/1347430/Cute_Honey/) 已锁国区。一款社保黄油。[社保补丁](https://www.jianguoyun.com/p/DeqYLckQmv_5CBiumsoD) 注意需要使用 Proton 5.0-10 版本。
 - [上古卷轴 5](https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/) 注意需要使用 Proton 5.0-10 版本。
 - [LOVE³ -爱立方-](https://store.steampowered.com/app/939600/LOVE/) 一款社保黄油。steam dlc 有社保补丁 dlc。注意需要使用 Proton 5.0-10 版本。
-- [三国志 11](https://store.steampowered.com/app/628070/Romance_of_the_Three_Kingdoms_XI_with_Power_Up_Kit/) 注意需要使用 Proton 5.0-10 版本
+- [三国志 11](https://store.steampowered.com/app/628070/Romance_of_the_Three_Kingdoms_XI_with_Power_Up_Kit/) 注意需要使用 Proton 5.0-10 版本。
+- [骑马与砍杀 2](https://store.steampowered.com/app/261550/Mount__Blade_II_Bannerlord/) 目前最新可运行的游戏版本为 e1.5.3。经测试，在特定的 Proton-5.9-GE-8-ST 的版本下可正常运行。
 
 ### Lutris
 
