@@ -1,6 +1,7 @@
 # 关于&致谢 <!-- {docsify-ignore-all} -->
 
-关于本书存在的任何问题以及建议，均可以给群主发送邮件，也可以直接在本页下方留言。  
+关于本书存在的任何问题以及建议，均可以给群主发送邮件，也可以直接在本页下方留言。
+Telegram 电报群: [篝之雾枝的咕咕小屋](https://t.me/wu1fan)  
 Linux 二次元交流 QQ 群: [232995416](https://jq.qq.com/?_wv=1027&k=5hTGQRy)  
 邮箱: wallena3@gmail.com  
 Github: [wallena3](https://github.com/wallena3)  
