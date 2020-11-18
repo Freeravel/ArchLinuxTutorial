@@ -1,7 +1,7 @@
 # 使用 Qv2ray+cgproxy 配置透明代理（仅限 Linux）
 
 注意，一定要先启动 cgproxy service,再启动链接 Qv2ray 的相关节点。  
-本文收集自 [Qv2ray 用户组](https://t.me/qv2ray)，`非群主书写`。
+本文原本收集自 [Qv2ray 用户组](https://t.me/qv2ray)，`非群主书写`，群主仅在其基础上进行更新与修正。[项目源地址](https://github.com/springzfx/cgproxy)。
 
 1. 在“首选项-入站设置”的下方启用透明代理选项。
 
@@ -98,3 +98,7 @@
 - 透明代理环境中响应速度变慢
 
   由于 iptables 是在域名解析成 ip 之后，才对相应的流量进行重定向。因此，在透明代理环境中，访问一个域名 s 可能会需要解析至少 2 次 dns（系统解析一次，重定向到 v2ray 之后 v2ray 分流模块再解析一次）。因此，响应理论上是会变慢一点的，变慢的幅度取决于系统 dns 及 v2ray 的 dns 的响应速度。
+
+- 开启 UDP 支持后报错`too many open files`
+
+  解决方法可看 V2Ray 官方网站的[这一节](https://guide.v2fly.org/app/tproxy.html#%E8%A7%A3%E5%86%B3-too-many-open-files-%E9%97%AE%E9%A2%98)
