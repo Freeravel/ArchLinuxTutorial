@@ -69,6 +69,7 @@ sudo pacman -S steam
   [相关 issue 讨论](https://github.com/ValveSoftware/Proton/issues/3706)
 
 - [Kenshi](https://store.steampowered.com/app/233860/Kenshi/) 废土生存类游戏，非常好玩。注意需要使用 Proton 5.0-10 版本。
+- [光环士官长合集](https://store.steampowered.com/app/976730/Halo_The_Master_Chief_Collection/) 大名鼎鼎的光环系列。启动时需要在启动参数中加入`-windowed`，否则会报错 fatal error。可在进入游戏后自行调整分辨率。注意需要使用 Proton 5.0-10 版本。
 
 ### Lutris
 
