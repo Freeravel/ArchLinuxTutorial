@@ -1,6 +1,7 @@
 # Arch Linux 简明实用教程
 
 [![HitCount](http://hits.dwyl.com/KagarinoKirieStudio/ArchLinuxTutorial.svg)](http://hits.dwyl.com/KagarinoKirieStudio/ArchLinuxTutorial)
+
 可能是最实用，最简洁的 ArchLinux 中文教程。你可以通过本教程学会:
 
 - ArchLinux 的安装与 KDE 桌面环境的安装
