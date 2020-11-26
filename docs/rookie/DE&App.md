@@ -16,7 +16,7 @@ pacman -Syyu    #升级系统中全部包
 添加用户，比如新增加的用户叫 wallen
 
 ```bash
-useradd -m -g users -G wheel -s /bin/bash wallen  #wheel附加组可sudo进行提权
+useradd -m -G wheel -s /bin/bash wallen  #wheel附加组可sudo进行提权 -m同时创建用户家目录
 ```
 
 设置新用户 wallen 的密码
