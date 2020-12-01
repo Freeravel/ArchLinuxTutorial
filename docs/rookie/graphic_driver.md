@@ -66,7 +66,7 @@ yay -S optimus-manager optimus-manager-qt
 
 <!-- 目前的 hybrid 模式尚不稳定，不建议使用。 -->
 
-对于 AMD 核显+N 卡独显的同学，optimus-manager 对于这套组合的支持正在开发中，这个组合的同学需要再等待一下。
+对于 AMD 核显+N 卡独显的同学，optimus-manager 对于这套组合的支持已经开发完成合入 master，这个组合的同学已经可以使用了。但是开发者说他没有相关设备，无法测试。这个组合在目前可能仍存在一些未知问题。
 
 ## AMD 显卡
 
