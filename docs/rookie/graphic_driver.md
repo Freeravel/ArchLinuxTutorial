@@ -62,6 +62,8 @@ yay -S optimus-manager optimus-manager-qt
 - hybird 模式中添加的三个环境变量，在切换到其他模式之前一定要去掉，否则会黑屏，切换不到 intel。
 - 如果你使用了混成器，调整至 OpenGl 2.0 - 平滑模式。否则切换时可能会卡 splash screen
 
+从独显切换到核显，重启后可能会在 splash screen 卡很久，大概有几分钟的样子，是正常的，耐心等待不要以为卡死了。
+
 <!-- 目前的 hybrid 模式尚不稳定，不建议使用。 -->
 
 对于 AMD 核显+N 卡独显的同学，optimus-manager 对于这套组合的支持正在开发中，这个组合的同学需要再等待一下。
