@@ -60,7 +60,9 @@ pacman -S plasma-meta konsole dolphin bash-completion #安装plasma-meta元软�
 
 #### 4.配置 greeter sddm
 
-<!-- pacman -S sddm //包含在plasma-meta了 不用单独装-->
+<!-- pacman -S sddm //包含在plasma-meta了 不用单独装
+但是plasma-desktop 没有 还是要装
+-->
 
 ```
 systemctl enable sddm
@@ -77,7 +79,7 @@ sudo vim /etc/pacman.conf
 
 ```bash
 [archlinuxcn]
-Server = http://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 ```
 
 上面服务器的地址是清华的，也可用下面中科大的
@@ -85,6 +87,8 @@ Server = http://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 ```bash
 Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 ```
+
+[此处](https://github.com/archlinuxcn/mirrorlist-repo#arch-linux-cn-community-repo-mirrors-list)为 archlinuxcn 全部仓库地址 可以根据自己实际情况另行选择。
 
 最后:wq 保存退出，刷新 pacman 数据库
 
@@ -102,18 +106,24 @@ sudo pacman -Syyu
 ```bash
 sudo systemctl disable iwd                                                  #确保iwd处于关闭状态，其无线连接会与NetworkManager冲突
 sudo systemctl stop iwd                                                     #同上
-sudo systemctl enable --now NetworkManager                                  #确保先启动NetworkManager，并进行网络连接
+sudo systemctl enable --now NetworkManager                                  #确保先启动NetworkManager，并进行网络连接 若iwd已经与NetworkManager冲突 则执行完上述步骤重启一下电脑即可。
 sudo pacman -S ntfs-3g                                                      #识别NTFS格式的硬盘
 sudo pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei                   #安装几个开源中文字体
-sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra  #安装谷歌开源字体
+sudo pacman -S adobe-source-han-serif-kr-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra  #安装谷歌开源字体及表情
 sudo pacman -S firefox chromium                                             #安装常用的火狐、谷歌浏览器
-sudo pacman -S archlinuxcn-keyring                                          #cn源中的签名
+
+```
+
+接下来要安装 archlinuxcn 源的相关步骤，由于密钥环的问题，先按照[此链接](https://www.archlinuxcn.org/gnupg-2-1-and-the-pacman-keyring/)执行其中的命令
+
+```bash
+sudo pacman -S archlinuxcn-keyring                                          #cn源中的签名(archlinuxcn-keyring在archLinuxCn)
 sudo pacman -S yay                                                          #yay命令可以让用户安装AUR中的软件(yay在archLinuxCn)
 ```
 
 #### 7.设置系统为中文
 
-打开 _系统设置_ > _区域设置_ > _语言_ 中加入中文，重新登陆即可。
+打开 _System Settings_ > _Regional Settings_ > _Language_ 中选择中文加入，再拖拽到第一位，Apply 重新登陆即可。
 
 <!-- optional KDE应该不需要了 在 kde 的区域设置里直接加上中文就行了
 https://wiki.archlinux.org/index.php/Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E5%9F%BA%E6%9C%AC%E4%B8%AD%E6%96%87%E6%94%AF%E6%8C%81
@@ -140,6 +150,7 @@ echo 'LANG=zh_CN.UTF-8'  >> /etc/locale.conf
 ```bash
 sudo pacman -S fcitx5-im #基础包组
 sudo pacman -S fcitx5-chinese-addons #官方中文输入引擎
+sudo pacman -S fcitx5-anthy #日文输入引擎
 sudo pacman -S fcitx5-pinyin-moegirl #萌娘百科词库 二刺猿必备(ArchLinuxCn)
 sudo pacman -S fcitx5-material-color #主题
 ```
