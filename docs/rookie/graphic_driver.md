@@ -10,10 +10,14 @@
 
 [官网文档](https://wiki.archlinux.org/index.php/Intel_graphics)
 
-英特尔核心显卡安装如下几个包即可。`xf86-video-intel`arch wiki 里写的很多发行版不建议安装它，而应使用 xorg 的 modesetting 驱动。但是我实际尝试了，如果不使用它，混成，启动都会出现问题。所以还是建议安装使用。
+英特尔核心显卡安装如下几个包即可。
+
+<!-- `xf86-video-intel`arch wiki 里写的很多发行版不建议安装它，而应使用 xorg 的 modesetting 驱动。但是我实际尝试了，如果不使用它，混成，启动都会出现问题。所以还是建议安装使用。 -->
 
 ```bash
-sudo pacman -S xf86-video-intel mesa lib32-mesa vulkan-intel lib32-vulkan-intel
+# sudo pacman -S xf86-video-intel mesa lib32-mesa vulkan-intel lib32-vulkan-intel
+sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel
+
 ```
 
 <!-- intel-compute-runtime? beignet? -->
@@ -32,7 +36,11 @@ sudo pacman -S xf86-video-intel mesa lib32-mesa vulkan-intel lib32-vulkan-intel
 <!-- ?也许不需要手动生成 使用闭源驱动的，在安装完后执行`nvidia-xconfig`自动生成配置文件即可。 -->
 
 ```bash
-sudo pacman -S nvidia nvidia-settings nvidia-utils lib32-nvidia-utils opencl-nvidia lib32-opencl-nvidia
+sudo pacman -S nvidia nvidia-settings lib32-nvidia-utils #必须安装
+```
+
+```bash
+sudo pacman -S opencl-nvidia lib32-opencl-nvidia #可选
 ```
 
 如果是 GeForce 630 以下到 GeForce 400 系列的老卡，安装 [nvidia-390xx-dkms](https://aur.archlinux.org/packages/nvidia-390xx-dkms/)<sup>AUR</sup>及其 32 位支持包。
@@ -47,6 +55,8 @@ yay -S nvidia-390xx-dkms nvidia-390xx-utils lib32-nvidia-390xx-utils
 sudo pacman -S mesa lib32-mesa xf86-video-nouveau
 ```
 
+重启
+
 ---
 
 若为 Intel 核显+Nvidia 独显的笔记本，同样需要按照显卡新旧的分类安装如上台式机驱动的各个软件包，除此之外还需要安装 optimus-manager。可以在核心显卡和独立显卡间轻松切换。[笔记本双显卡官方文档](https://wiki.archlinux.org/index.php/NVIDIA_Optimus)
@@ -57,12 +67,15 @@ yay -S optimus-manager optimus-manager-qt
 
 在你切换显卡模式`前`需要进行的配置：
 
-- I 卡 N 卡的 modeset 选项都去掉勾选
-- 切换到英特尔核显模式前，需要选择 intel，不要选 modesettings 模式。否则会黑屏+混成不能开启
-- hybird 模式中添加的三个环境变量，在切换到其他模式之前一定要去掉，否则会黑屏，切换不到 intel。
-- 如果你使用了混成器，调整至 OpenGl 2.0 - 平滑模式。否则切换时可能会卡 splash screen
+<!-- - I 卡 N 卡的 modeset 选项都去掉勾选
+- 切换到英特尔核显模式前，需要选择 intel，不要选 modesettings 模式。否则会黑屏+混成不能开启 -->
 
-从独显切换到核显，重启后可能会在 splash screen 卡很久，大概有几分钟的样子，是正常的，耐心等待不要以为卡死了。
+- hybird 模式中添加的三个环境变量，在切换到其他模式之前一定要去掉，否则会黑屏，切换不到 intel。
+<!-- - 如果你使用了混成器，调整至 OpenGl 2.0 - 平滑模式。否则切换时可能会卡 splash screen -->
+
+显卡之间的切换，重新登陆后可能会在 splash screen 卡很久，大概有几分钟的样子，是正常的，耐心等待不要以为卡死了。
+
+经过测试，第一次的显卡切换基本不会有问题，但是反复横跳，不停的切换显卡的话，可能会切换失败， 但是不会黑屏。等进入系统后重启即可。
 
 <!-- 目前的 hybrid 模式尚不稳定，不建议使用。 -->
 
