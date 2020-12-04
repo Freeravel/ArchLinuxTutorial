@@ -12,12 +12,10 @@
 
 英特尔核心显卡安装如下几个包即可。
 
-<!-- `xf86-video-intel`arch wiki 里写的很多发行版不建议安装它，而应使用 xorg 的 modesetting 驱动。但是我实际尝试了，如果不使用它，混成，启动都会出现问题。所以还是建议安装使用。 -->
+<!-- `xf86-video-intel`arch wiki 里写的很多发行版不建议安装它，而应使用 xorg 的 modesetting 驱动。-->
 
 ```bash
-# sudo pacman -S xf86-video-intel mesa lib32-mesa vulkan-intel lib32-vulkan-intel
 sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel
-
 ```
 
 <!-- intel-compute-runtime? beignet? -->
@@ -61,9 +59,12 @@ sudo pacman -S mesa lib32-mesa xf86-video-nouveau
 
 若为 Intel 核显+Nvidia 独显的笔记本，同样需要按照显卡新旧的分类安装如上台式机驱动的各个软件包，除此之外还需要安装 optimus-manager。可以在核心显卡和独立显卡间轻松切换。[笔记本双显卡官方文档](https://wiki.archlinux.org/index.php/NVIDIA_Optimus)
 
-```
+```bash
 yay -S optimus-manager optimus-manager-qt
+sudo pacman -S bbswitch #安装bbswitch切换方式
 ```
+
+安装完成后可以看到右下角已经出现图标，右键设置，在 Optimus 中的 switch method 选择 Bbswitch 即可。重启即可使用。
 
 在你切换显卡模式`前`需要进行的配置：
 
