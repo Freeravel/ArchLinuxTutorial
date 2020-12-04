@@ -18,14 +18,13 @@
 sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel
 ```
 
+注意 只有 Intel HD 4000 及以上的核显才支持 vulkan
+
 <!-- intel-compute-runtime? beignet? -->
 
 ## AMD 核芯显卡<sup>TODO</sup>
 
-[驱动分类官方文档](https://wiki.archlinux.org/index.php/Xorg#AMD)  
-[新卡驱动](https://wiki.archlinux.org/index.php/AMDGPU)  
-[老卡驱动](https://wiki.archlinux.org/index.php/ATI)  
-群主目前没有相关设备，无法提供`经验证的`最佳实践。相关同学请自行查看文档踩坑。
+此路线尚未尝试，因为群主没有相关设备。
 
 ## 英伟达独立显卡
 
@@ -84,11 +83,29 @@ sudo pacman -S bbswitch #安装bbswitch切换方式
 
 ## AMD 显卡
 
-群主目前没有 AMD 显卡或者笔记本，无法提供经验证的最佳实践
+可先用 `lspci -v` 确认你显卡的详细信息
 
-  <!-- ```bash
-  sudo pacman -S xf86-video-amdgpu opencl-mesa lib32-opencl-mesa   #amd显卡
-  ``` -->
+[驱动分类官方文档](https://wiki.archlinux.org/index.php/Xorg#AMD)  
+[新卡开源驱动](https://wiki.archlinux.org/index.php/AMDGPU)  
+[老卡开源驱动](https://wiki.archlinux.org/index.php/ATI)
+
+对于一些旧型号的 AMD 显卡(GCN2 及以前的型号)，闭源驱动 Catalyst 目前已经停止更新，其最后的版本只支持到 Xorg1.10,基本在 arch linux 上已经处于无法使用的地步（如我的 HD7670M，属于 TeraScale 2 架构），这种情况只能使用开源的 [ATI 驱动](<https://wiki.archlinux.org/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)。如果是笔记本，则只能使用 PRIME 的双显卡切换方式。
+此外，可以使用 `glmark2`，`DRI_PRIME=1 glmark2` 分别对核显和独显进行测试，选择分数更高的一个进行使用。原因是只能使用开源驱动的老型号独立显卡，性能可能还比不上核芯显卡。如果玩游戏的话，还是要根据实际表现来。
+
+可以在 steam 游戏的启动前缀中加入`DRI_PRIME=1 mangohud %command%`来使用独显。(关于 [mangohud](/play/software?id=性能监控))
+
+笔记本上使用独立显卡运行 steam 游戏的另一个例子。
+
+```bash
+env DRI_PRIME=1 steam steam://rungameid/570 #运行dota2
+env DRI_PRIME=1 steam steam://rungameid/730 #运行cs go
+```
+
+只能用 ATI 驱动的老显卡应该都不支持 vulkan。
+
+---
+
+对于新型号，即 GCN3 架构及更新，开源驱动可使用 AMDGPU 闭源驱动可使用 AMDGPU PRO。此路线尚未尝试，因为群主没有相关设备。
 
 ## 后续
 
