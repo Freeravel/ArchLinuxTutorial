@@ -75,6 +75,8 @@ sudo pacman -S steam
 - [Stronghold Legends](https://store.steampowered.com/app/40980/Stronghold_Legends_Steam_Edition/) 要塞传奇。完美运行。
 - [Sekiro™: Shadows Die Twice - GOTY Edition](https://store.steampowered.com/app/814380/Sekiro_Shadows_Die_Twice__GOTY_Edition/) 只狼。完美运行。注意需要使用 Proton 5.0-10 版本。
 - [战意](https://store.steampowered.com/app/835570/_/) 中世纪网游。注意需要使用 GE Proton 的新版本。
+- [Just Cause](https://store.steampowered.com/app/6880/Just_Cause/)
+- [侠盗猎车手圣安地列斯](https://store.steampowered.com/app/12120/Grand_Theft_Auto_San_Andreas/)
 
 ### Lutris
 
