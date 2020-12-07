@@ -51,6 +51,9 @@ sudo pacman -S steam
 - [骑马与砍杀：战团](https://store.steampowered.com/app/48700/Mount__Blade_Warband/)
 - [武装突袭 1(闪点行动)](https://store.steampowered.com/app/594550/Arma_Cold_War_Assault_MacLinux/) 血统上为武装突袭第一代。
 - [中土世界 暗影摩多](https://store.steampowered.com/app/241930/Middleearth_Shadow_of_Mordor/) 兽人养成器。
+- [Portal 系列](https://store.steampowered.com/app/400/Portal/) V 社著名解谜游戏。
+- [监狱建造师](https://store.steampowered.com/app/233450/Prison_Architect/) 好玩的坐牢游戏。
+- [Surviving Mars](https://store.steampowered.com/app/464920/Surviving_Mars/) 好玩的火星生存游戏。
 
 #### Steam Play 组
 
@@ -77,6 +80,7 @@ sudo pacman -S steam
 - [战意](https://store.steampowered.com/app/835570/_/) 中世纪网游。注意需要使用 GE Proton 的新版本。
 - [Just Cause](https://store.steampowered.com/app/6880/Just_Cause/)
 - [侠盗猎车手圣安地列斯](https://store.steampowered.com/app/12120/Grand_Theft_Auto_San_Andreas/)
+- [Seek girl 系列黄油](https://store.steampowered.com/app/998930/Seek_Girl/) 好玩的 🐍 击游戏。玩之前记得先去装社保补丁
 
 ### Lutris
 

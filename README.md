@@ -1,6 +1,15 @@
-# Arch Linux 简明实用教程
+<p align="center">
+<img width="120" height="40" align="left" style="float: left; margin: 19px 10px 0 0;" src="https://www.archlinux.org/static/logos/archlinux-logo-dark-1200dpi.b42bd35d5916.png" alt="ArchLinuxStudio_ArchLinuxTutorial"/>
+</br>
+<h2>Arch Linux 安装使用教程 </h2> 
+包含ArchLinux从安装到日常使用、娱乐、编程、媒体制作的各个方面，让Arch成为你的常用系统吧！ 
+</br>
+提供在线网页文档，承诺健在即更新
+</p>
 
 [![HitCount](http://hits.dwyl.com/ArchLinuxStudio/ArchLinuxTutorial.svg)](http://hits.dwyl.com/ArchLinuxStudio/ArchLinuxTutorial)
+
+## [阅读地址](https://ArchLinuxStudio.github.io/ArchLinuxTutorial/#/)
 
 可能是最实用，最简洁的 ArchLinux 中文教程。你可以通过本教程学会:
 
@@ -8,5 +17,3 @@
 - Linux 的相关知识
 - 中国用户常用的软件安装与配置
 - 编程软件与环境的配置
-
-[阅读地址](https://ArchLinuxStudio.github.io/ArchLinuxTutorial/#/)

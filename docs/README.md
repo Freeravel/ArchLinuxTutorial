@@ -1,4 +1,4 @@
-# Arch Linux 简明实用教程 <!-- {docsify-ignore-all} -->
+# Arch Linux 安装使用教程 <!-- {docsify-ignore-all} -->
 
 本书提供群主多年生活与工作中使用 Linux 的一些经验，并教与需要的人。  
 与 Linux 密不可分的另一部分: [GNU](https://www.gnu.org/home.zh-cn.html)  
