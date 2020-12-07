@@ -4,6 +4,7 @@
 
 ```bash
 sudo pacman -S netease-cloud-music  #网易云音乐(ArchLinuxCN)
+yay -S qqmusic-bin #QQ音乐
 sudo pacman -S vlc #VLC 播放器
 sudo pacman -S mpv #MPV 播放器
 ```
