@@ -55,7 +55,7 @@ nobody       ALL=(root) NOPASSWD: /usr/sbin/rndc reload
 #### 3.安装 KDE Plasma 桌面环境
 
 ```bash
-pacman -S plasma-meta konsole dolphin bash-completion #安装plasma-meta元软件包 直接回车回车
+pacman -S plasma-meta konsole dolphin  #安装plasma-meta元软件包 直接回车回车
 ```
 
 #### 4.配置 greeter sddm
@@ -71,7 +71,7 @@ systemctl enable sddm
 #### 5.开启 32 位支持库与 ArchLinuxCN 支持库
 
 ```bash
-sudo vim /etc/pacman.conf
+vim /etc/pacman.conf
 ```
 
 去掉[multilib]一节中两行的注释，来开启 32 位库支持。  
@@ -93,7 +93,7 @@ Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 最后:wq 保存退出，刷新 pacman 数据库
 
 ```bash
-sudo pacman -Syyu
+pacman -Syyu
 ```
 
 重启电脑，即可看到欢迎界面，输入新用户的密码即可登录桌面
@@ -114,11 +114,22 @@ sudo pacman -S firefox chromium                                             #安
 
 ```
 
-接下来要安装 archlinuxcn 源的相关步骤，由于密钥环的问题，先按照[此链接](https://www.archlinuxcn.org/gnupg-2-1-and-the-pacman-keyring/)执行其中的命令
+接下来要安装 archlinuxcn 源的相关步骤，
 
 ```bash
 sudo pacman -S archlinuxcn-keyring                                          #cn源中的签名(archlinuxcn-keyring在archLinuxCn)
 sudo pacman -S yay                                                          #yay命令可以让用户安装AUR中的软件(yay在archLinuxCn)
+```
+
+若安装 archlinuxcn-keyring 时报错，是由于密钥环的问题，可先按照[此链接](https://www.archlinuxcn.org/gnupg-2-1-and-the-pacman-keyring/)执行其中的命令，再安装 archlinuxcn-keyring
+
+#### 6.5 检查家目录
+
+检查家目录下的各个常见目录是否已经创建，若没有则需手动创建。
+
+```bash
+cd /home/wallen
+mkdir Desktop Documents Downloads Music Pictures Videos
 ```
 
 #### 7.设置系统为中文
@@ -173,3 +184,9 @@ XMODIFIERS DEFAULT=\@im=fcitx5
 找到 _classic user interface_ 在主题里选择一个你喜欢的颜色 最后应用
 
 注销，重新登陆，就可以发现已经可以在各个软件中输入中文了
+
+#### 9.启动蓝牙(若有)
+
+```bash
+sudo systemctl enable --now bluetooth
+```

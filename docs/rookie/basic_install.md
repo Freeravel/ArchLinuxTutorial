@@ -139,7 +139,7 @@ pacstrap /mnt base base-devel linux linux-firmware #base-devel在某些AUR包的
 功能性软件
 
 ```bash
-pacstrap /mnt dhcpcd iwd vim sudo                #一个有线所需 一个无线所需 一个编辑器  一个提权工具 iwd也需要dhcpcd
+pacstrap /mnt dhcpcd iwd vim sudo bash-completion                #一个有线所需 一个无线所需 一个编辑器  一个提权工具 iwd也需要dhcpcd
 ```
 
 #### 11.生产 fstab
@@ -228,12 +228,11 @@ reboot              # 重启
 重启后，开启 dhcp 服务，即可连接网络
 
 ```bash
-systemctl enable dhcpcd #开机自动启动dhcp
 systemctl start dhcpcd  #立即启动dhcp
 ping www.baidu.com      #测试网络连接
 ```
 
-若为无线链接，则需要启动 iwd 才可以使用 iwctl 连接网络
+若为无线链接，则还需要启动 iwd 才可以使用 iwctl 连接网络
 
 ```bash
 systemctl start iwd #立即启动iwd
