@@ -111,7 +111,8 @@ sudo pacman -S ntfs-3g                                                      #识
 sudo pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei                   #安装几个开源中文字体
 sudo pacman -S adobe-source-han-serif-kr-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra  #安装谷歌开源字体及表情
 sudo pacman -S firefox chromium                                             #安装常用的火狐、谷歌浏览器
-
+sudo pacman -S ark                                                          #与dolphin同用右键解压
+sudo pacman -S gwenview                                                     #图片查看器
 ```
 
 接下来要安装 archlinuxcn 源的相关步骤，

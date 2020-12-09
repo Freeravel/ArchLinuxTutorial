@@ -35,11 +35,23 @@ proxychains systemsettings5 #通过代理打开系统设置
 
 #### 混成器
 
-_系统设置_ > _显示和监控_ > _混成器_ 选择平滑，OpenGL2.0。3.0 可能会黑屏。
+_系统设置_ > _显示和监控_ > _混成器_ 开启混成器
 
 #### 终端样式设置
 
 打开 konsole， _设置_ > _编辑当前方案_ > _外观_，选择`Red-Black` 应用确认即可。
+
+#### Kvantum Manager
+
+主题配合 Kvantum Manager 可以达到更好的效果。
+
+```bash
+sudo pacman -S kvantum-qt5
+```
+
+在[这里](https://www.pling.com/p/1325246/)下载 Layan 的 Kvantum 主题，并解压。打开 Kvantum Manager,选择主题并安装，接下来在`Change/Delete Theme`中选择 Layan,Use this theme 即可。
+
+最后在系统设置的颜色中选择 Kvantum,在应用程序风格中选择 kvantum 即可。
 
 ---
 
