@@ -20,7 +20,9 @@ sudo pacman -S minecraft #我的世界官服起动器(ArchLinuxCN)
 群主的 SteamID: 144736794 。由于游戏实在太多，个人肯定无法完成购买全部。期待有缘人赠送游戏，群主可以测试在 Linux 上的可运行性。
 
 [官方文档](https://wiki.archlinux.org/index.php/Steam)  
-一些字体和驱动已经在`新手上路`章节中配置完成。若有问题请自查。
+一些字体和驱动已经在`新手上路`章节中配置完成。若有安装问题请自查。
+
+此外，如果某些游戏启动或者游玩有问题，可以用终端使用`steam`命令启动 steam 客户端，并观察游戏崩溃时的终端报错。一般都是缺少某种依赖造成的，可以根据具体情况自行安装依赖。同时，archlinux 官方文档也提供了一个[查错页面](https://wiki.archlinux.org/index.php/Steam/Game-specific_troubleshooting)，记录了一些游戏崩溃(如骑马与砍杀等)的解决方式。
 
 ```bash
 sudo pacman -S steam

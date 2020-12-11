@@ -192,4 +192,5 @@ XMODIFIERS DEFAULT=\@im=fcitx5
 sudo systemctl enable --now bluetooth
 ```
 
-<!-- 字体 vscode 用 'Hack','WenQuanYi Micro Hei' 比较好。如果tg字体遇到锯齿问题可以尝试 125%缩放，最新版本 KDE 貌似会同时改动字体 DPI 到 120 -->
+<!-- 字体 vscode 用 'Hack','WenQuanYi Micro Hei' 比较好。
+如果tg字体遇到锯齿问题可以尝试 125%缩放，最新版本 KDE 貌似会同时改动字体 DPI 到 120。同时建议禁用'AR PL New Sung'和'WenQuanYi Zen Hei'这两个字体，因为tg貌似是自己有一套规则选择字体，会优先使用这两个字体，他们在tg里看着非常难受 -->
