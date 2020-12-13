@@ -13,9 +13,7 @@ shotcut 前置依赖 输出视频格式与素材拖拽倒入相关依赖
 声卡
 
 ```bash
-sudo pacman -S alsa-utils
 sudo pacman -S alsa-lib
-sudo pacman -S rtaudio rubberband portaudio swh-plugins
 ```
 
 <!--  不确定是否需要的：
