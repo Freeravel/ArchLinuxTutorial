@@ -16,7 +16,7 @@
 - 娱乐
 
   - [娱乐软件](/play/software)
-  - [安卓刷机]](/play/android)
+  - [安卓刷机](/play/android)
 
 - 办公
 
