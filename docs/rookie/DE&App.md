@@ -192,5 +192,8 @@ XMODIFIERS DEFAULT=\@im=fcitx5
 sudo systemctl enable --now bluetooth
 ```
 
-<!-- 字体 vscode 用 'Hack','WenQuanYi Micro Hei' 比较好。
-如果tg字体遇到锯齿问题可以尝试 125%缩放，最新版本 KDE 貌似会同时改动字体 DPI 到 120。同时建议禁用'AR PL New Sung'和'WenQuanYi Zen Hei'这两个字体，因为tg貌似是自己有一套规则选择字体，会优先使用这两个字体，他们在tg里看着非常难受 -->
+#### 10.字体设置
+
+个人的设置是英文使用 Hack，中文使用 WenQuanYi Micro Hei。如果 telegram 字体遇到锯齿问题可以尝试 125%缩放，最新版本 KDE 貌似会同时改动字体 DPI 到 120。同时建议禁用'AR PL New Sung'等，和'WenQuanYi Zen Hei'这两个字体，因为 tg 貌似是自己有一套规则选择字体，会优先使用这两个字体，他们在 tg 里看着非常难受。
+
+另外，telegram-desktop 这个包里 ttf-opensans 应该是强制依赖，不是可选依赖。没有安装的需要手动安装 ttf-opensans，否则英文字体会显示异常。
