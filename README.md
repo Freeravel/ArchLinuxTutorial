@@ -4,7 +4,7 @@
 <h1>Arch Linux 安装使用教程 </h1> 
 包含ArchLinux从安装到日常使用、娱乐、编程、媒体制作的各个方面，让Arch成为你的常用系统吧！ 
 </br>
-提供在线网页文档，承诺健在即更新
+提供在线网页文档，承诺健在即更新。
 </p>
 
 [![HitCount](http://hits.dwyl.com/ArchLinuxStudio/ArchLinuxTutorial.svg)](http://hits.dwyl.com/ArchLinuxStudio/ArchLinuxTutorial)
