@@ -9,7 +9,7 @@
 
 [![HitCount](http://hits.dwyl.com/ArchLinuxStudio/ArchLinuxTutorial.svg)](http://hits.dwyl.com/ArchLinuxStudio/ArchLinuxTutorial)
 
-## [阅读地址](https://ArchLinuxStudio.github.io/ArchLinuxTutorial/#/)
+## [阅读地址](https://ArchLinuxStudio.github.io/ArchLinuxTutorial/#/) 初步已经完成 逐渐完善中！
 
 可能是最实用，最简洁的 ArchLinux 中文教程。你可以通过本教程学会:
 
