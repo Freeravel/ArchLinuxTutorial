@@ -29,12 +29,12 @@ wine 版本应用均不建议安装。QQ 刚需可以尝试 [scrcpy](https://aur
 
 ```bash
 sudo pacman -S telegram-desktop #全球流行的即时通信软件 俗称电报
-yay -S deepin.com.qq.im.light　#最新基于deepin wine5的qq轻聊版 强烈推荐安装  需要字体Wenquanyi Micro Hei
 yay -S slack-desktop            #优秀的团队合作交流软件
+yay -S deepin.com.qq.im.light　 #基于deepin wine5的qq轻聊版 强烈推荐安装  需要字体Wenquanyi Micro Hei
 yay -S linuxqq                  #腾讯官方出版的辣鸡linuxqq
-# yay -S deepin-wine-qq           #基于deepin wine的qq
-yay -S deepin-wine-tim          #基于deepin wine的tim
-yay -S deepin-wine-wechat       #基于deepin-wine-wechat
+yay -S com.qq.im.deepin         #基于deepin wine5的qq
+yay -S com.qq.tim.spark         #基于deepin wine5的tim
+yay -S com.qq.weixin.deepin     #基于deepin wine5的wechat
 ```
 
 #### 网盘存储
