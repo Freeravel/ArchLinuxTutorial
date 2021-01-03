@@ -18,7 +18,9 @@ yay -S com.qq.weixin.deepin     #基于deepin wine5的wechat
 yay -S wechat-uos               #2020年末最新的uos版本原生微信的arch移植版本
 ```
 
-除此之外 对于另外一些手机通讯软件可以尝试使用[scrcpy](https://aur.archlinux.org/packages/scrcpy/)
+除此之外 对于另外一些手机通讯软件可以尝试使用[scrcpy](https://aur.archlinux.org/packages/scrcpy/)。
+
+> 如果 telegram 字体遇到锯齿问题可以尝试 125%缩放，最新版本 KDE 貌似会同时改动字体 DPI 到 120。同时建议禁用'AR PL New Sung'等，和'WenQuanYi Zen Hei'这两个字体，因为 tg 貌似是自己有一套规则选择字体，会优先使用这两个字体，他们在 tg 里看着非常难受。
 
 #### 办公套件
 

@@ -85,11 +85,16 @@ sudo pacman -S bbswitch #安装bbswitch切换方式
 
 可先用 `lspci -v` 确认你显卡的详细信息
 
-[驱动分类官方文档](https://wiki.archlinux.org/index.php/Xorg#AMD)  
+[驱动分类官方文档](https://wiki.archlinux.org/index.php/Xorg#AMD) 首先看这个表格，确定你的显卡架构是什么
 [新卡开源驱动](https://wiki.archlinux.org/index.php/AMDGPU)  
 [老卡开源驱动](https://wiki.archlinux.org/index.php/ATI)
 
-对于一些旧型号的 AMD 显卡(GCN2 及以前的型号)，闭源驱动 Catalyst 目前已经停止更新，其最后的版本只支持到 Xorg1.10,基本在 arch linux 上已经处于无法使用的地步（如我的 HD7670M，属于 TeraScale 2 架构），这种情况只能使用开源的 [ATI 驱动](<https://wiki.archlinux.org/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)。如果是笔记本，则只能使用 PRIME 的双显卡切换方式。
+对于一些旧型号的 AMD 显卡(GCN2 架构及以前的型号)，闭源驱动 Catalyst 目前已经停止更新，并不支持最新的 xorg-server,基本在 arch linux 上已经处于无法使用的地步（如我的 HD7670M，属于 TeraScale 2 架构），这种情况只能使用开源的 [ATI 驱动](<https://wiki.archlinux.org/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)。如果是笔记本，则只能使用 PRIME 的双显卡切换方式。
+sudo systemctl status radeon-profile-daemon.service
+安装可选依赖
+
+不要对左下角的 auto low high 进行更改 有 bug 会卡死
+
 此外，可以使用 `glmark2`，`DRI_PRIME=1 glmark2` 分别对核显和独显进行测试，选择分数更高的一个进行使用。原因是只能使用开源驱动的老型号独立显卡，性能可能还比不上核芯显卡。如果玩游戏的话，还是要根据实际表现来。
 
 可以在 steam 游戏的启动前缀中加入`DRI_PRIME=1 mangohud %command%`来使用独显。(关于 [mangohud](/play/software?id=性能监控))

@@ -7,6 +7,8 @@
 
 #### 1.确保系统为最新
 
+如果你在做完上一节的内容后，重启过，那需要先按照上节末尾处的方式重新连接网络。
+
 ```bash
 pacman -Syyu    #升级系统中全部包
 ```
@@ -101,7 +103,7 @@ pacman -Syyu
 #### 6.安装基础功能包
 
 进入桌面后，搜索 konsole。它是 KDE 桌面环境默认的命令行终端。  
-接下来我们安装一些基础功能包
+接下来我们进行网络连接，并安装一些基础功能包。
 
 ```bash
 sudo systemctl disable iwd                                                  #确保iwd处于关闭状态，其无线连接会与NetworkManager冲突
@@ -124,7 +126,7 @@ sudo pacman -S yay                                                          #yay
 
 若安装 archlinuxcn-keyring 时报错，是由于密钥环的问题，可先按照[此链接](https://www.archlinuxcn.org/gnupg-2-1-and-the-pacman-keyring/)执行其中的命令，再安装 archlinuxcn-keyring
 
-#### 6.5 检查家目录
+#### 7.检查家目录
 
 检查家目录下的各个常见目录是否已经创建，若没有则需手动创建。
 
@@ -133,7 +135,7 @@ cd /home/wallen
 mkdir Desktop Documents Downloads Music Pictures Videos
 ```
 
-#### 7.设置系统为中文
+#### 8.设置系统为中文
 
 打开 _System Settings_ > _Regional Settings_ > _Language_ 中选择中文加入，再拖拽到第一位，Apply 重新登陆即可。
 
@@ -154,7 +156,7 @@ echo 'LANG=zh_CN.UTF-8'  >> /etc/locale.conf
 
 ```-->
 
-#### 8.安装输入法
+#### 9.安装输入法
 
 [Fcitx5 官方文档](<https://wiki.archlinux.org/index.php/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)  
 中文及日文输入法均体验良好。
@@ -186,14 +188,12 @@ XMODIFIERS DEFAULT=\@im=fcitx5
 
 注销，重新登陆，就可以发现已经可以在各个软件中输入中文了
 
-#### 9.启动蓝牙(若有)
+#### 10.启动蓝牙(若有)
 
 ```bash
 sudo systemctl enable --now bluetooth
 ```
 
-#### 10.字体设置
+#### 11.字体设置
 
-个人的设置是英文使用 Hack，中文使用 WenQuanYi Micro Hei。如果 telegram 字体遇到锯齿问题可以尝试 125%缩放，最新版本 KDE 貌似会同时改动字体 DPI 到 120。同时建议禁用'AR PL New Sung'等，和'WenQuanYi Zen Hei'这两个字体，因为 tg 貌似是自己有一套规则选择字体，会优先使用这两个字体，他们在 tg 里看着非常难受。
-
-另外，telegram-desktop 这个包里 ttf-opensans 应该是强制依赖，不是可选依赖。没有安装的需要手动安装 ttf-opensans，否则英文字体会显示异常。
+个人的设置是英文使用 Hack，中文使用 WenQuanYi Micro Hei/Source Han Sans CN。可以在系统设置->字体中进行设置。
