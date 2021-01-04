@@ -22,9 +22,13 @@ sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel
 
 <!-- intel-compute-runtime? beignet? -->
 
-## AMD 核芯显卡<sup>TODO</sup>
+## AMD 核芯显卡
 
-此路线尚未尝试，因为群主没有相关设备。
+对于具有核芯显卡的 AMD 处理器，需要先确定核显架构(Architecture)是什么，再决定安装什么驱动。推荐在 techpowerup 网站进行查询，信息非常全面。在确定了显卡架构后，再根据架构对照[这个文档](https://wiki.archlinux.org/index.php/Xorg#AMD)决定安装什么驱动。**对于 GCN2.0 及以下架构的老显卡，均强烈建议安装开源 ATI 驱动，不要使用闭源的 Catalyst 驱动。因为此闭源驱动已经停止支持，并且需要降级 xorg 才能使用，非常麻烦且容易出错。**
+
+> 比如你的笔记本 cpu 是目前常见的 AMD R7 4800U，那么它的核显为 Vega 8。通过查询，可知其为 GCN 5.0 架构，那么对照 arch 官方文档，你可选择安装 AMDGPU 开源驱动。  
+> 再比如你的台式机 cpu 是目前常见的 锐龙 5 3400G，那么它的核显为 Vega 11。通过查询，可知其为 GCN 5.0 架构，那么对照 arch 官方文档，你可选择安装 AMDGPU 开源驱动。  
+> 在老一些的 apu A10-9700 处理器 ，它的核显为 Radeon R7。通过查询，可知其为 GCN 2.0 架构，那么对照 arch 官方文档，你可选择安装 ATI 开源驱动。
 
 ## 英伟达独立显卡
 
@@ -65,6 +69,8 @@ sudo pacman -S bbswitch #安装bbswitch切换方式
 
 安装完成后可以看到右下角已经出现图标，右键设置，在 Optimus 中的 switch method 选择 Bbswitch 即可。重启即可使用。
 
+[optimus-manager hybrid 模式官方文档](https://github.com/Askannz/optimus-manager/wiki/Nvidia-GPU-offloading-for-%22hybrid%22-mode)
+
 在你切换显卡模式`前`需要进行的配置：
 
 <!-- - I 卡 N 卡的 modeset 选项都去掉勾选
@@ -81,19 +87,17 @@ sudo pacman -S bbswitch #安装bbswitch切换方式
 
 对于 AMD 核显+N 卡独显的同学，optimus-manager 对于这套组合的支持已经开发完成合入 master，这个组合的同学已经可以使用了。但是开发者说他没有相关设备，无法测试。这个组合在目前可能仍存在一些未知问题。
 
-## AMD 显卡
+## AMD 独立显卡
 
 可先用 `lspci -v` 确认你显卡的详细信息
 
-[驱动分类官方文档](https://wiki.archlinux.org/index.php/Xorg#AMD) 首先看这个表格，确定你的显卡架构是什么
+[驱动分类官方文档](https://wiki.archlinux.org/index.php/Xorg#AMD) 首先看这个表格，确定你的显卡架构是什么  
 [新卡开源驱动](https://wiki.archlinux.org/index.php/AMDGPU)  
 [老卡开源驱动](https://wiki.archlinux.org/index.php/ATI)
 
-对于一些旧型号的 AMD 显卡(GCN2 架构及以前的型号)，闭源驱动 Catalyst 目前已经停止更新，并不支持最新的 xorg-server,基本在 arch linux 上已经处于无法使用的地步（如我的 HD7670M，属于 TeraScale 2 架构），这种情况只能使用开源的 [ATI 驱动](<https://wiki.archlinux.org/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)。如果是笔记本，则只能使用 PRIME 的双显卡切换方式。
-sudo systemctl status radeon-profile-daemon.service
-安装可选依赖
+对于一些旧型号的 AMD 显卡(GCN2 架构及以前的型号)，闭源驱动 Catalyst 目前已经停止更新，并不支持最新的 xorg-server,基本在 arch linux 上已经处于无法使用的地步（如我的 HD7670M，属于 TeraScale 2 架构），这种情况只能使用开源的 [ATI 驱动](<https://wiki.archlinux.org/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)。
 
-不要对左下角的 auto low high 进行更改 有 bug 会卡死
+如果是笔记本，则可以使用 [PRIME](https://wiki.archlinux.org/index.php/PRIME) 的双显卡切换方式。
 
 此外，可以使用 `glmark2`，`DRI_PRIME=1 glmark2` 分别对核显和独显进行测试，选择分数更高的一个进行使用。原因是只能使用开源驱动的老型号独立显卡，性能可能还比不上核芯显卡。如果玩游戏的话，还是要根据实际表现来。
 
@@ -142,6 +146,16 @@ Unigine 3D 引擎是一个更全面的基准测试工具。 截止目前有五�
 yay -S cpu-x
 yay -S gpu-viewer
 ```
+
+对于英伟达显卡，nvidia-settings 这个包即可全面的展示显卡相关信息。
+
+对于 AMD 显卡，稍微麻烦一些，通过 yay 安装 radeon-profile-git 这个包，同时安装其依赖 radeon-profile-daemon，最后启动这个进程。即可以图形化的方式查看 amd 显卡信息。[github 项目地址](https://github.com/marazmista/radeon-profile)
+
+```bash
+sudo systemctl status radeon-profile-daemon.service
+```
+
+注意，不要对左下角的 auto low high 进行更改 有 bug 会卡死。同时，显存占用在某些型号显卡上展示可能有误。
 
 ## 后续
 
