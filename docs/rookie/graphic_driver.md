@@ -28,7 +28,7 @@ sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel
 
 > 比如你的笔记本 cpu 是目前常见的 AMD R7 4800U，那么它的核显为 Vega 8。通过查询，可知其为 GCN 5.0 架构，那么对照 arch 官方文档，你可选择安装 AMDGPU 开源驱动。  
 > 再比如你的台式机 cpu 是目前常见的 锐龙 5 3400G，那么它的核显为 Vega 11。通过查询，可知其为 GCN 5.0 架构，那么对照 arch 官方文档，你可选择安装 AMDGPU 开源驱动。  
-> 在老一些的 apu A10-9700 处理器 ，它的核显为 Radeon R7。通过查询，可知其为 GCN 2.0 架构，那么对照 arch 官方文档，你可选择安装 ATI 开源驱动。
+> 再老一些的 apu A10-9700 处理器 ，它的核显为 Radeon R7。通过查询，可知其为 GCN 2.0 架构，那么对照 arch 官方文档，你可选择安装 ATI 开源驱动。
 
 ## 英伟达独立显卡
 
@@ -152,7 +152,7 @@ yay -S gpu-viewer
 对于 AMD 显卡，稍微麻烦一些，通过 yay 安装 radeon-profile-git 这个包，同时安装其依赖 radeon-profile-daemon，最后启动这个进程。即可以图形化的方式查看 amd 显卡信息。[github 项目地址](https://github.com/marazmista/radeon-profile)
 
 ```bash
-sudo systemctl status radeon-profile-daemon.service
+sudo systemctl enable --now radeon-profile-daemon.service
 ```
 
 注意，不要对左下角的 auto low high 进行更改 有 bug 会卡死。同时，显存占用在某些型号显卡上展示可能有误。
