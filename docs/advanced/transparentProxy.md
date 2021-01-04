@@ -91,7 +91,7 @@
   对于本机的程序，可以，可通过两种方式实现：
 
   - 通过`cgnoproxy`实现：如，在命令行中执行`cgnoproxy qbittorrent`，启动的 qbittorrent 程序就不会走透明代理。又如，在命令行中执行`cgnoproxy --pid 12345`，执行之后 pid 为 12345 的程序就不再走透明代理。这种方式可支持任何应用。
-  - 通过`/etc/cgproxy/config.json`实现：在配置里的`program_noproxy`中括号里加上相应的应用即可。这种方式只支持可执行文件，不支持各种脚本。注意修改`config.json`之后，需要重启 cgproxy 服务才能生效，执行`systemctl restart cgproxy.service`即可。
+  - 通过`/etc/cgproxy/config.json`实现：在配置里的`program_noproxy`中括号里加上相应的应用即可。这种方式只支持可执行文件，不支持各种脚本。如希望把 clash 与 kde connect 加入 noproxy 规则，则在把此字段补全成["v2ray", "qv2ray", "clash", "/usr/lib/kdeconnectd"]即可。注意修改`config.json`之后，需要重启 cgproxy 服务才能生效，执行`systemctl restart cgproxy.service`即可。
 
   对于当本机作为网关设备时为连接到本机网关的其他设备，不行，那些设备的所有流量（到本机的流量除外）都必然会走代理。
 
