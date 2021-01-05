@@ -47,6 +47,8 @@
 
    否则 udp 的透明代理可能会出问题。
 
+   > 如果每次更新了 v2ray 二进制文件，都需要重新执行此命令。
+
 6. 启动透明代理服务：`systemctl start cgproxy.service`或`systemctl enable --now cgproxy.service`。
 
 以上步骤完成后，透明代理应该能正常使用了。
