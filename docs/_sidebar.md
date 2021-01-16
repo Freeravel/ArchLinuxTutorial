@@ -13,14 +13,11 @@
   - [透明代理](/advanced/transparentProxy)
   - [系统美化](/advanced/beauty)
 
-- 娱乐
+- 娱乐与办公
 
-  - [娱乐软件](/play/software)
-  - [安卓刷机](/play/android)
-
-- 办公
-
-  - [办公软件](/office/software)
+  - [娱乐软件](/play&office/play)
+  - [办公软件](/play&office/office)
+  - [安卓刷机](/play&office/android)
 
 - 自媒体相关
 
