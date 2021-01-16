@@ -1,9 +1,9 @@
 {
   "name": "arch_linux_tutorial",
-  "author": { 
-    "name" : "wallena3", 
-    "email" : "wallena3@gmail.com", 
-    "url" : "https://github.com/wallena3"
+  "author": {
+    "name": "wallena3",
+    "email": "wallena3@gmail.com",
+    "url": "https://github.com/wallena3"
   },
   "version": "0.1.0",
   "private": false,
