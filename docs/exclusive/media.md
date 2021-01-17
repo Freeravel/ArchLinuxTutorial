@@ -18,8 +18,32 @@
   - [davinci-resolve](https://aur.archlinux.org/packages/davinci-resolve/)<sup>AUR</sup> 免费版
   - [davinci-resolve-studio](https://aur.archlinux.org/packages/davinci-resolve-studio/)<sup>AUR</sup> 收费完整版
 
+  还有一件事，达芬奇始终无法中文输入。。。有知道的同学麻烦告诉我一下。。。
+
+  Linux 下免费版支持的编解码格式有限
+  https://documents.blackmagicdesign.com/SupportNotes/DaVinci_Resolve_15_Supported_Codec_List.pdf
+
 - 绘图、制图与修饰
 
   - [krita](https://www.archlinux.org/packages/extra/x86_64/krita/)
   - [gimp](https://www.archlinux.org/packages/extra/x86_64/gimp/)
   - [inkscape](https://www.archlinux.org/packages/extra/x86_64/inkscape/)
+
+#### 声卡驱动
+
+[alsa 官方文档](https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture)  
+[PulseAudio 官方文档](https://wiki.archlinux.org/index.php/PulseAudio)  
+音频问题：需要安装一些包来解决声道独占的问题(davinci reslove 会出现声道抢占)
+
+shotcut 前置依赖 输出视频格式与素材拖拽倒入相关依赖
+声卡
+
+```bash
+sudo pacman -S alsa-lib
+```
+
+<!--  不确定是否需要的：
+sudo pacman -S pulseaudio-alsa  #作为一个pulseaudio与alsa的bridge，可能解决了没有声音的问题
+sudo pacman -S pulseaudio
+sudo pacman -S pulseeffects
+sudo pacman -S pulseaudio-jack -->

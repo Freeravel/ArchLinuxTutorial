@@ -19,15 +19,10 @@
   - [办公软件](/play&office/office)
   - [安卓刷机](/play&office/android)
 
-- 自媒体相关
+- 专有领域
 
-  - [自媒体软件](/media/software)
-  - [自媒体软件配置](/media/config)
-
-- 编程
-
-  - [编程软件](/code/software)
-  - [前端开发](/code/frontEnd)
+  - [直播与自媒体](/exclusive/media)
+  - [编程](/exclusive/code)
 
 - [贡献文档与代码](contribution.md)
 - [关于&致谢](about.md)
