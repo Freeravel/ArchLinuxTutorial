@@ -1,53 +1,51 @@
 # 显卡驱动
 
-<!-- [OpenCL 等官方文档](https://wiki.archlinux.org/index.php/GPGPU) -->
+结合[视频](https://www.bilibili.com/video/BV1vK4y187Ww/)食用更佳。
 
-结合[视频](https://www.bilibili.com/video/BV1vK4y187Ww/)食用更佳
+现在是 2021 年，显卡驱动的安装在 Arch Linux 上已经变得非常容易。本文区分核芯显卡和独立显卡两大类描述显卡驱动的安装。
 
-现在是 2021 年，显卡驱动的安装在 Arch Linux 上已经变得非常容易。本文简述几种情况下的显卡驱动安装。
+> 所有 AMD 显卡建议使用开源驱动，英伟达显卡建议使用闭源驱动。
 
-## 英特尔核芯显卡
+## 核芯显卡
+
+### 英特尔核芯显卡
 
 [官网文档](https://wiki.archlinux.org/index.php/Intel_graphics)
 
 英特尔核心显卡安装如下几个包即可。
 
-<!-- `xf86-video-intel`arch wiki 里写的很多发行版不建议安装它，而应使用 xorg 的 modesetting 驱动。-->
-
 ```bash
 sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel
 ```
 
-注意 只有 Intel HD 4000 及以上的核显才支持 vulkan
+> `xf86-video-intel`arch wiki 里写的很多发行版不建议安装它，而应使用 xorg 的 modesetting 驱动(也就是什么都不用装的意思)。个人测试下来目前确实是默认 modesetting 驱动较为稳定。
 
-<!-- intel-compute-runtime? beignet? -->
+注意，只有 Intel HD 4000 及以上的核显才支持 vulkan。
 
-## AMD 核芯显卡
+### AMD 核芯显卡
 
-对于具有核芯显卡的 AMD 处理器，需要先确定核显架构(Architecture)是什么，再决定安装什么驱动。推荐在 techpowerup 网站进行查询，信息非常全面。在确定了显卡架构后，再根据架构对照[这个文档](https://wiki.archlinux.org/index.php/Xorg#AMD)决定安装什么驱动。**对于 GCN2.0 及以下架构的老显卡，均强烈建议安装开源 ATI 驱动，不要使用闭源的 Catalyst 驱动。因为此闭源驱动已经停止支持，并且需要降级 xorg 才能使用，非常麻烦且容易出错。**
+对于具有核芯显卡的 AMD 处理器，需要先确定核显架构(Architecture)是什么，再决定安装什么驱动。推荐在 [techpowerup 网站](https://www.techpowerup.com/)进行查询，信息非常全面。在确定了显卡架构后，再根据架构对照[这个文档](https://wiki.archlinux.org/index.php/Xorg#AMD)决定安装什么驱动。**对于 GCN2.0 及以下架构的老显卡，均强烈建议安装开源 ATI 驱动，不要使用闭源的 Catalyst 驱动，实际上即使 GCN3.0 显卡的用户也不应该使用。因为此闭源驱动已经停止支持，并且需要降级 xorg 才能使用，非常麻烦且容易出错,基本在 arch linux 上已经处于无法使用的地步。GCN2.0 及以下架构的老显卡也不要使用开源的 AMPGPU 驱动，因为其仅处于实验性质，需要各种自定义内核编译选项与配置，非常麻烦，得不偿失。**对于新型号，即 GCN3 架构及更新型的核心显卡，直接安装开源驱动 AMDGPU 即可。
 
 > 比如你的笔记本 cpu 是目前常见的 AMD R7 4800U，那么它的核显为 Vega 8。通过查询，可知其为 GCN 5.0 架构，那么对照 arch 官方文档，你可选择安装 AMDGPU 开源驱动。  
 > 再比如你的台式机 cpu 是目前常见的 锐龙 5 3400G，那么它的核显为 Vega 11。通过查询，可知其为 GCN 5.0 架构，那么对照 arch 官方文档，你可选择安装 AMDGPU 开源驱动。  
 > 再老一些的 apu A10-9700 处理器 ，它的核显为 Radeon R7。通过查询，可知其为 GCN 2.0 架构，那么对照 arch 官方文档，你可选择安装 ATI 开源驱动。
 
-## 英伟达独立显卡
+## 独立显卡
 
-若为台式机，拥有独立的显卡，直接安装如下几个包即可。[台式机显卡官方文档](https://wiki.archlinux.org/index.php/NVIDIA)
+这部分会分为仅有独立显卡(无核显)与同时拥有独立显卡和核芯显卡两种情况进行讲解。
 
-<!-- ?也许不需要手动生成 使用闭源驱动的，在安装完后执行`nvidia-xconfig`自动生成配置文件即可。 -->
+### 英伟达独立显卡
+
+较新型号的独立显卡直接安装如下几个包即可。[官方文档](https://wiki.archlinux.org/index.php/NVIDIA)
 
 ```bash
 sudo pacman -S nvidia nvidia-settings lib32-nvidia-utils #必须安装
 ```
 
-```bash
-sudo pacman -S opencl-nvidia lib32-opencl-nvidia #可选
-```
-
 如果是 GeForce 630 以下到 GeForce 400 系列的老卡，安装 [nvidia-390xx-dkms](https://aur.archlinux.org/packages/nvidia-390xx-dkms/)<sup>AUR</sup>及其 32 位支持包。
 
 ```bash
-yay -S nvidia-390xx-dkms nvidia-390xx-utils lib32-nvidia-390xx-utils
+yay -S nvidia-390xx-dkms nvidia-settings lib32-nvidia-390xx-utils
 ```
 
 再老的显卡直接使用[开源驱动](https://wiki.archlinux.org/index.php/Nouveau)即可。
@@ -56,11 +54,11 @@ yay -S nvidia-390xx-dkms nvidia-390xx-utils lib32-nvidia-390xx-utils
 sudo pacman -S mesa lib32-mesa xf86-video-nouveau
 ```
 
-重启
-
 ---
 
-若为 Intel 核显+Nvidia 独显的笔记本，同样需要按照显卡新旧的分类安装如上台式机驱动的各个软件包，除此之外还需要安装 optimus-manager。可以在核心显卡和独立显卡间轻松切换。[笔记本双显卡官方文档](https://wiki.archlinux.org/index.php/NVIDIA_Optimus)
+若为同时拥有核芯显卡与英伟达独显的电脑，同样需要按照上述步骤先安装各个软件包。除此之外还需要安装 optimus-manager。可以在核芯显卡和独立显卡间轻松切换。optimus-manager 提供三种模式，分别为仅用独显，仅用核显，和 hybrid 动态切换模式。
+
+[英伟达双显卡切换官方文档](https://wiki.archlinux.org/index.php/NVIDIA_Optimus)
 
 ```bash
 yay -S optimus-manager optimus-manager-qt
@@ -71,37 +69,25 @@ sudo pacman -S bbswitch #安装bbswitch切换方式
 
 [optimus-manager hybrid 模式官方文档](https://github.com/Askannz/optimus-manager/wiki/Nvidia-GPU-offloading-for-%22hybrid%22-mode)
 
-在你切换显卡模式`前`需要进行的配置：
+下面详细说下动态切换模式。本质上其还是使用官方的 [PRIME](https://wiki.archlinux.org/index.php/PRIME#PRIME_render_offload)方法进行切换。需要设置三个环境变量，或者用 nvidia-prime 包提供的命令 prime-run，二者本质也是一样的，都是设置三个环境变量。
 
-<!-- - I 卡 N 卡的 modeset 选项都去掉勾选
-- 切换到英特尔核显模式前，需要选择 intel，不要选 modesettings 模式。否则会黑屏+混成不能开启 -->
+在你要使用动态模式前需要添加的三个环境变量，可以添加在你想执行的命令前，也可直接添加在/etc/environment 全局环境下。如果加在了全局环境中，在从 hybrid 模式切换到其他模式之前一定要去掉这三个环境变量，否则会黑屏。
 
-- hybird 模式中添加的三个环境变量，在切换到其他模式之前一定要去掉，否则会黑屏，切换不到 intel。
-<!-- - 如果你使用了混成器，调整至 OpenGl 2.0 - 平滑模式。否则切换时可能会卡 splash screen -->
+```bash
+__NV_PRIME_RENDER_OFFLOAD=1
+__GLX_VENDOR_LIBRARY_NAME="nvidia"
+__VK_LAYER_NV_optimus="NVIDIA_only"
+```
 
-显卡之间的切换，重新登陆后可能会在 splash screen 卡很久，大概有几分钟的样子，是正常的，耐心等待不要以为卡死了。
-
-经过测试，第一次的显卡切换基本不会有问题，但是反复横跳，不停的切换显卡的话，可能会切换失败， 但是不会黑屏。等进入系统后重启即可。
-
-<!-- 目前的 hybrid 模式尚不稳定，不建议使用。 -->
+显卡之间的切换，重新登陆后可能会在 splash screen 卡很久，大概有几分钟的样子，是正常的，耐心等待不要以为卡死了。经过测试，第一次的显卡切换基本不会有问题，但是反复横跳，不停的切换显卡的话，可能会切换失败， 但是不会黑屏。等进入系统后重启即可。
 
 对于 AMD 核显+N 卡独显的同学，optimus-manager 对于这套组合的支持已经开发完成合入 master，这个组合的同学已经可以使用了。但是开发者说他没有相关设备，无法测试。这个组合在目前可能仍存在一些未知问题。
 
-## AMD 独立显卡
+### AMD 独立显卡
 
-可先用 `lspci -v` 确认你显卡的详细信息
+AMD 独立显卡的驱动安装步骤实际上 AMD 核芯显卡是相同的，都需要先确定架构，然后选定正确的驱动安装即可。真正需要关注的是如何在核芯显卡和独立显卡间进行切换。可以使用 [PRIME](https://wiki.archlinux.org/index.php/PRIME) 的双显卡切换方式。
 
-[驱动分类官方文档](https://wiki.archlinux.org/index.php/Xorg#AMD) 首先看这个表格，确定你的显卡架构是什么  
-[新卡开源驱动](https://wiki.archlinux.org/index.php/AMDGPU)  
-[老卡开源驱动](https://wiki.archlinux.org/index.php/ATI)
-
-对于一些旧型号的 AMD 显卡(GCN2 架构及以前的型号)，闭源驱动 Catalyst 目前已经停止更新，并不支持最新的 xorg-server,基本在 arch linux 上已经处于无法使用的地步（如我的 HD7670M，属于 TeraScale 2 架构），这种情况只能使用开源的 [ATI 驱动](<https://wiki.archlinux.org/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)。
-
-如果是笔记本，则可以使用 [PRIME](https://wiki.archlinux.org/index.php/PRIME) 的双显卡切换方式。
-
-此外，可以使用 `glmark2`，`DRI_PRIME=1 glmark2` 分别对核显和独显进行测试，选择分数更高的一个进行使用。原因是只能使用开源驱动的老型号独立显卡，性能可能还比不上核芯显卡。如果玩游戏的话，还是要根据实际表现来。
-
-可以在 steam 游戏的启动前缀中加入`DRI_PRIME=1 mangohud %command%`来使用独显。(关于 [mangohud](/play/software?id=性能监控))
+此外，可以使用 `glmark2`，`DRI_PRIME=1 glmark2` 分别对核显和独显进行测试，选择分数更高的一个进行使用。可以在 steam 游戏的启动前缀中加入`DRI_PRIME=1 mangohud %command%`来使用独显。(关于 [mangohud](/play/software?id=性能监控))。
 
 笔记本上使用独立显卡运行 steam 游戏的另一个例子。
 
@@ -109,12 +95,6 @@ sudo pacman -S bbswitch #安装bbswitch切换方式
 DRI_PRIME=1 steam steam://rungameid/570 #运行dota2
 DRI_PRIME=1 steam steam://rungameid/730 #运行cs go
 ```
-
-只能用 ATI 驱动的老显卡应该都不支持 vulkan。
-
----
-
-对于新型号，即 GCN3 架构及更新，开源驱动可使用 AMDGPU 闭源驱动可使用 AMDGPU PRO。此路线尚未尝试，因为群主没有相关设备。
 
 ## 性能测试
 
