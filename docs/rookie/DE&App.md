@@ -137,24 +137,10 @@ mkdir Desktop Documents Downloads Music Pictures Videos
 
 #### 8.设置系统为中文
 
-打开 _System Settings_ > _Regional Settings_ > _Language_ 中选择中文加入，再拖拽到第一位，Apply 重新登陆即可。
+打开 _System Settings_ > _Regional Settings_ > _Language_ 中选择中文加入，再拖拽到第一位，Apply。
+打开 _System Settings_ > _Regional Settings_ > _Format_ 在 Region 中选择 `United States en_US`，Apply。
 
-<!-- optional KDE应该不需要了 在 kde 的区域设置里直接加上中文就行了
-https://wiki.archlinux.org/index.php/Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E5%9F%BA%E6%9C%AC%E4%B8%AD%E6%96%87%E6%94%AF%E6%8C%81
-如果想要系统换为中文，需要重新设置 locale
-
-编辑 /etc/locale.gen，去掉 zh_CN.UTF-8 的注释符号（#）。
-
-```bash
-locale-gen  #重新生成locale
-```
-
-编辑 /etc/locale.conf
-
-```bash
-echo 'LANG=zh_CN.UTF-8'  >> /etc/locale.conf
-
-```-->
+最后重新登陆即可。
 
 #### 9.安装输入法
 
