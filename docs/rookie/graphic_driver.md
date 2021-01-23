@@ -54,9 +54,11 @@ yay -S nvidia-390xx-dkms nvidia-settings lib32-nvidia-390xx-utils
 sudo pacman -S mesa lib32-mesa xf86-video-nouveau
 ```
 
+安装完对应的包后，执行`nvidia-xconfig`命令生成配置文件。注意，笔记本电脑不要执行此命令。
+
 ---
 
-若为同时拥有核芯显卡与英伟达独显的电脑，同样需要按照上述步骤先安装各个软件包。除此之外还需要安装 optimus-manager。可以在核芯显卡和独立显卡间轻松切换。optimus-manager 提供三种模式，分别为仅用独显，仅用核显，和 hybrid 动态切换模式。
+若为同时拥有核芯显卡与英伟达独显的笔记本电脑，同样需要按照上述步骤先安装各个软件包。除此之外还需要安装 optimus-manager。可以在核芯显卡和独立显卡间轻松切换。optimus-manager 提供三种模式，分别为仅用独显，仅用核显，和 hybrid 动态切换模式。
 
 [英伟达双显卡切换官方文档](https://wiki.archlinux.org/index.php/NVIDIA_Optimus)
 
