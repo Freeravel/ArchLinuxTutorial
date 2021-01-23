@@ -109,6 +109,15 @@ WantedBy=multi-user.target              #被谁依赖
 
 拓展链接: [官方文档](https://wiki.archlinux.org/index.php/Systemd#Basic_systemctl_usage)
 
+#### 系统信息检测
+
+磁盘检测：使用 [smartmontools](https://archlinux.org/packages/extra/x86_64/smartmontools/)
+
+```bash
+sudo smartctl -A /dev/sda   #硬盘
+sudo smartctl -d sat -A /dev/sdc #usb设备
+```
+
 #### 文件传输与系统备份
 
 有一点 Linux 经验的同学应该知道[scp](<https://wiki.archlinux.org/index.php/SCP_and_SFTP#Secure_copy_protocol_(SCP)>)这个命令。它常被用来在服务器间传输文件。但是目前它应该被更现代的工具[rsync](https://wiki.archlinux.org/index.php/Rsync)替代，其拥有即时压缩，差量传输等新特性。同时，`rsync`也被用来进行备份操作。

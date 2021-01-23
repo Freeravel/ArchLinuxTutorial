@@ -31,6 +31,10 @@
 Linux 下免费版支持的编解码格式有限
 https://documents.blackmagicdesign.com/SupportNotes/DaVinci_Resolve_15_Supported_Codec_List.pdf
 
+### MKV
+
+[mkvtoolnix](https://archlinux.org/packages/extra/x86_64/mkvtoolnix-gui/)
+
 ### 绘图、制图与修饰
 
 - [krita](https://www.archlinux.org/packages/extra/x86_64/krita/)

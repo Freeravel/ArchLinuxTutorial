@@ -241,6 +241,13 @@ grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB 
 grub-mkconfig -o /boot/grub/grub.cfg    #生成GRUB所需的配置文件
 ```
 
+> 在某些主板安装完成后，你会发现没有启动条目。这是因为某些主板的 UEFI 固件在显示 UEFI NVRAM 引导条目之前，需要在特定的位置存放可引导文件，不支持自定义存放 efi 文件(如微星 Z170-A Gaming PRO)。解决方案是在默认启动路径下安装 GRUB。你可以直接把已经生成好的 efi 文件移动到默认目录下，如下所示。[官方参考文档](https://wiki.archlinux.org/index.php/GRUB#Default/fallback_boot_path)
+
+```bash
+mkdir -p /boot/EFI/BOOT
+mv /boot/EFI/GRUB/grubx64.efi /boot/EFI/BOOT/BOOTX64.EFI
+```
+
 ### 20.完成安装
 
 ```bash
