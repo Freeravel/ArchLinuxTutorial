@@ -109,8 +109,8 @@ vim /etc/pacman.d/mirrorlist    #不会vim的同学，此处注意视频中的vi
 
 这里总共设置四个分区，可以满足绝大多数人的需求。
 
-- 根目录： `/` 50G
-- EFI： `/boot` 50M
+- 根目录： `/` 100G
+- EFI： `/boot` 300M
 - 交换分区: `swap` 2G
 - 用户主目录： `/home` 剩余全部 越大越好
 
