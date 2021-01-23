@@ -115,6 +115,7 @@ sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra  #安
 sudo pacman -S firefox chromium                                             #安装常用的火狐、谷歌浏览器
 sudo pacman -S ark                                                          #与dolphin同用右键解压
 sudo pacman -S gwenview                                                     #图片查看器
+sudo pacman -S steam                                                        #稍后看完显卡驱动再使用，安装顺便能解决音频问题
 ```
 
 接下来要安装 archlinuxcn 源的相关步骤，
