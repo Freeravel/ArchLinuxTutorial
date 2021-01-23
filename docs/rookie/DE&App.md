@@ -110,8 +110,8 @@ sudo systemctl disable iwd                                                  #确
 sudo systemctl stop iwd                                                     #同上
 sudo systemctl enable --now NetworkManager                                  #确保先启动NetworkManager，并进行网络连接 若iwd已经与NetworkManager冲突 则执行完上述步骤重启一下电脑即可。
 sudo pacman -S ntfs-3g                                                      #识别NTFS格式的硬盘
-sudo pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei                   #安装几个开源中文字体
-sudo pacman -S adobe-source-han-serif-kr-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra  #安装谷歌开源字体及表情
+sudo pacman -S adobe-source-han-serif-cn-fonts adobe-source-han-serif-kr-fonts wqy-zenhei                   #安装几个开源中文字体
+sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra  #安装谷歌开源字体及表情
 sudo pacman -S firefox chromium                                             #安装常用的火狐、谷歌浏览器
 sudo pacman -S ark                                                          #与dolphin同用右键解压
 sudo pacman -S gwenview                                                     #图片查看器
@@ -138,7 +138,6 @@ mkdir Desktop Documents Downloads Music Pictures Videos
 #### 8.设置系统为中文
 
 打开 _System Settings_ > _Regional Settings_ > _Language_ 中选择中文加入，再拖拽到第一位，Apply。
-打开 _System Settings_ > _Regional Settings_ > _Format_ 在 Region 中选择 `United States en_US`，Apply。
 
 最后重新登陆即可。
 

@@ -110,7 +110,7 @@ vim /etc/pacman.d/mirrorlist    #不会vim的同学，此处注意视频中的vi
 这里总共设置四个分区，可以满足绝大多数人的需求。
 
 - 根目录： `/` 50G
-- EFI： `/boot/EFI` 50M
+- EFI： `/boot` 50M
 - 交换分区: `swap` 2G
 - 用户主目录： `/home` 剩余全部 越大越好
 
@@ -133,7 +133,7 @@ cfdisk 分区的详细操作见视频中的教学。
 ```bash
 #磁盘若有数据会问 'proceed any way?' y回车 即可
 mkfs.ext4  /dev/sdax            #  /        /home 两个分区
-mkfs.vfat  /dev/sdax            #efi分区  挂载在/mnt/boot/EFI    300m
+mkfs.vfat  /dev/sdax            #efi分区  挂载在/mnt/boot    300m
 mkswap -f /dev/sdax             #格式化swap
 swapon /dev/sdax                #打开swap分区
 ```
@@ -148,8 +148,7 @@ mount /dev/sdax  /mnt
 mkdir /mnt/home
 mount /dev/sdax /mnt/home
 mkdir /mnt/boot
-mkdir /mnt/boot/EFI
-mount /dev/sdax /mnt/boot/EFI
+mount /dev/sdax /mnt/boot
 ```
 
 ### 11.安装系统
@@ -237,7 +236,7 @@ pacman -S amd-ucode     #AMD
 
 ```bash
 pacman -S grub efibootmgr   #grub是启动引导器，efibootmgr被 grub 脚本用来将启动项写入 NVRAM。
-grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB #取名为GRUB 并将grubx64.efi安装到之前的指定位置
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB #取名为GRUB 并将grubx64.efi安装到之前的指定位置
 grub-mkconfig -o /boot/grub/grub.cfg    #生成GRUB所需的配置文件
 ```
 
