@@ -54,8 +54,6 @@ yay -S nvidia-390xx-dkms nvidia-settings lib32-nvidia-390xx-utils
 sudo pacman -S mesa lib32-mesa xf86-video-nouveau
 ```
 
-安装完对应的包后，执行`nvidia-xconfig`命令生成配置文件。注意，笔记本电脑不要执行此命令。
-
 ---
 
 若为同时拥有核芯显卡与英伟达独显的笔记本电脑，同样需要按照上述步骤先安装各个软件包。除此之外还需要安装 optimus-manager。可以在核芯显卡和独立显卡间轻松切换。optimus-manager 提供三种模式，分别为仅用独显，仅用核显，和 hybrid 动态切换模式。
@@ -100,6 +98,8 @@ DRI_PRIME=1 steam steam://rungameid/730 #运行cs go
 
 ## 性能测试
 
+[官方文档](https://wiki.archlinux.org/index.php/benchmarking)。
+
 最传统和广为人知的方式为使用`glxgears`命令进行测试，其属于[mesa-demos](https://www.archlinux.org/packages/extra/x86_64/mesa-demos/)包。但其仅仅只能提供简单的测试场景及帧数显示，只测试了当前 OpenGL 功能的一小部分，功能明显不足。群主推荐如下两种工具。
 
 ### glmark2
@@ -120,14 +120,7 @@ Unigine 3D 引擎是一个更全面的基准测试工具。 截止目前有五�
 
 这些基准测试工具拥有实时的环境遮挡，来自不同来源的相互关联的灯光，HDR 效果图，逼真的水和具有大气光散射的动态天空。 用户还可以设置抗锯齿级别，纹理质量和滤波，各向异性和着色器质量。 除了能够以多个步骤测试硬件的“基准测试”按钮之外，您还可以自由地漫游，改变一天中的时间（改变世界的照明），并准确地确定“掰弯”硬件最多的条件。
 
-## 硬件检测
-
-如下两款是群主目前找到的，最佳的图形化查看硬件信息的软件。
-
-```bash
-yay -S cpu-x
-yay -S gpu-viewer
-```
+## 显卡信息查看
 
 对于英伟达显卡，nvidia-settings 这个包即可全面的展示显卡相关信息。
 

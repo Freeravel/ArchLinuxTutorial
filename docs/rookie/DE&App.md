@@ -1,13 +1,13 @@
 # 桌面环境与常用应用
 
-官方文档: [安装后的工作](<https://wiki.archlinux.org/index.php/General_recommendations_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)  
+官方文档: [安装后的工作](https://wiki.archlinux.org/index.php/General_recommendations)  
 本文只介绍最基本的，能使系统真正意义上可用所需的组件  
 相关视频链接： [2020ArchLinux 安装 KDE 桌面&Fcitx5 输入法配置](https://www.bilibili.com/video/BV1Vk4y117jc) 视频文字结合效果更好  
 注: 文档中带有 <sup>AUR</sup> 角标的软件代表是用户自行打包的第三方软件[AUR](https://aur.archlinux.org/)，不在 Arch 官方支持范围内，可能会出现各种问题。如果不是实在没有官方支持的同类软件，则不建议使用。
 
 #### 1.确保系统为最新
 
-如果你在做完上一节的内容后，重启过，那需要先按照上节末尾处的方式重新连接网络。
+如果你在做完上一节的内容后，重启并放置过一段时间，那需要先按照上节末尾处的方式重新连接网络，然后更新系统。
 
 ```bash
 pacman -Syyu    #升级系统中全部包
@@ -81,13 +81,13 @@ vim /etc/pacman.conf
 
 ```bash
 [archlinuxcn]
-Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 ```
 
-上面服务器的地址是清华的，也可用下面中科大的
+上面服务器的地址是中科大的，也可用下面清华的。
 
 ```bash
-Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 ```
 
 [此处](https://github.com/archlinuxcn/mirrorlist-repo#arch-linux-cn-community-repo-mirrors-list)为 archlinuxcn 全部仓库地址 可以根据自己实际情况另行选择。
@@ -106,11 +106,11 @@ pacman -Syyu
 接下来我们进行网络连接，并安装一些基础功能包。
 
 ```bash
-sudo systemctl disable iwd                                                  #确保iwd处于关闭状态，其无线连接会与NetworkManager冲突
-sudo systemctl stop iwd                                                     #同上
+sudo systemctl disable iwd                                                  #确保iwd开机处于关闭状态，其无线连接会与NetworkManager冲突
+sudo systemctl stop iwd                                                     #同上，立即关闭iwd
 sudo systemctl enable --now NetworkManager                                  #确保先启动NetworkManager，并进行网络连接 若iwd已经与NetworkManager冲突 则执行完上述步骤重启一下电脑即可。
 sudo pacman -S ntfs-3g                                                      #识别NTFS格式的硬盘
-sudo pacman -S adobe-source-han-serif-cn-fonts adobe-source-han-serif-kr-fonts wqy-zenhei                   #安装几个开源中文字体
+sudo pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei                   #安装几个开源中文字体
 sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra  #安装谷歌开源字体及表情
 sudo pacman -S firefox chromium                                             #安装常用的火狐、谷歌浏览器
 sudo pacman -S ark                                                          #与dolphin同用右键解压
@@ -182,4 +182,4 @@ sudo systemctl enable --now bluetooth
 
 #### 11.字体设置
 
-个人的设置是英文使用 Hack，中文使用 WenQuanYi Micro Hei/Source Han Sans CN。可以在系统设置->字体中进行设置。
+个人的设置是英文使用 Hack，中文使用 WenQuanYi Micro Hei/Source Han Sans CN/Noto Sans。可以在系统设置->字体中进行设置。

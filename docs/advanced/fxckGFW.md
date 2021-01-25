@@ -5,15 +5,14 @@
 目前 Linux 上最好用的是 [Qv2ray](https://qv2ray.net/) 这个软件。它是跨平台的，你在 Windows 与 macOS 均可使用。安装如下几个包
 
 ```bash
-sudo pacman -S qv2ray v2ray shadowsocks-v2ray-plugin
+sudo pacman -S qv2ray v2ray
 ```
 
-你需要按照官方文档导入已有的链接，并且在`首选项` `入站设置`中填好本地的 SOCKS 设置与 HTTP 设置。其余细节请详细阅读 Qv2ray 的文档。
-另外，在`内核设置中`,V2Ray 核心可执行文件路径为`/usr/bin/v2ray`，V2Ray 资源目录为`/usr/share/v2ray`。
+你需要按照官方文档导入已有的链接，其余细节请详细阅读 Qv2ray 的文档。
 
-如果你不使用原生 shadowsocks 而是其余方式，请在 AUR 搜索关键字 qv2ray，在[结果](https://aur.archlinux.org/packages/?O=0&K=qv2ray)中选取你所需要的对应插件进行安装。
+如果你不使用原生 shadowsocks/v2ray 而是其余方式，请在 AUR 搜索关键字 qv2ray，在[结果](https://aur.archlinux.org/packages/?O=0&K=qv2ray)中选取你所需要的对应插件进行安装。
 
-Qv2ray 设置完毕后，需要进行系统级的代理设置。按`windows`键呼出菜单栏，找到`设置`=>`系统设置`。在系统代理中,设置为使用手动配置的代理服务器，填入在 Qv2ray 中对应的代理地址即可。注意，`系统设置`中的代理配置在 KDE 桌面环境中并不是所有应用都会遵守。没有遵循系统设置代理的应用还需要单独进行代理配置。下面说明几种常用的软件中配置代理的方式。
+Qv2ray 会自行帮你设置`系统代理`。注意，`系统设置`中的代理配置在 KDE 桌面环境中并不是所有应用都会遵守。没有遵循系统设置代理的应用还需要单独进行代理配置。下面说明几种常用的软件中配置代理的方式。
 
 - Firefox 浏览器  
   火狐浏览器自身的设置选项中存在代理配置，进行配置即可。
@@ -48,6 +47,6 @@ export ALL_PROXY=socks5://127.0.0.1:1080
   proxychains yay -S crossover
   ```
 
-  拓展链接: [windows 版本的自述文档](https://github.com/shunf4/proxychains-windows/blob/master/README_zh-Hans.md)
+  拓展链接: [windows 版本 proxychains 的自述文档](https://github.com/shunf4/proxychains-windows/blob/master/README_zh-Hans.md)
 
 备用手段：建议自建，或持有多个机场。或者自备一下[lantern](https://aur.archlinux.org/packages/lantern-bin/)或者[老王 vpn](https://play.google.com/store/apps/details?id=com.findtheway&hl=zh)这类软件以防万一。还有一些电报群组有共享的链接资源，如[这个](https://t.me/wtovpn)。

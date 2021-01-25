@@ -7,6 +7,7 @@
   - [atom](https://www.archlinux.org/packages/community/x86_64/atom/)
   - [code](https://www.archlinux.org/packages/community/x86_64/code/)
     [官方 wiki](https://wiki.archlinux.org/index.php/Visual_Studio_Code)。一个普遍问题是删文件 UI 会卡住很久，原因是 electron 在 linux 下默认使用 gio 删除，但是 KDE 用户一般都不装这个。解决办法是把 `ELECTRON_TRASH=kioclient5` 环境变量加在~/.pam_environment 里。
+    package.json 等需要下载 schema 的文件的开始有一道黄线:settings 里设置 http 代理，即可解决。
 
 - IDE
 

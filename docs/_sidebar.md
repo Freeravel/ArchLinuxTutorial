@@ -15,8 +15,8 @@
 
 - 娱乐与办公
 
-  - [娱乐软件](/play&office/play)
-  - [办公软件](/play&office/office)
+  - [办公日常](/play&office/office)
+  - [游戏娱乐](/play&office/play)
   - [安卓刷机](/play&office/android)
 
 - 专有领域

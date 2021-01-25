@@ -66,13 +66,7 @@ exit                            #成功后exit退出
 ```
 
 有线连接:  
-正常来说，只要插上一个已经联网的路由器分出的网线(DHCP)，直接就能联网。若不行可以尝试输入如下命令再看看
-
-```bash
-systemctl start dhcpcd
-```
-
-> 如果还是无法连接，使用 `ip link set up xxx` 命令确认你已经激活了对应的网卡。
+正常来说，只要插上一个已经联网的路由器分出的网线(DHCP)，直接就能联网。
 
 ### 4.测试网络
 
@@ -80,11 +74,11 @@ systemctl start dhcpcd
 ping www.baidu.com
 ```
 
-若能看到数据返回，即说明已经联网，ctrl+c 终止退出当前命令。
+若能看到数据返回，即说明已经联网，ctrl+c 终止退出当前命令。如果还是无法连接，使用 `ip link set up xxx` 命令确认你已经激活了对应的网卡。
 
 ### 5.禁用自作聪明的 reflector
 
-reflector 服务会自己更新 mirrorlist，然而其结果并不准确，并且会删除掉部分源信息，包括中国，这里联网后的第一件事就是将其禁用。
+2020 年新版 archliveiso 加入了 reflector 服务，它会自己更新 mirrorlist，然而其结果并不准确，并且会删除掉部分源信息，包括中国的源，这里联网后的第一件事就是将其禁用。
 
 ```bash
 systemctl stop reflector.service
@@ -121,7 +115,7 @@ parted /dev/sdx             #执行parted，进行磁盘类型变更
 New disk label type? gpt    #输入gpt 将磁盘类型转换为gpt 如磁盘有数据会警告，输入yes即可
 quit                        #最后quit退出parted命令行交互
 cfdisk  /dev/sdx            #来执行分区操作,分配各个分区大小，类型
-fdisk -l                    #复查
+fdisk -l                    #复查磁盘情况
 ```
 
 cfdisk 分区的详细操作见视频中的教学。
@@ -132,8 +126,8 @@ cfdisk 分区的详细操作见视频中的教学。
 
 ```bash
 #磁盘若有数据会问 'proceed any way?' y回车 即可
-mkfs.ext4  /dev/sdax            #  /        /home 两个分区
-mkfs.vfat  /dev/sdax            #efi分区  挂载在/mnt/boot    300m
+mkfs.ext4  /dev/sdax            #格式化根目录和home目录的两个分区
+mkfs.vfat  /dev/sdax            #格式化efi分区
 mkswap -f /dev/sdax             #格式化swap
 swapon /dev/sdax                #打开swap分区
 ```
@@ -156,13 +150,13 @@ mount /dev/sdax /mnt/boot
 基础包
 
 ```bash
-pacstrap /mnt base base-devel linux linux-firmware #base-devel在AUR包的安装是必须的
+pacstrap /mnt base base-devel linux linux-firmware  #base-devel在AUR包的安装是必须的
 ```
 
 功能性软件
 
 ```bash
-pacstrap /mnt dhcpcd iwd vim sudo bash-completion                #一个有线所需 一个无线所需 一个编辑器  一个提权工具 一个补全工具 iwd也需要dhcpcd
+pacstrap /mnt dhcpcd iwd vim sudo bash-completion   #一个有线所需 一个无线所需 一个编辑器  一个提权工具 一个补全工具 iwd也需要dhcpcd
 ```
 
 ### 12.生产 fstab
@@ -240,7 +234,7 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB #取
 grub-mkconfig -o /boot/grub/grub.cfg    #生成GRUB所需的配置文件
 ```
 
-> 在某些主板安装完成后，你会发现没有启动条目。这是因为某些主板的 UEFI 固件在显示 UEFI NVRAM 引导条目之前，需要在特定的位置存放可引导文件，不支持自定义存放 efi 文件(如微星 Z170-A Gaming PRO)。解决方案是在默认启动路径下安装 GRUB。你可以直接把已经生成好的 efi 文件移动到默认目录下，如下所示。[官方参考文档](https://wiki.archlinux.org/index.php/GRUB#Default/fallback_boot_path)
+> 在某些主板安装完成后，你会发现没有启动条目。这是因为某些主板的 UEFI 固件在显示 UEFI NVRAM 引导条目之前，需要在特定的位置存放可引导文件，不支持自定义存放 efi 文件(如微星 Z170-A Gaming PRO)。解决方案是在默认启动路径下安装 GRUB。重新插入安装优盘，挂载目录，chroot 到/mnt，然后你可以直接把已经生成好的 efi 文件移动到默认目录下，如下代码所示。[官方参考文档](https://wiki.archlinux.org/index.php/GRUB#Default/fallback_boot_path)
 
 ```bash
 mkdir -p /boot/EFI/BOOT
@@ -255,7 +249,7 @@ umount -R  /mnt     # 卸载新分区
 reboot              # 重启
 ```
 
-重启后，开启 dhcp 服务，即可连接网络
+注意，重启前要先拔掉优盘，否则你重启后还是进安装程序而不是安装好的系统。重启后，开启 dhcp 服务，即可连接网络
 
 ```bash
 systemctl start dhcpcd  #立即启动dhcp
@@ -268,7 +262,5 @@ ping www.baidu.com      #测试网络连接
 systemctl start iwd #立即启动iwd
 iwctl               #和之前的方式一样，连接无线网络
 ```
-
----
 
 到此为止，一个基础的，无 UI 界面的 Arch Linux 已经安装完成了。紧接着下一节，我们来安装图形界面。

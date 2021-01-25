@@ -1,12 +1,12 @@
 # Linux 日常操作与基础知识
 
-阅读完`新手上路`章节，你的系统已完全可以使用，KDE 桌面环境提供了强大的 [GUI](https://zh.wikipedia.org/wiki/%E5%9B%BE%E5%BD%A2%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2) 以供普通用户使用。按`windows`键呼出菜单栏，找到`设置`=>`系统设置`，可以找到绝大多数系统设置项。
+阅读完`新手上路`章节，你的系统已完全可以使用，KDE 桌面环境提供了强大的 [GUI](https://zh.wikipedia.org/wiki/%E5%9B%BE%E5%BD%A2%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2) 以供普通用户使用。按`windows`键(Linux 下也常被叫做 Meta 键)呼出菜单栏，找到`设置`=>`系统设置`，可以找到绝大多数系统设置项。
 
 但如果想要游刃有余的掌控你的系统，你还需要阅读掌握本文的内容。  
-如果你想进一步详细了解本文各部分的详细知识，可以点击群主在各个小结给出的拓展链接进行学习。  
+如果你想进一步详细了解本文各部分的详细知识，可以点击群主在各个小节给出的拓展链接进行学习。  
 如果你不想详细了解，本章介绍的知识也足够你来应付日常的使用。
 
-#### 必须掌握的 Linux 知识
+## 必须掌握的 Linux 知识
 
 此处只介绍最基本的，最必要的 Linux 知识点与小技巧 。
 
@@ -15,7 +15,7 @@
 3. 简单来说，Linux 中存在两类用户。第一类用户即为 root 用户，也成为超级用户，它拥有系统中最高的权限。第二类用户就是除了 root 用户的普通用户，他们可以拥有不同等级的权限。任何时候都应该避免始终用 root 用户操作你的系统。
 4. 理论上来说，任何图形化界面中的操作都可以用对应的命令行命令完成。如果你打开某个程序报错，不妨试试找到它的对应启动命令，在终端中执行此命令，并观察它运行时的错误日志输出，查阅相关资料，解决问题。
 
-#### 终端操作基础
+## 终端操作基础
 
 如果想要熟练掌握 Linux，就必须掌握终端的常见命令与使用方式。
 
@@ -30,9 +30,9 @@ mv a.cpp b.cpp      #移动(重命名)命令 将a.cpp更名为b.cpp
 mkdir new_folder    #新建文件夹new_folder
 ```
 
-拓展链接：推荐阅读书籍`《Linux命令行与Shell脚本编程大全(第3版)》`。 群主也提供了与此书配套的教学视频 [Linux 命令行与 Shell 教程](https://bilibili.com)<sup>TODO</sup>。
+拓展链接：推荐阅读在线书籍 [Linux 命令行与 Shell 脚本教程](https://archlinuxstudio.github.io/ShellTutorial/#/)。 群主也提供了与此书配套的教学视频 [Linux 命令行与 Shell 教程](https://bilibili.com)<sup>TODO</sup>。
 
-#### Pacman 包管理
+## Pacman 包管理
 
 在 Arch Linux 上安装的软件都通过 Pacman 来进行管理。你可以把它理解为一个软件管理器，可以进行软件的安装，删除，查询等。
 
@@ -47,9 +47,15 @@ sudo pacman -Fy                 #更新命令查询文件列表数据库
 sudo pacman -F xxx              #当不知道某个命令属于哪个包时，用来查询某个xxx命令属于哪个包
 ```
 
+一个好用的图形化包管理软件
+
+```bash
+yay -S octopi #包管理器前端界面
+```
+
 拓展链接: [官方文档](https://wiki.archlinux.org/index.php/Pacman)
 
-#### 终端编辑器的使用
+## 终端编辑器的使用
 
 你需要掌握一个能在终端中进行文本编辑的软件，这里介绍 vim。
 
@@ -74,7 +80,7 @@ ctrl+g  #转到文本最后一行
 
 拓展链接：需要完整教程的同学可以在终端中输入命令`vimtutor`来学习完整的 vim 教程。
 
-#### 系统服务的操作与介绍
+## 系统服务的操作与介绍
 
 Linux 系统中运行着各种服务，你需要掌握查询，变更服务状态的方式。同时对创建服务最好也有大致的了解。这里讲述命令`systemctl`的用法。以 dhcpcd 为例
 
@@ -90,35 +96,35 @@ systemctl disable dhcpcd        #取消开机自动启动
 systemctl daemon-reload dhcpcd  #重新载入systemd配置 扫描新增或变更的服务单元 不会重新加载变更的配置 加载变更的配置用reload
 ```
 
-以下贴一个服务的配置文件来解释一下各部分的含义
-[样例文档](https://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples)
+拓展链接: [systemctl 官方文档](https://wiki.archlinux.org/index.php/Systemd#Basic_systemctl_usage) [systemd 配置文件样例解释](https://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples)
+
+## 系统硬件信息检测
+
+磁盘检测：  
+使用 [smartmontools](https://archlinux.org/packages/extra/x86_64/smartmontools/)
 
 ```bash
-[Unit]
-Description=Shadowsocks Client Service  #服务单元描述
-After=network-online.target             #标记服务启动
-Wants=network-online.target             #标记服务需要
-[Service]
-Type=simple                             #服务类型
-ExecStart=/usr/bin/ss-local             #服务具体执行的操作
-User=root                               #执行用户
-After=network-online.target
-[Install]
-WantedBy=multi-user.target              #被谁依赖
-```
-
-拓展链接: [官方文档](https://wiki.archlinux.org/index.php/Systemd#Basic_systemctl_usage)
-
-#### 系统信息检测
-
-磁盘检测：使用 [smartmontools](https://archlinux.org/packages/extra/x86_64/smartmontools/)
-
-```bash
+sudo pacman -S smartmontools
 sudo smartctl -A /dev/sda   #硬盘
 sudo smartctl -d sat -A /dev/sdc #usb设备
 ```
 
-#### 文件传输与系统备份
+cpu 与显卡：  
+如下两款是群主目前找到的，最佳的图形化查看 cpu 与显卡信息的软件。
+
+```bash
+yay -S cpu-x
+yay -S gpu-viewer
+```
+
+系统完整信息:  
+使用 dmidecode 可以完整查看系统绝大部分硬件信息，包括较难得到的内存频率等。
+
+```bash
+sudo pacman -S dmidecode
+```
+
+## 文件传输与系统备份
 
 有一点 Linux 经验的同学应该知道[scp](<https://wiki.archlinux.org/index.php/SCP_and_SFTP#Secure_copy_protocol_(SCP)>)这个命令。它常被用来在服务器间传输文件。但是目前它应该被更现代的工具[rsync](https://wiki.archlinux.org/index.php/Rsync)替代，其拥有即时压缩，差量传输等新特性。同时，`rsync`也被用来进行备份操作。
 
@@ -129,31 +135,11 @@ rsync -a bar/ me@server:/home/me/   #-a 标记实现目录复制等 比scp -r �
 
 关于全盘备份，请阅读[官方文档](https://wiki.archlinux.org/index.php/Rsync#Full_system_backup)
 
-#### 杂项
+## 文件解压缩
 
-解压 windows 下的压缩包，可能会乱码。使用 unar
+除了众所周知的 tar 命令，我们在之前安装过的 ark 包可以配合 dolphin 文件管理器轻松的右键直接解压缩。需要注意的是解压 windows 下的压缩包，可能会乱码。使用 unar 可以避免这个问题。
 
 ```bash
 sudo pacman -S unarchiver
 unar xxx.zip
 ```
-
-<!-- 提升 CPU 性能
-
-```bash
-如果您的 CPU 频率调节器设为了 Power Save 模式，那您可以会在玩 Total War: THREE KINGDOMS 时遇到性能问题。 我们建议您在游戏时将 CPU 频率调节器设为 High Performance 模式。
-
-我们开发了一款工具 GameMode，它可以自动开启该过程。 GameMode 安装后，Total War: THREE KINGDOMS 将自动设置 CPU 的变频控制定速模式。 要了解更多以下是，请前往 GitHub 查看关于 GameMode 的条目。
-
-如果您希望手动设置 CPU 变频控制定速模式，请参考下列说明。
-
-    在桌面上打开 Terminal 应用程序。
-    在 Terminal 中，输入下列代码：echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor。然后按下回车键。
-    系统将提示您输入密码。 输入密码，然后按下回车键。
-    现在您的电源应该处于 High Performance 模式了。 关闭 Terminal 应用程序。
-
-如果您希望将设置改回 Power Save 模式，那么只需要按照上述步骤，并输入下列代码即可：echo powersave | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor。
-``` -->
-
-<!-- 这个先不放在这里 会有网络问题，之后放在进阶
-yay -S octopi                                                               #包管理器前端界面 -->

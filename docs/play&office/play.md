@@ -1,21 +1,26 @@
-# 娱乐软件 <!-- {docsify-ignore-all} -->
+# 娱乐软件
 
-#### 音视频播放器
+在游戏之前，先确保 cpu 处于性能模式。在终端中，输入下列代码：
 
 ```bash
-sudo pacman -S netease-cloud-music  #网易云音乐(ArchLinuxCN)
-yay -S qqmusic-bin #QQ音乐
-sudo pacman -S vlc #VLC 播放器
-sudo pacman -S mpv #MPV 播放器
+echo performance | sudo tee /sys/devices/system/cpu/cpu\*/cpufreq/scaling_governor
 ```
 
-#### 我的世界
+现在电源应该处于 High Performance 模式了。
+
+如果希望将设置改回 Power Save 模式，那么只需要输入下列代码即可
+
+```bash
+echo powersave | sudo tee /sys/devices/system/cpu/cpu\*/cpufreq/scaling_governor。
+```
+
+## 我的世界
 
 ```bash
 sudo pacman -S minecraft #我的世界官服起动器(ArchLinuxCN)
 ```
 
-### Steam
+## Steam
 
 群主的 SteamID: 144736794 。由于游戏实在太多，个人肯定无法完成购买全部。期待有缘人赠送游戏，群主可以测试在 Linux 上的可运行性。
 
@@ -35,7 +40,7 @@ sudo pacman -S steam
 
 游戏锁区解决办法：让你的 steam 处于一个国家的代理下，如日本。先随便加一个游戏到购物车，在购物车右上角国家地区改成日本，再去访问已锁区的游戏，就可以浏览购买了。
 
-#### 原生游戏组
+### 原生游戏组
 
 - [武装突袭 3](https://store.steampowered.com/app/107410/Arma_3/) 大名鼎鼎的吃鸡游戏的爸爸。
 - [CS GO](https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/) 不用介绍了吧？
@@ -58,7 +63,7 @@ sudo pacman -S steam
 - [监狱建造师](https://store.steampowered.com/app/233450/Prison_Architect/) 好玩的坐牢游戏。
 - [Surviving Mars](https://store.steampowered.com/app/464920/Surviving_Mars/) 好玩的火星生存游戏。
 
-#### Steam Play 组
+### Steam Play 组
 
 如无另行说明，则代表默认使用最新的 Pronton 版本即可。
 
@@ -85,7 +90,7 @@ sudo pacman -S steam
 - [侠盗猎车手圣安地列斯](https://store.steampowered.com/app/12120/Grand_Theft_Auto_San_Andreas/)
 - [Seek girl 系列黄油](https://store.steampowered.com/app/998930/Seek_Girl/) 好玩的 🐍 击游戏。玩之前记得先去装社保补丁
 
-### Lutris
+## Lutris
 
 Lutris 基于 wine，提供了大量游戏在 Linux 下的解决方案。其为你已经配置好了 wine 相关的一切配置，你只需要安装游玩即可。一般极少需要额外配置。进入[官网](https://lutris.net/)在右上角搜索你想玩的游戏。点击进入游戏页面后，可以看到在相应版本右侧有一个 install 按钮，点击后即可拉起 Lurtis 进行安装。下面针对一些群主玩的游戏进行一些额外说明。
 
@@ -97,6 +102,6 @@ sudo pacman -S giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnu
 
 - [WargamingGameCenter(坦克世界等)](https://lutris.net/games/wargaming-game-center/) 默认情况无法更新游戏。在需要更新游戏的时候，将 wine 版本设置为系统的 wine staging 版本。在更新完毕后，需要启动游戏时，将 wine 版本设置为 lutris 的版本，如 lutris 5.7-10 x86_64。如遇到无法启动闪退的情况，可以尝试在命令行启动 Lutris,再启动坦克世界即可，玄学，不知道原因。如果你玩亚服，则需要使用[透明代理](/advanced/transparentProxy)对 UDP 流量进行加速。
 
-### 性能监控
+## 性能监控
 
 和微星的 Afterburner 软件中性能显示的部分类似，linux 上也有一款同类软件可以监控游戏中的电脑性能，名为[MangoHud](https://github.com/flightlessmango/MangoHud)。使用方式可参见此项目的 readme。
