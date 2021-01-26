@@ -26,6 +26,7 @@
 
   - [robo3t](https://aur.archlinux.org/packages/robo3t-bin/)<sup>AUR</sup>
   - [redis-desktop-manager](https://aur.archlinux.org/packages/redis-desktop-manager/)<sup>AUR</sup>
+  - [rdm-bin](https://aur.archlinux.org/packages/rdm-bin/)<sup>AUR</sup> 如果上面的编译有问题，可用这个 bin 版本
 
 ---
 

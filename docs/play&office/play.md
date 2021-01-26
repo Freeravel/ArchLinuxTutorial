@@ -67,25 +67,25 @@ sudo pacman -S steam
 
 如无另行说明，则代表默认使用最新的 Pronton 版本即可。
 
-- [赛博朋克 2077]](https://store.steampowered.com/app/1091500/_2077/) 在最新的 GEProton 下可正常运行。时不时会闪退，需要等后续优化。
-- [ATRI -My Dear Moments-](https://store.steampowered.com/app/1230140/ATRI_My_Dear_Moments/) 可爱的あとり 第一时间预购了 但始终没时间玩。 注意需要使用 Proton 4.11-13 版本。
-- [cute honey](https://store.steampowered.com/app/1347430/Cute_Honey/) 已锁国区。一款社保黄油。[社保补丁](https://www.jianguoyun.com/p/DeqYLckQmv_5CBiumsoD) 注意需要使用 Proton 5.0-10 版本。
-- [上古卷轴 5](https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/) 注意需要使用 Proton 5.0-10 版本。
-- [LOVE³ -爱立方-](https://store.steampowered.com/app/939600/LOVE/) 一款社保黄油。steam dlc 有社保补丁 dlc。注意需要使用 Proton 5.0-10 版本。
-- [三国志 11](https://store.steampowered.com/app/628070/Romance_of_the_Three_Kingdoms_XI_with_Power_Up_Kit/) 注意需要使用 Proton 5.0-10 版本。
+- [赛博朋克 2077](https://store.steampowered.com/app/1091500/_2077/) 在最新的 GEProton 下可正常运行。时不时会闪退，需要等后续优化。
 - [骑马与砍杀 2](https://store.steampowered.com/app/261550/Mount__Blade_II_Bannerlord/) 目前最新的游戏版本为 e1.5.7。经测试，在最新的 GEProton 下可正常运行，略有卡顿。但是启动器存在 bug,需要进行一点修改。进入游戏文件夹的./bin/Win64_Shipping_Client 文件夹中，执行如下命令
   ```bash
   mv TaleWorlds.MountAndBlade.Launcher.exe TaleWorlds.MountAndBlade.Launcher.exe.bak #备份源文件
   ln -s Bannerlord.Native.exe TaleWorlds.MountAndBlade.Launcher.exe #通过符号链接让启动器直接指向Bannerlord.Native.exe
   ```
   [相关 issue 讨论](https://github.com/ValveSoftware/Proton/issues/3706)
+- [只狼](https://store.steampowered.com/app/814380/Sekiro_Shadows_Die_Twice__GOTY_Edition/) 只狼。完美运行。注意需要使用 Proton 5.0-10 版本。
+- [上古卷轴 5](https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/) 注意需要使用 Proton 5.0-10 版本。
+- [ATRI -My Dear Moments-](https://store.steampowered.com/app/1230140/ATRI_My_Dear_Moments/) 可爱的あとり 第一时间预购了 但始终没时间玩。 注意需要使用 Proton 4.11-13 版本。
+- [cute honey](https://store.steampowered.com/app/1347430/Cute_Honey/) 已锁国区。一款社保黄油。[社保补丁](https://www.jianguoyun.com/p/DeqYLckQmv_5CBiumsoD) 注意需要使用 Proton 5.0-10 版本。
+- [LOVE³ -爱立方-](https://store.steampowered.com/app/939600/LOVE/) 一款社保黄油。steam dlc 有社保补丁 dlc。注意需要使用 Proton 5.0-10 版本。
+- [三国志 11](https://store.steampowered.com/app/628070/Romance_of_the_Three_Kingdoms_XI_with_Power_Up_Kit/) 注意需要使用 Proton 5.0-10 版本。
 - [Kenshi](https://store.steampowered.com/app/233860/Kenshi/) 废土生存类游戏，非常好玩。注意需要使用 Proton 5.0-10 版本。
 - [光环士官长合集](https://store.steampowered.com/app/976730/Halo_The_Master_Chief_Collection/) 大名鼎鼎的光环系列。启动时需要在启动参数中加入`-windowed`，否则会报错 fatal error。可在进入游戏后自行调整分辨率。注意需要使用 Proton 5.0-10 版本。
 - [Stronghold HD](https://store.steampowered.com/app/40950/Stronghold_HD/) 要塞 1 重制版，近乎完美，只是不能 Alt+Tab 切换，会卡死。
 - [Stronghold Crusader (Extreme) HD](https://store.steampowered.com/app/40970/Stronghold_Crusader_HD/) 要塞 1 十字军重制版，近乎完美，只是不能 Alt+Tab 切换，会卡死。
 - [Stronghold 2](https://store.steampowered.com/app/40960/Stronghold_2_Steam_Edition/) 要塞 2。完美运行。
 - [Stronghold Legends](https://store.steampowered.com/app/40980/Stronghold_Legends_Steam_Edition/) 要塞传奇。完美运行。
-- [Sekiro™: Shadows Die Twice - GOTY Edition](https://store.steampowered.com/app/814380/Sekiro_Shadows_Die_Twice__GOTY_Edition/) 只狼。完美运行。注意需要使用 Proton 5.0-10 版本。
 - [战意](https://store.steampowered.com/app/835570/_/) 中世纪网游。注意需要使用 GE Proton 的新版本。
 - [Just Cause](https://store.steampowered.com/app/6880/Just_Cause/)
 - [侠盗猎车手圣安地列斯](https://store.steampowered.com/app/12120/Grand_Theft_Auto_San_Andreas/)
@@ -93,7 +93,7 @@ sudo pacman -S steam
 
 ## Lutris
 
-Lutris 基于 wine，提供了大量游戏在 Linux 下的解决方案。其为你已经配置好了 wine 相关的一切配置，你只需要安装游玩即可。一般极少需要额外配置。进入[官网](https://lutris.net/)在右上角搜索你想玩的游戏。点击进入游戏页面后，可以看到在相应版本右侧有一个 install 按钮，点击后即可拉起 Lurtis 进行安装。下面针对一些群主玩的游戏进行一些额外说明。
+Lutris 基于 wine，提供了大量游戏在 Linux 下的解决方案。其为你已经配置好了 wine 相关的一切配置，你只需要安装游玩即可。一般极少需要额外配置。进入[官网](https://lutris.net/)在右上角搜索你想玩的游戏。点击进入游戏页面后，可以看到在相应版本右侧有一个 install 按钮，点击后即可拉起 Lurtis 进行安装。玩游戏前要先装好[驱动](https://github.com/lutris/docs/blob/master/InstallingDrivers.md)和[依赖](https://github.com/lutris/docs/blob/master/WineDependencies.md)。下面针对一些群主玩的游戏进行一些额外说明。
 
 - [暴雪战网](https://lutris.net/games/battlenet/) 直接安装后可能无法登录，这是因为缺乏某些库。阅读历史 Issue,安装如下库后解决问题。
 
@@ -101,7 +101,7 @@ Lutris 基于 wine，提供了大量游戏在 Linux 下的解决方案。其为�
 sudo pacman -S giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo libxcomposite lib32-libxcomposite libxinerama lib32-libxinerama ncurses lib32-ncurses opencl-icd-loader lib32-opencl-icd-loader libxslt lib32-libxslt libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader cups samba dosbox
 ```
 
-- [WargamingGameCenter(坦克世界等)](https://lutris.net/games/wargaming-game-center/) 默认情况无法更新游戏。在需要更新游戏的时候，将 wine 版本设置为系统的 wine staging 版本。在更新完毕后，需要启动游戏时，将 wine 版本设置为 lutris 的版本，如 lutris 5.7-10 x86_64。如遇到无法启动闪退的情况，可以尝试在命令行启动 Lutris,再启动坦克世界即可，玄学，不知道原因。如果你玩亚服，则需要使用[透明代理](/advanced/transparentProxy)对 UDP 流量进行加速。
+- [WargamingGameCenter(坦克世界、战舰世界等)](https://lutris.net/games/wargaming-game-center/) 如果无法更新游戏，在需要更新游戏的时候，将 wine 版本设置为系统的 wine staging 版本。在更新完毕后，需要启动游戏时，将 wine 版本设置为 lutris 的版本，如 lutris 5.7-10 x86_64。如遇到无法启动闪退的情况，可以尝试在命令行启动 Lutris,再启动坦克世界即可，玄学，不知道原因。如果启动器中启动游戏还是闪退，可以尝试把 lutris 容器的启动文件从启动器改到 WOT 游戏本体的可执行文件。如果你玩亚服，则需要使用[透明代理](/advanced/transparentProxy)对 UDP 流量进行加速。如果你玩国服，群主上传了国服的安装脚本，目前还没通过审核。有两点需要注意，第一，安装完启动器，会出现黑框的 war gaming 启动器，右下角托盘右键关闭就可以继续安装流程。第二，启动 war gaming 启动器后，直接点开始游戏会闪退，之前的办法是启动 exe 程序从启动器改成坦克世界游戏本体 exe，但是这个方法在外服可以，国服就不行，因为启动游戏本体后要输入帐号密码，我试了旧的空中网帐密，新的 360 帐密都不行，提示帐号密码错误或已过期。想了想原因可能是 360 在启动器做了套娃，有自身的验证登陆手段，经过测试，可以使用 lutris 的功能`Run EXE inside wine prefix`，然后选择坦克世界游戏本体就可以通过验证玩游戏了。`Run EXE inside wine prefix`的位置在 lutris 下方，点击小酒杯，最后一个。
 
 ## 性能监控
 
