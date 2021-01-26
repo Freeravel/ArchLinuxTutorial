@@ -44,7 +44,7 @@ sudo pacman -S steam
 
 - [武装突袭 3](https://store.steampowered.com/app/107410/Arma_3/) 大名鼎鼎的吃鸡游戏的爸爸。
 - [CS GO](https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/) 不用介绍了吧？
-- [十字军之王 3](https://store.steampowered.com/app/1158310/Crusader_Kings_III/) 经典的中世纪模拟器 第三部已经有官方中文了。目前启动器好像有 bug,启动不了游戏。可以在游戏目录的./binary/ck3 执行起动游戏。
+- [十字军之王 3](https://store.steampowered.com/app/1158310/Crusader_Kings_III/) 经典的中世纪模拟器 第三部已经有官方中文了。若启动器闪退启动不了游戏，可以执行游戏目录的./binary/ck3 启动游戏。
 - [Dota2](https://store.steampowered.com/app/570/Dota_2/) 不用介绍了吧？
 - [RimWorld](https://store.steampowered.com/app/294100/RimWorld/) 一款非常好玩的生存建设类游戏。
 - [欧陆风云 4](https://store.steampowered.com/app/236850/Europa_Universalis_IV/) 没有官中。linux 双字节补丁暂无。
@@ -67,12 +67,13 @@ sudo pacman -S steam
 
 如无另行说明，则代表默认使用最新的 Pronton 版本即可。
 
+- [赛博朋克 2077]](https://store.steampowered.com/app/1091500/_2077/) 在最新的 GEProton 下可正常运行。时不时会闪退，需要等后续优化。
 - [ATRI -My Dear Moments-](https://store.steampowered.com/app/1230140/ATRI_My_Dear_Moments/) 可爱的あとり 第一时间预购了 但始终没时间玩。 注意需要使用 Proton 4.11-13 版本。
 - [cute honey](https://store.steampowered.com/app/1347430/Cute_Honey/) 已锁国区。一款社保黄油。[社保补丁](https://www.jianguoyun.com/p/DeqYLckQmv_5CBiumsoD) 注意需要使用 Proton 5.0-10 版本。
 - [上古卷轴 5](https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/) 注意需要使用 Proton 5.0-10 版本。
 - [LOVE³ -爱立方-](https://store.steampowered.com/app/939600/LOVE/) 一款社保黄油。steam dlc 有社保补丁 dlc。注意需要使用 Proton 5.0-10 版本。
 - [三国志 11](https://store.steampowered.com/app/628070/Romance_of_the_Three_Kingdoms_XI_with_Power_Up_Kit/) 注意需要使用 Proton 5.0-10 版本。
-- [骑马与砍杀 2](https://store.steampowered.com/app/261550/Mount__Blade_II_Bannerlord/) 目前最新的非 beta 游戏版本为 e1.5.4。经测试，在特定的 Proton-5.9-GE-8-ST 的版本下可正常运行。但是启动器存在 bug,需要进行一点修改。进入游戏文件夹的./bin/Win64_Shipping_Client 文件夹中，执行如下命令
+- [骑马与砍杀 2](https://store.steampowered.com/app/261550/Mount__Blade_II_Bannerlord/) 目前最新的游戏版本为 e1.5.7。经测试，在最新的 GEProton 下可正常运行，略有卡顿。但是启动器存在 bug,需要进行一点修改。进入游戏文件夹的./bin/Win64_Shipping_Client 文件夹中，执行如下命令
   ```bash
   mv TaleWorlds.MountAndBlade.Launcher.exe TaleWorlds.MountAndBlade.Launcher.exe.bak #备份源文件
   ln -s Bannerlord.Native.exe TaleWorlds.MountAndBlade.Launcher.exe #通过符号链接让启动器直接指向Bannerlord.Native.exe
