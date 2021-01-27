@@ -14,6 +14,15 @@ echo performance | sudo tee /sys/devices/system/cpu/cpu\*/cpufreq/scaling_govern
 echo powersave | sudo tee /sys/devices/system/cpu/cpu\*/cpufreq/scaling_governor。
 ```
 
+群主的电脑配置如下，供参考，本节中所有主观的体验均以此配置为准。
+
+```bash
+CPU: Intel i7-6700K (8) @ 4.200GHz
+GPU: NVIDIA GeForce GTX 1070
+Memory: 32GB
+Disk: PLEXTOR PX-1TM9PeG
+```
+
 ## 我的世界
 
 ```bash
@@ -65,17 +74,18 @@ sudo pacman -S steam
 
 ### Steam Play 组
 
-如无另行说明，则代表默认使用最新的 Pronton 版本即可。
+如无另行说明，则代表默认使用最新的 Steam 官方 Pronton 版本即可。如果不行，可尝试 GE Pronton。
 
-- [赛博朋克 2077](https://store.steampowered.com/app/1091500/_2077/) 在最新的 GEProton 下可正常运行。时不时会闪退，需要等后续优化。
-- [骑马与砍杀 2](https://store.steampowered.com/app/261550/Mount__Blade_II_Bannerlord/) 目前最新的游戏版本为 e1.5.7。经测试，在最新的 GEProton 下可正常运行，略有卡顿。但是启动器存在 bug,需要进行一点修改。进入游戏文件夹的./bin/Win64_Shipping_Client 文件夹中，执行如下命令
+- [赛博朋克 2077](https://store.steampowered.com/app/1091500/_2077/) 可玩，但是偶尔会闪退，期待后续优化。
+- [荒野大镖客 2](https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/) 完美运行。
+- [骑马与砍杀 2](https://store.steampowered.com/app/261550/Mount__Blade_II_Bannerlord/) 略有卡顿，启动器存在 bug，无法启动游戏，需要进行一点修改。进入游戏文件夹的./bin/Win64_Shipping_Client 文件夹中，执行如下命令
   ```bash
   mv TaleWorlds.MountAndBlade.Launcher.exe TaleWorlds.MountAndBlade.Launcher.exe.bak #备份源文件
   ln -s Bannerlord.Native.exe TaleWorlds.MountAndBlade.Launcher.exe #通过符号链接让启动器直接指向Bannerlord.Native.exe
   ```
   [相关 issue 讨论](https://github.com/ValveSoftware/Proton/issues/3706)
-- [只狼](https://store.steampowered.com/app/814380/Sekiro_Shadows_Die_Twice__GOTY_Edition/) 只狼。完美运行。注意需要使用 Proton 5.0-10 版本。
-- [上古卷轴 5](https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/) 注意需要使用 Proton 5.0-10 版本。
+- [只狼](https://store.steampowered.com/app/814380/Sekiro_Shadows_Die_Twice__GOTY_Edition/) 完美运行。
+- [上古卷轴 5](https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/) 完美运行
 - [ATRI -My Dear Moments-](https://store.steampowered.com/app/1230140/ATRI_My_Dear_Moments/) 可爱的あとり 第一时间预购了 但始终没时间玩。 注意需要使用 Proton 4.11-13 版本。
 - [cute honey](https://store.steampowered.com/app/1347430/Cute_Honey/) 已锁国区。一款社保黄油。[社保补丁](https://www.jianguoyun.com/p/DeqYLckQmv_5CBiumsoD) 注意需要使用 Proton 5.0-10 版本。
 - [LOVE³ -爱立方-](https://store.steampowered.com/app/939600/LOVE/) 一款社保黄油。steam dlc 有社保补丁 dlc。注意需要使用 Proton 5.0-10 版本。

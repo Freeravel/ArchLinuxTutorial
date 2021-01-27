@@ -162,6 +162,7 @@ INPUT_METHOD DEFAULT=fcitx5
 GTK_IM_MODULE DEFAULT=fcitx5
 QT_IM_MODULE DEFAULT=fcitx5
 XMODIFIERS DEFAULT=\@im=fcitx5
+SDL_IM_MODULE DEFAULT=fcitx
 ```
 
 打开 _系统设置_ > _区域设置_ > _输入法_
