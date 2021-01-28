@@ -51,6 +51,8 @@ flameshot
 sudo pacman -S flameshot
 ```
 
+或者尝试 KDE 官方的 spectacle
+
 ## 网盘存储
 
 - [稳定版坚果云](https://aur.archlinux.org/packages/nutstore/)<sup>AUR</sup> 可直接使用 [web 版本](https://www.jianguoyun.com/d/home#/) [最新版坚果云](https://aur.archlinux.org/packages/nutstore-experimental/)<sup>AUR</sup>

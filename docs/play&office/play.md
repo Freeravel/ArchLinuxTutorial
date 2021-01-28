@@ -51,10 +51,11 @@ sudo pacman -S steam
 
 ### 原生游戏组
 
-- [武装突袭 3](https://store.steampowered.com/app/107410/Arma_3/) 大名鼎鼎的吃鸡游戏的爸爸。
+- [武装突袭 3](https://store.steampowered.com/app/107410/Arma_3/) 完美运行。
 - [CS GO](https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/) 不用介绍了吧？
 - [十字军之王 3](https://store.steampowered.com/app/1158310/Crusader_Kings_III/) 经典的中世纪模拟器 第三部已经有官方中文了。若启动器闪退启动不了游戏，可以执行游戏目录的./binary/ck3 启动游戏。
-- [Dota2](https://store.steampowered.com/app/570/Dota_2/) 不用介绍了吧？
+- [Dota2](https://store.steampowered.com/app/570/Dota_2/) 完美运行，提供 openGL 与 Vulkan 两种方案。目前已经可以输入中文。
+- [巫师 3](https://store.steampowered.com/app/292030/_3/) 完美运行。
 - [RimWorld](https://store.steampowered.com/app/294100/RimWorld/) 一款非常好玩的生存建设类游戏。
 - [欧陆风云 4](https://store.steampowered.com/app/236850/Europa_Universalis_IV/) 没有官中。linux 双字节补丁暂无。
 - [Kingdom: Classic](https://store.steampowered.com/app/368230/Kingdom_Classic/) 挺好玩的一个像素风横版闯关类小游戏。同系列还有几个新作。
@@ -76,7 +77,7 @@ sudo pacman -S steam
 
 如无另行说明，则代表默认使用最新的 Steam 官方 Pronton 版本即可。如果不行，可尝试 GE Pronton。
 
-- [赛博朋克 2077](https://store.steampowered.com/app/1091500/_2077/) 可玩，但是偶尔会闪退，期待后续优化。
+- [赛博朋克 2077](https://store.steampowered.com/app/1091500/_2077/) 可玩，但是会随机性闪退，是共性问题。需要等待后续优化。
 - [荒野大镖客 2](https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/) 完美运行。
 - [骑马与砍杀 2](https://store.steampowered.com/app/261550/Mount__Blade_II_Bannerlord/) 略有卡顿，启动器存在 bug，无法启动游戏，需要进行一点修改。进入游戏文件夹的./bin/Win64_Shipping_Client 文件夹中，执行如下命令
   ```bash
@@ -85,7 +86,7 @@ sudo pacman -S steam
   ```
   [相关 issue 讨论](https://github.com/ValveSoftware/Proton/issues/3706)
 - [只狼](https://store.steampowered.com/app/814380/Sekiro_Shadows_Die_Twice__GOTY_Edition/) 完美运行。
-- [上古卷轴 5](https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/) 完美运行
+- [上古卷轴 5](https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/) 完美运行。
 - [ATRI -My Dear Moments-](https://store.steampowered.com/app/1230140/ATRI_My_Dear_Moments/) 可爱的あとり 第一时间预购了 但始终没时间玩。 注意需要使用 Proton 4.11-13 版本。
 - [cute honey](https://store.steampowered.com/app/1347430/Cute_Honey/) 已锁国区。一款社保黄油。[社保补丁](https://www.jianguoyun.com/p/DeqYLckQmv_5CBiumsoD) 注意需要使用 Proton 5.0-10 版本。
 - [LOVE³ -爱立方-](https://store.steampowered.com/app/939600/LOVE/) 一款社保黄油。steam dlc 有社保补丁 dlc。注意需要使用 Proton 5.0-10 版本。
