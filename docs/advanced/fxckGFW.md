@@ -21,17 +21,17 @@ Qv2ray 会自行帮你设置`系统代理`。注意，`系统设置`中的代理
   Chromium 遵循 KDE 系统设置中的代理参数，在系统设置中设置完毕即可使用。
 
 - 终端  
-  可以通过 export 命令设置当前终端的代理方式。如下命令将流量都代理到 SOCKS5 代理
+  可以通过 export 命令设置当前终端的代理方式。比如使用 tldr 或 github raw 等资源需要设置 https 代理。
 
 ```bash
-export ALL_PROXY=socks5://127.0.0.1:1080
+export https_proxy=http://127.0.0.1:8889
 ```
 
 - code OSS  
    code => preference => settings  
    搜索 proxy，在其中填入 http 代理地址即可
 
-- 最后的手段: proxychains-ng  
+- proxychains-ng  
   如果对于一个应用，KDE 的全局代理不生效，在终端 export 了 ALL_PROXY 变量再用终端启动此应用代理也不生效，并且这个应用自身也没有配置代理的选项，此时可以尝试使用 proxychains-ng，它可以为单行命令配置代理。它是一个预加载的 hook，允许通过一个或多个 SOCKS 或 HTTP 代理重定向现有动态链接程序的 TCP 流量。
 
   ```bash
