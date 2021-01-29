@@ -122,6 +122,7 @@ yay -S gpu-viewer
 
 ```bash
 sudo pacman -S dmidecode
+sudo dmidecode
 ```
 
 ## 文件传输与系统备份
@@ -143,3 +144,7 @@ rsync -a bar/ me@server:/home/me/   #-a 标记实现目录复制等 比scp -r �
 sudo pacman -S unarchiver
 unar xxx.zip
 ```
+
+## 磁盘容量不足的处理方式
+
+一般使用 LVM 安装 Linux 系统则不用担心这种情况发生。但是我们使用的是传统的 ext4 经典分区方式。这种情况下一般建议在安装的开始就将根目录设置的大一些，如 100G。如果/home 分区大小不够了，可以新安装一块硬盘，将其挂载到你想要的位置，再按照`基础安装`的步骤中重新 genfstab 一下就行了。

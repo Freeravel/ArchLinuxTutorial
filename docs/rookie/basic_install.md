@@ -1,6 +1,6 @@
 # Arch Linux 基础安装二十步
 
-从安装最基础的 ArchLinux 系统开始，由于当前已经是 2021 年，安装将全部以 UEFI+GPT 的形式进行。传统 BIOS 方式不再赘述。  
+从安装最基础的 ArchLinux 系统开始，由于当前已经是 2021 年，安装将全部以 UEFI+GPT 的形式进行，传统 BIOS 方式不再赘述。  
 官方文档: [安装指南](https://wiki.archlinux.org/index.php/Installation_guide)  
 相关视频链接： [2020ArchLinux 安装教程](https://www.bilibili.com/video/BV1qf4y1D7Da/) 视频中可看到全部操作步骤 强烈建议观看视频配合文字学习。
 
@@ -68,13 +68,15 @@ exit                            #成功后exit退出
 有线连接:  
 正常来说，只要插上一个已经联网的路由器分出的网线(DHCP)，直接就能联网。
 
+可以等待几秒等网络建立链接后再进行下步测试网络的操作。
+
 ### 4.测试网络
 
 ```bash
 ping www.baidu.com
 ```
 
-若能看到数据返回，即说明已经联网，ctrl+c 终止退出当前命令。如果还是无法连接，使用 `ip link set up xxx` 命令确认你已经激活了对应的网卡。
+若能看到数据返回，即说明已经联网，ctrl+c 终止退出当前命令。如果还是无法连接，使用 `ip link set up xxx` 命令确认你已经激活了对应的网卡，再重新继续网络链接与测试。
 
 ### 5.禁用自作聪明的 reflector
 
@@ -118,7 +120,7 @@ cfdisk  /dev/sdx            #来执行分区操作,分配各个分区大小，�
 fdisk -l                    #复查磁盘情况
 ```
 
-cfdisk 分区的详细操作见视频中的教学。
+cfdisk 分区的详细操作见视频中的教学。一般建议将 EFI 分区设置为磁盘的第一个分区，据说有些主板如果不将 EFI 设置为第一个分区，可能有不兼容的问题。
 
 ### 9.格式化
 
@@ -164,7 +166,7 @@ pacstrap /mnt dhcpcd iwd vim sudo bash-completion   #一个有线所需 一个�
 fstab 用来定义磁盘分区
 
 ```bash
-genfstab -U /mnt >> /mnt/etc/fstab
+genfstab -U /mnt > /mnt/etc/fstab
 ```
 
 复查一下 /mnt/etc/fstab 确保没有错误
@@ -199,7 +201,7 @@ hwclock --systohc
 
 Locale 决定了软件使用的语言、书写习惯和字符集。
 
-编辑 /etc/locale.gen，去掉 en_US.UTF-8 行的注释符号（#）。
+编辑 /etc/locale.gen，去掉 en_US.UTF-8 行以及 zh_CN.UTF-8 的注释符号（#）。
 
 然后使用如下命令生成 locale。
 
@@ -234,7 +236,7 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB #取
 grub-mkconfig -o /boot/grub/grub.cfg    #生成GRUB所需的配置文件
 ```
 
-> 在某些主板安装完成后，你会发现没有启动条目。这是因为某些主板的 UEFI 固件在显示 UEFI NVRAM 引导条目之前，需要在特定的位置存放可引导文件，不支持自定义存放 efi 文件(如微星 Z170-A Gaming PRO)。解决方案是在默认启动路径下安装 GRUB。重新插入安装优盘，挂载目录，chroot 到/mnt，然后你可以直接把已经生成好的 efi 文件移动到默认目录下，如下代码所示。[官方参考文档](https://wiki.archlinux.org/index.php/GRUB#Default/fallback_boot_path)
+> 在某些主板安装完成后，你会发现没有启动条目。这是因为某些主板的 UEFI 固件在显示 UEFI NVRAM 引导条目之前，需要在特定的位置存放可引导文件，不支持自定义存放 efi 文件(如微星 Z170-A Gaming PRO)。解决方案是在默认启动路径下安装 GRUB。重新插入安装优盘，挂载目录，chroot 到/mnt，然后你可以直接把已经生成好的 efi 文件移动到默认目录下，如下代码所示。只有安装完成后你的主板不出现启动条目才需要尝试如下命令，正常安装无需执行。[官方参考文档](https://wiki.archlinux.org/index.php/GRUB#Default/fallback_boot_path)
 
 ```bash
 mkdir -p /boot/EFI/BOOT

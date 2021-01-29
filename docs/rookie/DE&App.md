@@ -57,7 +57,7 @@ nobody       ALL=(root) NOPASSWD: /usr/sbin/rndc reload
 #### 3.安装 KDE Plasma 桌面环境
 
 ```bash
-pacman -S plasma-meta konsole dolphin  #安装plasma-meta元软件包 直接回车回车
+pacman -S plasma-meta konsole dolphin  #安装plasma-meta元软件包以及终端和文件管理器
 ```
 
 #### 4.配置 greeter sddm
@@ -103,12 +103,12 @@ pacman -Syyu
 #### 6.安装基础功能包
 
 进入桌面后，搜索 konsole。它是 KDE 桌面环境默认的命令行终端。  
-接下来我们进行网络连接，并安装一些基础功能包。
+接下来我们进行网络配置与连接，并安装一些基础功能包。
 
 ```bash
 sudo systemctl disable iwd                                                  #确保iwd开机处于关闭状态，其无线连接会与NetworkManager冲突
 sudo systemctl stop iwd                                                     #同上，立即关闭iwd
-sudo systemctl enable --now NetworkManager                                  #确保先启动NetworkManager，并进行网络连接 若iwd已经与NetworkManager冲突 则执行完上述步骤重启一下电脑即可。
+sudo systemctl enable --now NetworkManager                                  #确保先启动NetworkManager，并进行网络连接 若iwd已经与NetworkManager冲突 则执行完上一步重启一下电脑即可。
 sudo pacman -S ntfs-3g                                                      #识别NTFS格式的硬盘
 sudo pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei                   #安装几个开源中文字体
 sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra  #安装谷歌开源字体及表情
@@ -141,6 +141,8 @@ mkdir Desktop Documents Downloads Music Pictures Videos
 打开 _System Settings_ > _Regional Settings_ > _Language_ 中选择中文加入，再拖拽到第一位，Apply。
 
 最后重新登陆即可。
+
+> 很多人会错误的更改 _System Settings_ > _Regional Settings_ > _Formats_ 中的值为中文蒙古，默认，或者其他值，这会导致系统中一半英文一般中文。这里的值要保持默认的 en_US，或者更改为 zh_CN,或者改为你在 locale.gen 中添加的任意一种语言。
 
 #### 9.安装输入法
 
@@ -183,4 +185,4 @@ sudo systemctl enable --now bluetooth
 
 #### 11.字体设置
 
-个人的设置是英文使用 Hack，中文使用 WenQuanYi Micro Hei/Source Han Sans CN/Noto Sans。可以在系统设置->字体中进行设置。
+个人的设置是英文使用 Hack，中文使用 Noto Sans CJK SC。可以在系统设置->字体中进行设置。
