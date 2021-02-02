@@ -112,6 +112,8 @@ Lutris 基于 wine，提供了大量游戏在 Linux 下的解决方案。其为�
 sudo pacman -S giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo libxcomposite lib32-libxcomposite libxinerama lib32-libxinerama ncurses lib32-ncurses opencl-icd-loader lib32-opencl-icd-loader libxslt lib32-libxslt libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader cups samba dosbox
 ```
 
+> 如果你发现还是无法登陆，检查你的代理设置。比如你是国服的帐号，但是代理挂的是日本的，那是无法登陆的，可以换一个香港的代理再尝试。
+
 - [WargamingGameCenter(坦克世界、战舰世界等)](https://lutris.net/games/wargaming-game-center/) 如果无法更新游戏，在需要更新游戏的时候，将 wine 版本设置为系统的 wine staging 版本。在更新完毕后，需要启动游戏时，将 wine 版本设置为 lutris 的版本，如 lutris 5.7-10 x86_64。如遇到无法启动闪退的情况，可以尝试在命令行启动 Lutris,再启动坦克世界即可，玄学，不知道原因。如果启动器中启动游戏还是闪退，可以尝试把 lutris 容器的启动文件从启动器改到 WOT 游戏本体的可执行文件。如果你玩亚服，则需要使用[透明代理](/advanced/transparentProxy)对 UDP 流量进行加速。如果你玩国服，群主上传了国服的安装脚本，目前还没通过审核。有两点需要注意，第一，安装完启动器，会出现黑框的 war gaming 启动器，右下角托盘右键关闭就可以继续安装流程。第二，启动 war gaming 启动器后，直接点开始游戏会闪退，之前的办法是启动 exe 程序从启动器改成坦克世界游戏本体 exe，但是这个方法在外服可以，国服就不行，因为启动游戏本体后要输入帐号密码，我试了旧的空中网帐密，新的 360 帐密都不行，提示帐号密码错误或已过期。想了想原因可能是 360 在启动器做了套娃，有自身的验证登陆手段，经过测试，可以使用 lutris 的功能`Run EXE inside wine prefix`，然后选择坦克世界游戏本体就可以通过验证玩游戏了。`Run EXE inside wine prefix`的位置在 lutris 下方，点击小酒杯，最后一个。
 
 ## 性能监控
