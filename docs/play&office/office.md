@@ -29,7 +29,7 @@ yay -S wechat-uos               #2020年末最新的uos版本原生微信的arch
 
 除此之外 对于另外一些手机通讯软件可以尝试使用[scrcpy](https://aur.archlinux.org/packages/scrcpy/)。
 
-> 如果 telegram 字体遇到锯齿问题可以尝试 125%缩放，最新版本 KDE 貌似会同时改动字体 DPI 到 120。同时建议禁用'AR PL New Sung'等，和'WenQuanYi Zen Hei'这两个字体，因为 tg 貌似是自己有一套规则选择字体，会优先使用这两个字体，他们在 tg 里看着非常难受。
+电报会自行选择字体，如果电报的字体有问题，可以参考[这个页面](<https://wiki.archlinux.org/index.php/Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E4%BF%AE%E6%AD%A3%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E4%B8%BA%E5%BC%82%E4%BD%93%EF%BC%88%E6%97%A5%E6%96%87%EF%BC%89%E5%AD%97%E5%BD%A2>)设置字体优先级。
 
 ## 办公套件
 
@@ -50,6 +50,8 @@ flameshot
 ```
 sudo pacman -S flameshot
 ```
+
+快捷键的命令是`flameshot gui`
 
 或者尝试 KDE 官方的 spectacle
 

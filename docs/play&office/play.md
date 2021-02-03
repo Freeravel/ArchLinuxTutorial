@@ -31,7 +31,7 @@ sudo pacman -S minecraft #我的世界官服起动器(ArchLinuxCN)
 
 ## Steam
 
-群主的 SteamID: 144736794 。由于游戏实在太多，个人肯定无法完成购买全部。期待有缘人赠送游戏，群主可以测试在 Linux 上的可运行性。
+群主的 SteamID: 144736794 。由于游戏实在太多，个人肯定无法完成购买全部。如有需要可以进行联络，群主可以测试在 Linux 上的可运行性。
 
 [官方文档](https://wiki.archlinux.org/index.php/Steam)  
 一些字体和驱动已经在`新手上路`章节中配置完成。若有安装问题请自查。

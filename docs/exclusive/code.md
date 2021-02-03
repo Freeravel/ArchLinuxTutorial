@@ -10,7 +10,7 @@
 
 ## 后端编程
 
-Jetbrains 家的全家桶基本都有支持可以在源中或 AUR 中自行搜索，如[IntelliJ Idea](https://www.archlinux.org/packages/community/x86_64/intellij-idea-community-edition/)，[PyCharm](https://www.archlinux.org/packages/community/x86_64/pycharm-community-edition/)等。
+Jetbrains 家的全家桶基本都有支持可以在源中或 AUR 中自行搜索，如[IntelliJ Idea](https://www.archlinux.org/packages/community/x86_64/intellij-idea-community-edition/)，[PyCharm](https://www.archlinux.org/packages/community/x86_64/pycharm-community-edition/)，[GoLand](https://aur.archlinux.org/packages/goland/)<sup>AUR</sup>等。
 较为老式的 IDE 有[Netbeans](https://www.archlinux.org/packages/community/any/netbeans/)以及 eclipse，eclipse 有多种版本，可在 AUR 中自行搜索。
 
 关于数据库相关软件，也有多种选择。

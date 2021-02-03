@@ -69,7 +69,7 @@ sudo pacman -S bbswitch #安装bbswitch切换方式
 
 [optimus-manager hybrid 模式官方文档](https://github.com/Askannz/optimus-manager/wiki/Nvidia-GPU-offloading-for-%22hybrid%22-mode)
 
-下面详细说下动态切换模式。本质上其还是使用官方的 [PRIME](https://wiki.archlinux.org/index.php/PRIME#PRIME_render_offload)方法进行切换。需要设置三个环境变量，或者用 nvidia-prime 包提供的命令 prime-run，二者本质也是一样的，都是设置三个环境变量。
+下面详细说下动态切换模式。本质上其还是使用官方的 [PRIME](https://wiki.archlinux.org/index.php/PRIME#PRIME_render_offload)方法进行切换。需要设置三个环境变量，或者用 nvidia-prime 包提供的命令 prime-run，二者本质也是一样的，都是设置三个环境变量。如果 optimus-manager 在你的设备上始终无法正确切换运行，可以考虑使用官方的 PRIME 方案。
 
 在你要使用动态模式前需要添加的三个环境变量，可以添加在你想执行的命令前，也可直接添加在/etc/environment 全局环境下。如果加在了全局环境中，在从 hybrid 模式切换到其他模式之前一定要去掉这三个环境变量，否则会黑屏。
 

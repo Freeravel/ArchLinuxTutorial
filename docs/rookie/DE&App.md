@@ -115,7 +115,7 @@ sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra  #安
 sudo pacman -S firefox chromium                                             #安装常用的火狐、谷歌浏览器
 sudo pacman -S ark                                                          #与dolphin同用右键解压
 sudo pacman -S gwenview                                                     #图片查看器
-sudo pacman -S steam                                                        #稍后看完显卡驱动再使用，安装顺便能解决音频问题
+sudo pacman -S steam                                                        #稍后看完显卡驱动再使用
 ```
 
 接下来要安装 archlinuxcn 源的相关步骤，
@@ -142,7 +142,7 @@ mkdir Desktop Documents Downloads Music Pictures Videos
 
 最后重新登陆即可。
 
-> 很多人会错误的更改 _System Settings_ > _Regional Settings_ > _Formats_ 中的值为中文蒙古，默认，或者其他值，这会导致系统中一半英文一般中文。这里的值要保持默认的 en_US，或者更改为 zh_CN,或者改为你在 locale.gen 中添加的任意一种语言。
+> 很多人会错误的更改 _System Settings_ > _Regional Settings_ > _Formats_ 中的值为中文蒙古，默认，或者其他值，这会导致系统中一半英文一般中文。这里的值要保持默认的 en_US 或 zh_CN,或者改为你在 locale.gen 中添加的任意一种语言。
 
 #### 9.安装输入法
 
@@ -185,4 +185,4 @@ sudo systemctl enable --now bluetooth
 
 #### 11.字体设置
 
-个人的设置是英文使用 Hack，中文使用 Noto Sans CJK SC。可以在系统设置->字体中进行设置。
+个人的设置是英文使用 Hack，中文使用 Noto Sans CJK SC。可以在系统设置->字体中进行设置。有关用户全局级别的设置，可参考[官方文档](<https://wiki.archlinux.org/index.php/Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E4%BF%AE%E6%AD%A3%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E4%B8%BA%E5%BC%82%E4%BD%93%EF%BC%88%E6%97%A5%E6%96%87%EF%BC%89%E5%AD%97%E5%BD%A2>)
