@@ -68,3 +68,7 @@ sudo pacman -S flameshot
 
 - [feh](https://www.archlinux.org/packages/extra/x86_64/feh/)
 - [nomacs](https://www.archlinux.org/packages/community/x86_64/nomacs/)
+
+## 远程协助
+
+- [teamviewer](https://aur.archlinux.org/packages/teamviewer/)<sup>AUR</sup>
